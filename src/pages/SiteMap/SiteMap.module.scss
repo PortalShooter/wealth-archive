@@ -1,0 +1,95 @@
+@use "@/app/mixins/index.scss" as *;
+
+.site-map {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    margin-top: 71px;
+    margin-bottom: 56px;
+    font-family: 'Reckless', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    @include mediaTablet {
+      font-size: 36px;
+      margin-top: 64px;
+    }
+    @include mediaDesktop {
+      font-size: 64px;
+      margin-left: 213px;
+      margin-top: 92px;
+      margin-bottom: 61px;
+    }
+  }
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 76px;
+    @include mediaTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 102px;
+    }
+    @include mediaDesktop {
+      margin-bottom: 176px;
+    }
+  }
+  &__section {
+    font-family: 'Neue Haas Unica Pro', serif;
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    &:nth-child(1) {
+      @include mediaDesktop {
+        margin-left: 213px;
+      }
+    }
+    &:nth-child(2) {
+      margin-top: 32px;
+      @include mediaTablet {
+        margin-top: 0;
+        margin-right: 29%;
+      }
+      @include mediaDesktop {
+        margin-right: 26.4%;
+      }
+    }
+  }
+  &__section-title {
+    font-family: 'Neue Haas Unica Pro', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    margin-bottom: 30px;
+
+    @include mediaTablet {
+      font-size: 24px;
+    }
+    @include mediaDesktop {
+      font-size: 32px;
+    }
+  }
+  &__section-links {
+    display: flex;
+    flex-direction: column;
+  }
+  &__section-links div {
+    margin-bottom: 29px;
+  }
+  &__section-links a {
+    padding-bottom: 3px;
+    display: inline;
+    font-size: 16px;
+    line-height: 140%;
+    border-bottom: 2px solid rgba(0, 133, 124, 0.3);
+    color: var(--color-green);
+
+    &:hover {
+      border-bottom: 2px solid rgba(0, 133, 124, 0.5);
+      color: var(--color-dark-green);
+    }
+  }
+}

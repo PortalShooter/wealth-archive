@@ -1,0 +1,329 @@
+@import "src/app/mixins/queries";
+
+.compare-side {
+  margin-bottom: 100px;
+  &__wrapper {
+    padding: 58px 24px 30px;
+
+    @include mediaTablet {
+      padding: 71px 93px 24px;
+    }
+
+    @include mediaDesktop {
+      padding: 110px 90px 72px;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 122px 0 0;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+  }
+
+  &__columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc((100% / 12) * 4);
+
+    @include mediaDesktop {
+      width: calc((100% / 4) - 30px);
+    }
+
+    &-desktop {
+      display: none;
+
+      @include mediaDesktop {
+        display: flex;
+        width: calc(((100% / 12) * 5));
+
+        .compare-side__column-title {
+          text-align: left;
+        }
+
+        .compare-side__column-img {
+          text-align: left;
+        }
+      }
+    }
+
+    &-active_trust {
+      @include mediaDesktop {
+        background: #f4f5f8;
+        border-radius: 20px;
+        margin-left: 32px;
+        margin-top: -39px;
+        padding: 39px 32px 0;
+
+        svg circle {
+          fill: #ffffff;
+        }
+
+        .green-icon circle {
+          fill: #00857c;
+        }
+      }
+    }
+
+    &-active_will {
+      @include mediaDesktop {
+        background: #f4f5f8;
+        border-radius: 20px;
+        margin: 0 32px;
+        margin-top: -39px;
+        padding: 39px 32px 0;
+
+        svg circle {
+          fill: #ffffff;
+        }
+
+        .green-icon circle {
+          fill: #00857c;
+        }
+      }
+    }
+
+    &-active_core {
+      @include mediaDesktop {
+        background: #f4f5f8;
+        border-radius: 20px;
+        margin: 0 32px;
+        margin-top: -39px;
+        padding: 39px 32px 0;
+
+        svg circle {
+          fill: #ffffff;
+        }
+
+        .green-icon circle {
+          fill: #00857c;
+        }
+
+        @include mediaDesktop {
+          &:nth-child(2) {
+            .compare-side__column-wrapper {
+              padding-right: 0;
+            }
+
+            .compare-side__column-img {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__column-wrapper {
+    width: 100%;
+    background-color: #00877e;
+
+    padding: 16px 0;
+    margin-bottom: 16px;
+    // padding-bottom: 24px;
+
+    @include mediaTablet {
+      // padding-bottom: 20px;
+    }
+
+    @include mediaDesktop {
+      // padding-bottom: 40px;
+    }
+
+    &_active-trust {
+      padding-bottom: 12px;
+
+      @include mediaTablet {
+        padding-bottom: 8px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 28px;
+      }
+    }
+
+    &_active-will {
+      padding-bottom: 12px;
+
+      @include mediaTablet {
+        padding-bottom: 10px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 28px;
+      }
+    }
+
+    &_active-core {
+      padding-bottom: 12px;
+
+      @include mediaTablet {
+        padding-bottom: 10px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 28px;
+      }
+    }
+  }
+
+  &__column:first-of-type > &__column-wrapper {
+    border-radius: 16px 0 0 16px;
+  }
+
+  &__column:nth-of-type(2) > &__column-wrapper {
+    border-radius: 16px 0 0 16px;
+
+    @include mediaDesktop {
+      border-radius: initial;
+    }
+  }
+
+  &__column:last-of-type > &__column-wrapper {
+    border-radius: 0 16px 16px 0;
+  }
+
+  &__column-title {
+    font: 400 26px/32px "Neue Haas Unica Pro";
+    color: #f6f4ed;
+    text-align: center;
+
+    @include mediaTablet {
+      font-size: 22px;
+    }
+
+    @include mediaDesktop {
+      font-size: 32px;
+    }
+
+    &_active-trust {
+      padding: 12px 0;
+      background: #f4f5f8;
+      border-radius: 12px;
+      margin: -12px auto 0 auto;
+    }
+
+    &_active-will {
+      padding: 12px 0;
+      background: #f4f5f8;
+      border-radius: 12px;
+      margin: -12px auto 0 auto;
+    }
+
+    &_active-core {
+      padding: 12px 0;
+      background: #f4f5f8;
+      border-radius: 12px;
+      margin: -12px auto 0 auto;
+    }
+  }
+
+  &__column:first-of-type &__column-title {
+    color: #00877e;
+  }
+
+  &__column-img {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 79px 0 36px;
+    background-color: white;
+    margin-bottom: 10px;
+
+    @include mediaDesktop {
+      padding: 11.75px 0 8px;
+      max-height: 113px;
+    }
+  }
+
+  &__block-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0 8px 24px;
+    background-color: white;
+    margin-bottom: 10px;
+
+    font: 400 20px/24px "Neue Haas Unica Pro";
+    color: #1a1b1c;
+
+    svg {
+      margin-right: 32px;
+    }
+  }
+
+  &__column:first-of-type &__block-info {
+    border-radius: 16px 0 0 16px;
+  }
+
+  &__column:nth-of-type(2) &__column-img {
+    border-radius: 16px 0 0 16px;
+
+    @include mediaDesktop {
+      border-radius: initial;
+    }
+  }
+
+  &__column:last-of-type &__column-img {
+    border-radius: 0 16px 16px 0;
+  }
+
+  &__btn {
+    margin: 32px auto 0;
+    min-width: 192px;
+
+    @include mediaTablet {
+      margin: 37px auto 0;
+    }
+
+    @include mediaDesktop {
+      display: none;
+    }
+
+    &:focus,
+    &:focus-visible {
+      background: #00857c;
+    }
+  }
+
+  &__info-btn {
+    display: none;
+
+    @include mediaDesktop {
+      display: block;
+      margin: 30px 0;
+      min-width: 192px;
+    }
+
+    &:focus,
+    &:focus-visible {
+      background: #00857c;
+    }
+  }
+
+  &__column-text {
+    width: 300%;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font: 500 18px/130% "Neue Haas Unica Pro";
+    color: #1a1b1c;
+    z-index: 1;
+    padding-left: 20px;
+
+    @include mediaDesktop {
+      padding-left: 0;
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "src/app/mixins/index" as *;
+
+.category {
+  padding-bottom: 140px;
+
+  @include mediaTablet {
+    padding-bottom: 177px;
+  }
+
+  @include mediaDesktop {
+    padding-bottom: 200px;
+  }
+
+  &__container {
+
+  }
+
+  &__title {
+    @include heading_h3_responsive;
+    margin-bottom: 32px;
+
+    @include mediaTablet {
+      margin-bottom: 48px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__cards {
+    @include mediaTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: auto;
+      max-width: 830px;
+    }
+
+    @include mediaDesktop {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1260px;
+    }
+  }
+}

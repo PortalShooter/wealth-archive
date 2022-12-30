@@ -1,0 +1,99 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.compare {
+  margin: 0 auto;
+
+  @include mediaDesktopMedium {
+    width: 1220px;
+  }
+
+  @include mediaDesktopDesign {
+    width: 1360px;
+  }
+
+  @media (max-width: 1279px){
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    width: 1260px;
+    justify-content: space-between;
+    margin: 0 50px;
+
+    @include mediaDesktopMedium {
+      width: 1120px;
+      margin-left: 46px;
+    }
+
+    @include mediaDesktopDesign {
+      width: 1260px;
+      margin: 0 50px;
+    }
+
+    &__item {
+      font-family: 'Reckless';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 110%;
+      color: var(--color-text);
+
+      &:nth-child(2) {
+        @include mediaDesktopMedium {
+          margin-left: 25px;
+        }
+        @include mediaDesktopDesign {
+          transform: translateX(32px);
+          //margin-left: 25px;
+        }
+      }
+      &:nth-child(3) {
+        @include mediaDesktopMedium {
+          margin-left: 5px;
+          transform: translateX(32px);
+        }
+        @include mediaDesktopDesign {
+          margin-left: -9px;
+          transform: translateX(32px);
+        }
+
+      }
+      &:nth-child(4) {
+        @include mediaDesktopMedium {
+          margin-right: 80px;
+          transform: translateX(32px);
+        }
+        @include mediaDesktopDesign {
+          margin-right: 93px;
+          transform: translateX(27px);
+        }
+      }
+    }
+
+  }
+  &__table {
+    display: flex;
+    margin-top: 51px;
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    box-sizing: border-box;
+
+    &__icons {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__list {
+      margin-top: -20px;
+    }
+  }
+}
+.icon {
+  margin-bottom: 60px;
+}

@@ -1,0 +1,274 @@
+@import "src/app/mixins/queries";
+
+.questions {
+  scroll-behavior: smooth;
+
+  &:first-child {
+    .questions__wrapper {
+      padding: 86px 24px 0;
+      margin-top: -46px;
+
+      @include mediaTablet {
+        padding: 142px 32px 0;
+        margin-top: -84px;
+      }
+
+      @include mediaDesktop {
+        padding: 144px 90px 0;
+        margin-top: -84px;
+      }
+
+      @include mediaDesktopDesign {
+        padding: 185px 0 0;
+        margin-top: -104px;
+      }
+    }
+  }
+
+  &__wrapper {
+    padding: 107px 24px 0;
+
+    @include mediaTablet {
+      padding: 131px 32px 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @include mediaDesktop {
+      padding: 131px 90px 0;
+      max-width: 1046px;
+      margin: 0 auto;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 199px 0 0;
+      max-width: 1046px;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    font: 400 32px/110% 'Reckless';
+    color: #1A1B1C;
+    margin-bottom: 15px;
+
+    @include mediaTablet {
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 64px;
+      line-height: 100%;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__subtitle {
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    color: #1A1B1C;
+    margin-bottom: 39px;
+
+    @include mediaTablet {
+      max-width: 522px;
+      margin-bottom: 46px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 22px;
+      line-height: 130%;
+      max-width: 651px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__block-external {
+    padding: 24px 0 0;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    @include mediaTablet {
+      padding: 32px 0 0;
+    }
+
+    @include mediaDesktop {
+      &:hover {
+        .questions__item-title {
+          color: #00857C;
+        }
+      }
+    }
+
+    @include mediaDesktopDesign {
+      padding: 34px 0 0;
+    }
+
+    &:last-child {
+      @include mediaDesktopDesign {
+        hr {
+          margin-top: 39px;
+        }
+      }
+
+      .questions__item-title {
+        @include mediaTablet {
+          line-height: 140%;
+        }
+
+        @include mediaDesktopDesign {
+          padding: 8px 0 0;
+        }
+      }
+    }
+
+    &_open {
+      border-radius: 20px;
+      padding: 24px 0 0 0;
+
+      @include mediaTablet {
+        padding: 32px 0 0 0;
+        margin: 0;
+      }
+
+      @include mediaDesktop {
+        &:hover {
+          .questions__item-title {
+            color: #00857C;
+          }
+        }
+      }
+
+      @include mediaDesktopDesign {
+        padding: 34px 0 0 0;
+      }
+    }
+
+    &:hover {
+      .questions__arrow {
+        path {
+          stroke: #75dbd3;
+        }
+      }
+    }
+  }
+
+  &__block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7px 0 0;
+
+    @include mediaTablet {
+      //padding: 0 40px 0 32px;
+    }
+
+    @include mediaDesktopDesign {
+      //padding: 0 64px 0 56px;
+    }
+  }
+
+  &__item-title {
+    font: 500 18px/120% 'Neue Haas Unica Pro';
+    color: #1A1B1C;
+    max-width: 280px;
+
+    @media screen and (min-width: 440px) {
+      max-width: 100%;
+    }
+
+    @include mediaTablet {
+      max-width: 580px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 22px;
+      line-height: 120%;
+      max-width: 726px;
+    }
+  }
+
+  &__arrow {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    transform: rotate(180deg);
+    transition: transform .8s var(--ease-out);
+    margin-right: -7px;
+    path {
+      stroke-width: 4;
+    }
+
+    @include mediaDesktopDesign {
+      width: 40px;
+      height: 40px;
+
+      path {
+        stroke-width: 2;
+      }
+    }
+
+    &-up {
+      transform: rotate(1turn);
+      transition: transform .8s var(--ease-out);
+    }
+  }
+
+  hr {
+    color: #DEE3EC;
+    background-color: #DEE3EC;
+    border: 0 none;
+    height: 1px;
+    width: 100%;
+    margin-top: 24px;
+
+    @include mediaTablet {
+      //width: calc(100% - 64px);
+      margin: 32px auto 0 auto;
+    }
+
+    @include mediaDesktopDesign {
+      //width: calc(100% - 112px);
+      margin: 32px auto 0 auto;
+    }
+  }
+
+  &__text {
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    color: #1A1B1C;
+    padding: 0;
+    margin-top: 0px;
+    height: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path .5s var(--ease-out);
+
+    @include mediaTablet {
+      padding: 0;
+      max-width: 583px;
+      //margin-top: 16px;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 0;
+      max-width: 830px;
+      font-size: 22px;
+      //margin-top: 16px;
+      //margin-bottom: 40px;
+    }
+
+    &_opened {
+      height:auto;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transition: clip-path .5s var(--ease-out);
+      margin-top: 20px;
+    }
+  }
+
+  &__btn {
+    width: 238px;
+    margin: 88px auto 0 auto;
+  }
+}
+
+#security, #privacy {
+  scroll-behavior: smooth;
+}

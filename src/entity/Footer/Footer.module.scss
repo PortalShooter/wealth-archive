@@ -1,0 +1,302 @@
+@use "@/app/mixins/index.scss" as *;
+
+.link {
+  @include link;
+  font-size: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+  font-family: inherit;
+  font-weight: inherit;
+
+  &_text-secondary {
+    @include textLink(
+        var(--link-secondary-color-normal),
+        var(--link-secondary-color-hover),
+        var(--link-secondary-color-active),
+        var(--link-secondary-color-focus-visible),
+        var(--link-secondary-underline-color-normal),
+        var(--link-secondary-underline-color-hover),
+        var(--link-secondary-underline-color-active),
+        var(--link-secondary-underline-color-focus-visible)
+    );
+  }
+}
+
+.footer {
+  background-color: var(--color-grey);
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+
+  @include mediaDesktop {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &__container {
+    padding-top: 52px;
+    padding-bottom: 22px;
+    @include mediaDesktop {
+      padding-top: 70px;
+    }
+    @include mediaDesktop {
+      padding-top: 55px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__body {
+    @include mediaTablet {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+  }
+
+  &__logo {
+    @include mediaDesktop {
+      position: relative;
+      top: 12px;
+    }
+  }
+
+  &__about {
+    @include mediaTablet {
+      display: none;
+    }
+  }
+
+  &__links {
+    margin-top: 48px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mediaMobile {
+      margin-right: 26%;
+    }
+
+    @include mediaTablet {
+      margin-top: 73px;
+      margin-bottom: 10px;
+      margin-right: 24.6%;
+      flex-grow: 1;
+      max-width: 350px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 0;
+      margin-right: 0;
+      justify-content: center;
+      gap: 20px;
+      max-width: none;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__links-section {
+    @include mediaDesktop {
+      margin-left: 13.8%;
+      margin-right: 11.2%;
+    }
+  }
+
+  &__separator {
+    width: 100%;
+    margin-top: 36px;
+    border-bottom: 1px solid var(--color-border-pink);
+    @include mediaTablet {
+      margin-top: 31px;
+    }
+    @include mediaDesktop {
+      margin-top: 57px;
+    }
+  }
+}
+
+.about {
+  margin-bottom: 48px;
+
+  @include mediaTablet {
+    position: absolute;
+    right: 56px;
+    top: 151px;
+  }
+
+  @include mediaDesktop {
+    position: static;
+  }
+
+  &__address {
+    margin-top: 36px;
+    margin-bottom: 16px;
+
+    @include mediaTablet {
+      margin-bottom: 13px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__mail {
+    font-weight: 400;
+  }
+}
+
+.socials {
+
+  @include mediaTablet {
+    margin-top: 73px;
+    margin-right: 0px;
+    width: 217px;
+  }
+  @include mediaDesktop {
+    margin-top: 2px;
+    margin-right: 0px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &__icon {
+    margin-top: 20px;
+    margin-right: 24px;
+
+    @include mediaTablet {
+      margin-top: 25px;
+      margin-right: 16px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 31px;
+    }
+  }
+}
+
+.socials {
+  &__icon {
+    color: var(--color-green);
+    outline: none;
+    transition: color .3s var(--ease-out);
+
+    &:hover,
+    &:focus-visible {
+      color: #00655E;
+    }
+
+    &:active {
+      color: var(--color-green-dark);
+    }
+  }
+}
+
+.links-section {
+  &__title {
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__link {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    white-space: nowrap;
+    font-weight: 400;
+    display: block;
+
+    @include mediaTablet {
+      margin-bottom: 20px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.privacy {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--color-dark-gray);
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  @include mediaMobile {
+    display: block;
+  }
+  @include mediaTablet {
+    margin-top: 25px;
+    display: flex;
+  }
+
+  &__links {
+    margin-top: 20px;
+    display: flex;
+    white-space: nowrap;
+    @include mediaMobile {
+      justify-content: space-between;
+    }
+    @include mediaTablet {
+      margin-top: 0;
+    }
+    @include mediaDesktop {
+
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+
+    &:nth-child(2) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @include mediaMobile {
+      &:nth-child(1) {
+        order: 2;
+      }
+      &:nth-child(2) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+    }
+    @include mediaTablet {
+      &:nth-child(2) {
+        margin-left: 48px;
+        margin-right: 50px;
+      }
+    }
+    @include mediaDesktop {
+      &:nth-child(2) {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+    }
+    color: var(--color-dark-gray);
+  }
+}
+
+

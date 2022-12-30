@@ -1,0 +1,72 @@
+@use "src/app/mixins/index" as *;
+.black-cards {
+  background: var(--color-black);
+  padding: 80px 0 24px 0;
+  color: var(--color-white);
+  @include mediaTablet {
+    padding: 104px 0 67px 0;
+  }
+  @include mediaDesktopMedium {
+    padding: 200px 0 80px 0;
+  }
+
+  @include mediaDesktopBig {
+    padding: 240px 0 80px 0;
+  }
+  &__content {
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 111px;
+    @include mediaTablet {
+      margin-bottom: 130px;
+    }
+    @include mediaDesktopDesign {
+      margin-bottom: 200px;
+    }
+  }
+  &__title {
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: 'Reckless';
+    @include mediaTablet {
+      font-size: 80px;
+    }
+    @include mediaDesktopMedium {
+      font-size: 88px;
+    }
+    @include mediaDesktopDesign {
+      font-size: 112px;
+    }
+  }
+  &__text {
+    margin-top: 31px;
+    font-size: 18px;
+    line-height: 1.29;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    @include  mediaTablet{
+      font-size: 35px;
+      max-width: 635px;
+      margin-top: 37px;
+      line-height: 1.2;
+    }
+    @include mediaDesktop {
+      font-size: 42px;
+      margin-top: 40px;
+
+
+    }
+    @include mediaDesktopDesign {
+      font-size: 48px;
+      max-width: 990px;
+      font-weight: 400;
+      margin-top: 65px;
+    }
+  }
+  &__quote {
+
+  }
+}

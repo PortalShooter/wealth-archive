@@ -1,0 +1,51 @@
+@use "@/app/mixins/index.scss" as *;
+
+.item {
+
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  margin-left: 12px;
+  position: relative;
+  margin-bottom: 7px;
+  text-align: left;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mediaTablet {
+    width: 500px;
+  }
+
+  @include mediaDesktop {
+    font-size: 22px;
+    width: 694px;
+    margin-left: 16px;
+    margin-bottom: 9px;
+  }
+
+  &:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height:5px;
+    top: 0.7rem;
+    left: -14px;
+    width: 5px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: #000;
+
+    @include mediaTablet {
+      top: 0.7rem;
+      left: -16px;
+    }
+
+    @include mediaDesktop {
+      left: -19px;
+    }
+  }
+}

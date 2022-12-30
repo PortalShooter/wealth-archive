@@ -1,0 +1,12 @@
+@import "src/app/mixins/queries";
+
+.article {
+  @include mediaTablet {
+    padding-bottom: 128px;
+    margin: 0 auto;
+  }
+
+  @include mediaDesktopDesign {
+    padding-bottom: 200px;
+  }
+}

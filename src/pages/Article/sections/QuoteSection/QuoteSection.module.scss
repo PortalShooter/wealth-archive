@@ -1,0 +1,102 @@
+@use "@/app/mixins/index.scss" as *;
+
+.quote {
+  width: calc(100% - 32px);
+  margin: -16px auto 56px;
+  background-color: var(--color-beige);
+  border-radius: 12px;
+  padding: 48px 32px;
+  position: relative;
+
+  @include mediaTablet {
+    margin: -20px auto 56px;
+    width: calc(100% - 64px);
+    padding: 56px 32px 56px 61px;
+  }
+
+  @include mediaDesktop {
+    width: calc(100% - 80px);
+    padding: 80px 48px 80px 264px;
+    margin: -27px auto 80px;
+    max-width: 1360px;
+  }
+
+  &__title {
+    font-family: 'Reckless';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 110%;
+    margin-bottom: 40px;
+    color: var(--color-text);
+
+    @include mediaTablet {
+      width: 461px;
+    }
+
+    @include mediaDesktop {
+      font-size: 48px;
+      width: 639px;
+      line-height: 100%;
+    }
+  }
+
+  &__wrapper {
+    margin: 0;
+    width: 100%;
+
+    @include mediaTablet {
+      padding: 0;
+    }
+  }
+
+  &__author {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-text);
+    margin-bottom: 8px;
+
+    @include mediaDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__job-title {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-dark-gray);
+
+    @include mediaDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__icon {
+    width: 88px;
+    height: 67px;
+    position: absolute;
+    bottom: -48px;
+    right: -32px;
+    margin: 20px;
+
+    @include mediaTablet {
+      width: 122px;
+      height: 93px;
+      bottom: -35px;
+      right: -20px;
+    }
+
+    @include mediaDesktopDesign {
+      width: 293px;
+      height: 223px;
+      bottom: -51px;
+      right: -20px;
+    }
+  }
+}

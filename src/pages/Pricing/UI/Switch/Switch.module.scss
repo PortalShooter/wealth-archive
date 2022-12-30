@@ -1,0 +1,126 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+@use "@/app/mixins/index.scss" as *;
+
+.link {
+  flex-grow: 1;
+  height: 100%;
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--color-green);
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin-top: -2px;
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include mediaTablet {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  @include mediaDesktop {
+    font-size: 16px;
+    line-height: 140%;
+  }
+  &.checked {
+    color: var(--color-white);
+  }
+}
+.links {
+  --switch-transitition: 0.3s;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--color-white);
+  padding: 4px;
+  width: 327px;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  z-index: 2;
+
+  &__switch {
+    position: absolute;
+    width: 155px;
+    cursor: pointer;
+    z-index: -2;
+    height: 40px;
+    background-color: var(--color-green);
+    border-radius: 6px;
+    transition: var(--switch-transitition);
+    opacity: 1;
+
+    @include mediaTablet {
+      width: 152px;
+    }
+
+    &__move {
+      transform: translateX(163px);
+
+      @include mediaTablet {
+        transform: translateX(160px);
+      }
+    }
+
+    &__opacity {
+      transition-duration: var(--switch-transitition);
+      opacity: 0.8;
+    }
+  }
+
+  @include mediaTablet {
+    width: 320px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 6px;
+
+    &__checked {
+      transition: var(--switch-transitition);
+      border-color: var(--color-green);
+      color: var(--color-white);
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &__not-checked {
+      transition: var(--switch-transitition);
+      color: var(--color-green);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--color-green);
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:active {
+        color: var(--color-green-button);
+      }
+
+        &:hover,
+        &:focus-visible {
+          background-color: #DCF4F2;
+        }
+        &:active {
+          background-color: #BBEAE7;
+        }
+    }
+  }
+}

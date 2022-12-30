@@ -1,0 +1,88 @@
+@import "src/app/mixins/queries";
+
+.promo {
+  background: #00534F;
+  padding-top: 48px;
+  padding-bottom: 75px;
+
+  @include mediaTablet {
+    padding-bottom: 122px;
+  }
+
+  @include mediaDesktop {
+    padding-top: 95px;
+    padding-bottom: 152px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include mediaTablet {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .promo__title {
+    font: 400 36px/110% 'Reckless';
+    color: #FFFFFF;
+    padding-right: 130px;
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      font-size: 54px;
+      padding-right: 40px;
+      margin-bottom: 19px;
+    }
+
+    @include mediaDesktop {
+      padding-right: 150px;
+    }
+  }
+
+  &__title p span {
+    color: rgba(238, 253, 178, 1);
+  }
+
+  &__subtitle {
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    color: #FFFFFF;
+    margin-bottom: 38px;
+
+    @include mediaTablet {
+      padding-right: 60px;
+      margin-bottom: 0;
+    }
+
+    @include mediaDesktop {
+      font-size: 22px;
+      padding-right: 100px;
+    }
+  }
+
+  &__subheading {
+    color: red;
+  }
+
+  &__img {
+    max-width: 450px;
+    margin: 0 auto;
+
+    @include mediaTablet {
+      max-width: 340px;
+    }
+
+    @include mediaDesktop {
+      max-width: 620px;
+    }
+
+    @include mediaDesktopDesign {
+      min-width: 620px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,202 @@
+@use "@/app/mixins/index.scss" as *;
+
+.slider {
+
+  :global(.swiper) {
+    height: 100vw;
+
+    @media screen and (min-width: 400px) {
+      height: calc(250px + 30vw);
+    }
+
+    @media screen and (min-width: 480px) {
+      height: calc(200px + 30vw);
+    }
+
+    @media screen and (min-width: 700px) {
+      height: calc(180px + 30vw);
+    }
+
+    @include mediaDesktop {
+      height: 600px;
+    }
+  }
+
+  :global(.swiper-container) {
+    @include mediaMobileMedium {
+      max-width: 576px;
+    }
+
+    @include mediaTablet {
+      max-width: 768px;
+    }
+
+  }
+  :global(.swiper-slide) {
+    height: 87.5%;
+    transition:all 200ms linear;
+    transform: scale(0.87);
+    * {
+      pointer-events: none;
+      @include mediaTablet {
+        pointer-events: auto;
+      }
+    }
+
+    @include mediaMobileMedium {
+      height: 328px;
+    }
+    @include mediaMobileMedium {
+      height: 88%;
+      min-height: 333px;
+    }
+    @include mediaTablet {
+      &:hover {
+        //transform: scale(0.90, 0.98);
+      }
+    }
+    @media screen and (width: 1024px) {
+      max-width: 318px;
+      height: 96%;
+    }
+    @include mediaDesktopDesign {
+      height: 560px;
+      &:hover {
+        //transform: scale(0.93, 1);
+      }
+    }
+  }
+  :global(.swiper-wrapper) {
+    @include mediaTablet {
+      //left: -1.6%;
+      transform: translate3d(12px,0,0)!important;
+    }
+
+    @media screen and (width: 1024px) {
+      transform: translate3d(50px,0,0)!important;
+    }
+
+    @include mediaDesktop {
+      //left: -1%;
+      transform: translate3d(0px,0,0)!important;
+    }
+
+    @include mediaDesktopDesign {
+      left: 0;
+    }
+  }
+  :global(.swiper-slide-prev) {
+    @include mediaTablet {
+      //margin-right: 11px !important;
+    }
+  }
+  :global(.swiper-slide-active) {
+    //transform: scale(1);
+    transform: scale(0.87);
+
+
+    >div {
+      transform: scale(1.07,1.13);
+      //.card__gradient {
+      //  transform: scale(1.07,1.13);
+      //}
+      >div:first-child {
+        transform: translate(-50%,-50%) scale(1.13,1.13);
+      }
+      >div:nth-child(2) >div > div >div {
+        transform: scale(0.93,0.87);
+      }
+    }
+    >div {
+      background: transparent;
+
+
+      >div {
+        div {
+          color: var(--color-dark-green);
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+
+      @include mediaDesktop {
+
+        >div {
+          div {
+            color: var(--color-dark-green);
+            p {
+              font-size: 22px;
+            }
+          }
+        }
+
+      }
+
+      @include mediaTablet {
+
+        background: #EDFDB1;
+        cursor: pointer;
+
+        >div {
+          div {
+            color: var(--color-dark-green);
+          }
+        }
+
+      }
+    }
+
+
+    @media (max-width: 767px) {
+      h2 {
+        color: #00534F;
+      }
+
+      p {
+        max-height: none;
+        color: #00534F;
+      }
+
+      div {
+        background: #EDFDB1!important;
+      }
+    }
+
+    @include mediaTablet {
+      //margin-right: 10px !important;
+      transform: scale(0.87);
+    }
+  }
+
+  :global(.swiper-pagination-bullets) {
+    @include mediaTablet {
+      bottom: 0;
+    }
+    @include mediaDesktopDesign {
+      bottom: 9px;
+    }
+  }
+
+  :global(.swiper-pagination-bullet) {
+    margin: 0 6px !important;
+    height: 8px;
+    width: 8px;
+    opacity: 0.4;
+    background: var(--color-green);
+
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  :global(.swiper-pagination-bullet-active) {
+    width: 48px;
+    opacity: 1;
+  }
+
+  &.img {
+    :global(.swiper-pagination-bullet) {
+      background: #fff;
+    }
+  }
+}

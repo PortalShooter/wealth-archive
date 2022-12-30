@@ -1,0 +1,85 @@
+@import "src/app/mixins/queries";
+
+.blog-category {
+
+  display: flex;
+  align-items: flex-start;
+
+  @include mediaTablet {
+    margin-top: -3px;
+  }
+
+  @include mediaDesktop {
+    margin-top: -9px;
+  }
+
+  &>section {
+    padding-bottom: 0;
+    background-color: var(--color-white);
+    margin-bottom: 30px;
+
+    @include mediaTablet {
+      margin-bottom: 33px;
+    }
+
+    @include mediaDesktopDesign {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__show {
+    &>section {
+      background-color: var(--color-beige);
+    }
+  }
+}
+
+.article-section {
+  &>div {
+    &>div {
+      &>h4 {
+        font-size: 32px;
+        margin-bottom: -1px;
+
+        @include mediaTablet {
+          font-size: 36px;
+        }
+
+        @include mediaDesktopDesign {
+          font-size: 64px;
+          margin-bottom: 17px;
+        }
+      }
+      &:nth-child(2) {
+        grid-template-rows: auto;
+
+        @include mediaTablet {
+          row-gap: 80px;
+        }
+
+        @include mediaDesktopDesign {
+          row-gap: 129px;
+        }
+      }
+      &:nth-child(3) {
+
+        @include mediaTablet {
+          margin-top:63px;
+        }
+
+        @include mediaDesktopDesign {
+          margin-top: 88px;
+        }
+      }
+    }
+  }
+  margin-bottom: 104px;
+
+  @include mediaTablet {
+    margin-bottom: 128px;
+  }
+
+  @include mediaDesktopDesign {
+    margin-bottom: 200px;
+  }
+}

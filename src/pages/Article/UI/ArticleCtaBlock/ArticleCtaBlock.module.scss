@@ -1,0 +1,29 @@
+@use "@/app/mixins/index.scss" as *;
+
+.cta {
+
+  padding: 0;
+  margin-bottom: 56px;
+  margin-top: -16px;
+
+  @include mediaDesktop{
+    margin-top: -32px;
+  }
+
+  @include mediaDesktop {
+    margin-bottom: 80px;
+  }
+
+  &__wrapper {
+    width: calc(100% - 32px);
+
+    @include mediaMobileMedium {
+      width: calc(100% - 64px);
+    }
+
+    @include mediaDesktopDesign {
+      max-width: 1360px;
+      width: calc(100% - 80px) !important;
+    }
+  }
+}

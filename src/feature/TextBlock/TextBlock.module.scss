@@ -1,0 +1,23 @@
+@use '../../app/mixins/index.scss' as *;
+
+.TextBlock {
+  margin-bottom: 40px;
+
+  @include mediaTablet {
+    margin-bottom: 56px;
+  }
+
+  @include mediaDesktop {
+    margin-bottom: 88px;
+  }
+}
+
+.Heading {
+  &_MarginNone {
+    margin-bottom: 0;
+  }
+
+  & span {
+    color: var(--color-green);
+  }
+}

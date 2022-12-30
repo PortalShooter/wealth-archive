@@ -1,0 +1,219 @@
+@import "src/app/mixins/queries";
+
+.search-bar {
+  $block:&;
+  display: flex;
+  padding-bottom: 18px;
+  justify-content: space-between;
+
+  @include mediaTablet {
+    padding-bottom: 26px;
+  }
+
+  &_direction {
+    justify-content: flex-end;
+  }
+
+  &__tab-repeater {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &__back {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 7px;
+    margin-bottom: 4px;
+    @include mediaTablet {
+      margin-bottom: 7px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 3px;
+      transition: opacity .3s var(--ease-out);
+    }
+
+    &_show {
+      display: none;
+    }
+
+    &:hover {
+      //opacity: .6;
+      #{$block}__back-text {
+        color: var(--link-color-hover);
+        text-decoration-color: var(--link-underline-color-hover);
+      }
+    }
+
+  }
+
+  &__svg {
+    margin-bottom: 0;
+  }
+
+  &__back-text {
+    margin-left: 18px;
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    font-feature-settings: 'liga' off;
+    color: var(--color-dark-green);
+    width: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0);
+    text-underline-offset:4px;
+    transition: 0.3s var(--cubic-ease-out-expo);
+
+    @include mediaMobileMedium {
+      width: 300px;
+    }
+  }
+
+  &_show &__back {
+    display: none;
+  }
+
+
+  &__search-block {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    height: 41px;
+    padding: 16px 0;
+    box-sizing: border-box;
+
+
+    @include mediaTablet {
+      margin-top: 10px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 0;
+      transition: opacity .3s var(--ease-out);
+    }
+
+    &:hover {
+    #{$block}__text {
+      color: var(--link-color-hover);
+      text-decoration-color: var(--link-underline-color-hover);
+    }
+
+    }
+
+    &_hide {
+      cursor: auto;
+    }
+
+    &_hide:hover {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+
+    &_gray {
+      margin-top: 3px;
+
+      &>svg {
+        &>circle {
+          stroke: var(--color-dark-gray);
+        }
+        &>path {
+          fill: var(--color-dark-gray);
+        }
+      }
+    }
+  }
+
+  &__text {
+    width: 113px;
+    height: 22px;
+    font-family: 'Neue Haas Unica Pro', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #00534F;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0);
+    text-underline-offset:4px;
+    transition: 0.3s var(--cubic-ease-out-expo);
+
+
+    &__hide {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+  }
+
+  &_hidden &__container {
+    display: none;
+  }
+
+  &_hidden &__search-block {
+    width: 150px;
+    justify-content: flex-end;
+  }
+
+  &__close-icon {
+    width: 24px;
+    height: 24px;
+    align-self: end;
+    cursor: pointer;
+    margin-bottom: -2px;
+
+    @include mediaDesktop {
+      transition: opacity .3s var(--ease-out);
+    }
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  &_hidden &__close-icon {
+    display: none;
+  }
+
+
+  &__input {
+    display: block;
+    flex-grow: 1;
+    background-color: var(--color-beige);
+    outline:none;
+    align-self: flex-end;
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--color-text);
+    transition: width 300ms;
+    width: 100%;
+  }
+
+  &_hidden &__input {
+    width: 0;
+  }
+}
+:global(.article-search_white) {
+  .search-bar {
+    &__input {
+      background-color: var(--color-white);
+    }
+  }
+
+}

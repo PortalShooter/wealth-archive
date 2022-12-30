@@ -1,0 +1,106 @@
+@import "src/app/mixins/queries";
+
+.trust {
+  &__info {
+    position: relative;
+    padding-bottom: 56px;
+    color: #FFFFFF;
+
+    &-text {
+      position: relative;
+      padding-left: 17px;
+
+      @include mediaDesktop {
+        padding-left: 0;
+      }
+
+      &_quotes-small {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 17px;
+
+        @include mediaDesktop {
+          width: 24px;
+          top: 2px;
+          left: -30px;
+        }
+      }
+
+      &_1 {
+        font: 400 28px/110% 'Reckless';
+        margin-bottom: 20px;
+
+        @include mediaTablet {
+          font-size: 30px;
+          max-width: 444px;
+          margin-bottom: 18px;
+        }
+
+        @include mediaDesktop {
+          font-size: 48px;
+          line-height: 110%;
+          max-width: 732px;
+          margin-bottom: 24px;
+        }
+      }
+
+      &_2 {
+        font: 400 18px/130% 'Neue Haas Unica Pro';
+        margin-bottom: 40px;
+
+        @include mediaTablet {
+          max-width: 444px;
+          margin-bottom: 46px;
+        }
+
+        @include mediaDesktop {
+          font-size: 22px;
+          line-height: 130%;
+          margin-bottom: 64px;
+          max-width: 640px;
+        }
+      }
+
+      &__block {
+        span {
+          display: block;
+          font: 400 14px/130% 'Neue Haas Unica Pro';
+
+          &:first-child {
+            font-weight: 500;
+            margin-bottom: 4px;
+          }
+
+          @include mediaDesktop {
+            font-size: 18px;
+            line-height: 24px;
+
+            &:first-child {
+              margin-bottom: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    &__quotes-img {
+      width: 146px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @include mediaTablet {
+        width: 171px;
+        bottom: -28px;
+        right: 22px;
+      }
+
+      @include mediaDesktop {
+        width: 293px;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,557 @@
+@use "@/app/mixins/index.scss" as *;
+
+.Modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: 250;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--color-black);
+    opacity: 0.6;
+
+    @media (max-width: 980px) {
+      background: var(--color-white);
+      opacity: 1;
+    }
+  }
+}
+
+.Modal.Active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s;
+
+  .Container {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1.2s var(--ease-out);
+    transition-property: opacity, transform;
+    outline: none;
+
+    @media (max-width: 980px) {
+      display: flex;
+      align-items: center;
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+}
+
+.Overflow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.Inner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 980px) {
+    overflow: auto;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 576px) {
+    justify-content: center;
+  }
+}
+
+.Container {
+  position: relative;
+  background: var(--color-white);
+  max-width: 1176px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0s var(--easeOut) 0.8s;
+  transition-property: opacity, transform;
+  border-radius: 12px;
+  margin: 40px 0px;
+
+  @media (max-width: 1280px) {
+    max-width: 886px;
+  }
+
+  @media (max-width: 980px) {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+.Close {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  right: 14px;
+  top: 11px;
+  z-index: 2;
+  background-color: var(--color-white);
+  border-radius: 5px;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: #00857C;
+    transition: 0.3s var(--ease-out);
+    transition-property: background, transform;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after,
+    &::before {
+      background: #00655E;
+    }
+  }
+
+  &:active {
+    &::after,
+    &::before {
+      background: #00534F;
+      transform: rotate(45deg) scaleX(1.1);
+    }
+
+    &::after {
+      transform: rotate(-45deg) scaleX(1.1);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 2px 1px var(--color-green);
+    border-radius: 4px;
+  }
+
+  @media (max-width: 767px) {
+    right: 32px;
+    top: 12px;
+  }
+}
+
+.Title {
+  font-size: 48px;
+  text-align: left;
+  margin-bottom: 54px;
+
+  @media (max-width: 1280px) {
+    font-size: 30px;
+    line-height: 120%;
+  }
+
+  @media (max-width: 980px) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+}
+
+.Block {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-height: calc(var(--vh, 1vh) * 100);
+  overflow: auto;
+
+  @media (max-width: 767px) {
+    margin: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 980px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    max-height: 80vh;
+  }
+
+  &_center {
+    margin: 0 auto;
+  }
+}
+
+.Item {
+  width: calc(50% - 20px);
+  text-align: center;
+  min-height: 625px;
+  position: relative;
+
+  @media only screen and (min-width: 1025px) {
+    position: static;
+  }
+
+  &:first-child {
+    width: 560px;
+    padding: 96px 56px 0;
+    background: var(--color-beige);
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &:last-child {
+    width: 616px;
+    background: var(--color-white);
+    //padding: 64px 130px 58px 112px;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 56px;
+    padding-right: 72px;
+
+  }
+
+  @media (max-width: 1280px) {
+    &:first-child,
+    &:last-child {
+      width: 50%;
+    }
+
+    &:first-child {
+      padding: 50px 40px 0;
+      align-items: flex-start;
+    }
+
+    &:last-child {
+      padding-left: 32px;
+    }
+  }
+
+  @media (max-width: 980px) {
+    flex-direction: column;
+    min-height: auto;
+
+    &:first-child,
+    &:last-child {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    &:first-child {
+      padding: 89px 32px 16px;
+      background: var(--color-white);
+    }
+
+    &:last-child {
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &:first-child {
+      padding: 84px 24px 14px;
+    }
+
+    &:last-child {
+      padding: 0 30px 66px 24px;
+      max-width: 100vw;
+    }
+  }
+}
+
+.Form {
+  padding-top: 20px;
+  display: none;
+
+  @media only screen and (min-width: 1025px) {
+    padding-top: 60px;
+  }
+
+  &_Active {
+    display: block;
+  }
+}
+
+.ButtonsTitile {
+  text-align: left;
+  margin-bottom: 37px;
+}
+
+//.ButtonsMain {
+//  display: flex;
+//  flex-direction: column;
+//
+//  &_Hide {
+//    display: none;
+//  }
+//}
+
+.ButtonsText {
+  width: 97%;
+  margin-bottom: 32px;
+  font-family: "Neue Haas Unica Pro";
+  text-align: left;
+  font-size: 18px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+}
+
+.ButtonsWrapper {
+  display: block;
+  width: 100%;
+  background-color: var(--color-beige);
+  border-radius: 12px;
+  padding: 62px 30px;
+
+  @include mediaTablet {
+    padding: 62px;
+  }
+
+  @include mediaDesktop {
+    padding: 62px 96px;
+  }
+
+  @media only screen and (min-width: 980px) and (max-width: 1280px) {
+    padding: 62px 70px;
+  }
+
+  &_Hide {
+    display: none;
+  }
+}
+
+.ButtonWrapper {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.ButtonName {
+  font-weight: 500 !important;
+  margin-bottom: 16px;
+}
+
+.Button {
+  width: 100% !important;
+  margin: 0 auto;
+  min-width: 184px;
+  padding: 10px 43px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+}
+
+.FormText {
+  line-height: 25px;
+  color: var(--color-dark-grey);
+  margin-bottom: 32px;
+  text-align: left;
+
+  @media (max-width: 767px) {
+    margin-bottom: 32px;
+  }
+}
+
+.ImageWrapper {
+  display: block;
+  position: relative;
+  width: 425px;
+  height: 391px;
+  margin: 0 auto;
+
+  @media (max-width: 1280px) {
+    width: 350px;
+  }
+
+  @media (max-width: 980px) {
+    display: none;
+  }
+}
+
+.Image {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+}
+
+.Success {
+  .Item {
+    &:first-child {
+      padding: 0 56px 0;
+    }
+
+    &:last-child {
+      padding: 58px 74px 58px 58px;
+    }
+
+    @media (max-width: 1280px) {
+      &:first-child {
+        padding: 0 40px 0;
+      }
+
+      &:last-child {
+        padding: 58px 35px 58px 35px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      &:first-child {
+        padding: 90px 72px 46px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      &:last-child {
+        padding: 30px;
+      }
+    }
+  }
+
+  .ImageWrapper {
+    height: 100%;
+
+    @media (max-width: 980px) {
+      display: block;
+      height: 172px;
+      width: 255px;
+    }
+  }
+
+  .Image {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.SuccessText {
+  @media (max-width: 980px) {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 280px;
+  }
+}
+
+.SuccessTitle {
+  font-size: 48px !important;
+  line-height: 58px !important;
+  text-align: left;
+  margin-bottom: 100px;
+
+  @media (max-width: 1280px) {
+    font-size: 38px !important;
+    line-height: 120% !important;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 29px !important;
+    line-height: 38px !important;
+  }
+}
+
+.SuccessLink {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+
+  a {
+    display: inline-block;
+    color: var(--color-green-button);
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 14px;
+    line-height: 120%;
+    margin-right: 27px;
+  }
+}
+
+.TabRepeater {
+  height: 0;
+  width: 0;
+  outline: none;
+}
+
+.Contacts {
+  font-size: 14px;
+  text-align: left;
+
+  @include mediaDesktop {
+    font-size: 18px;
+    padding-bottom: 37px;
+  }
+
+  &__title {
+    max-width: 260px;
+    margin-bottom: 26px;
+
+    @include mediaDesktop {
+      max-width: 350px;
+    }
+  }
+  &__form {
+    padding-top: 0;
+    padding-left: 20px;
+  }
+
+  &__contact {
+    max-width: 205px;
+    margin-bottom: 14px;
+
+    @include mediaDesktop  {
+      margin-bottom: 24px;
+      max-width: 280px;
+    }
+    &_title {
+      margin-bottom: 3px;
+      color: var(--color-dark-gray);
+    }
+    &_link {
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Neue Haas Unica Pro';
+      color: #1A1B1C;
+    }
+    &_info {
+      font-weight: 500;
+      font-family: 'Neue Haas Unica Pro';
+      color: #1A1B1C;
+    }
+  }
+}

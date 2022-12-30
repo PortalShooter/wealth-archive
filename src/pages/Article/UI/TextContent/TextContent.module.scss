@@ -1,0 +1,178 @@
+@use "@/app/mixins/index.scss" as *;
+
+.text {
+
+  padding: 0;
+  margin-bottom: 72px;
+
+  @include mediaTablet {
+    transform: translateX(-4vw);
+    margin: 0 auto;
+    margin-bottom: 72px;
+    padding: 0;
+  }
+
+  @include mediaDesktop {
+    transform: translateX(calc(-4vw + 4px));
+    width: 727px;
+    margin-bottom: 112px;
+  }
+
+  @include mediaDesktopBig {
+    transform: translateX(calc(-3vw + 4px));
+  }
+
+  @include responsive(width, 522px, 727px, 768px, 1440px);
+
+  &__wrapper {
+    font-family: "Neue Haas Unica Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    margin-bottom: 7px;
+
+    @include mediaTablet {
+      width: 100%;
+    }
+
+    @include mediaDesktop {
+      font-size: 22px;
+    }
+
+    & a {
+      @include textLink(
+          var(--link-color-normal),
+          var(--link-color-hover),
+          var(--link-color-active),
+          var(--link-color-focus-visible),
+          var(--link-underline-color-normal),
+          var(--link-underline-color-hover),
+          var(--link-underline-color-active),
+          var(--link-underline-color-focus-visible)
+      );
+
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+
+    & a br {
+      display: none;
+    }
+
+    & > ul {
+      margin-top: 20px;
+      & > li {
+        margin-left: 12px;
+        position: relative;
+        margin-bottom: 7px;
+        text-align: left;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @include mediaTablet {
+          width: 500px;
+        }
+
+        @include mediaDesktop {
+          width: 694px;
+          margin-left: 16px;
+          margin-bottom: 9px;
+        }
+
+        &:before{
+          content: '';
+          display: inline-block;
+          position: absolute;
+          height:5px;
+          top: 0.7rem;
+          left: -14px;
+          width: 5px;
+          vertical-align: middle;
+          border-radius: 50%;
+          background-color: #000;
+
+          @include mediaTablet {
+            top: 0.7rem;
+            left: -16px;
+          }
+
+          @include mediaDesktop {
+            left: -19px;
+          }
+        }
+      }
+    }
+
+    & > ol {
+      margin-top: 20px;
+      margin-left: 14px;
+      @include mediaTablet {
+        margin-left: 16px;
+      }
+
+      @include mediaDesktop {
+        margin-left: 19px;
+      }
+      & > li {
+        list-style: unset;
+      }
+    }
+
+    & > p {
+      min-height: 1em;
+    }
+  }
+
+  &__title {
+    font-family: 'Neue Haas Unica Pro';
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 24px;
+    line-height: 120%;
+
+    @include mediaTablet {
+      font-size: 24px;
+      margin-bottom: 21px;
+    }
+
+    @include mediaDesktop {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__primary {
+    margin-bottom: 24px;
+    font-size: 26px;
+    line-height: 120%;
+
+    @include mediaTablet {
+      font-size: 32px;
+      margin-bottom: 22px;
+    }
+
+    @include mediaDesktop {
+      font-size: 40px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__paragraph {
+    line-height: 128%;
+
+    @include mediaTablet {
+      line-height: 130%;
+    }
+
+    @include mediaDesktop {
+      font-size: 22px;
+    }
+  }
+
+  &__block {
+    margin-bottom: 0;
+  }
+}

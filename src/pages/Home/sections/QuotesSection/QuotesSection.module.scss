@@ -1,0 +1,238 @@
+@use "@/app/mixins/index.scss" as *;
+
+.quotes {
+  &__section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 24px;
+    padding-bottom: 97px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @include mediaTablet {
+      padding-top: 26px;
+      padding-bottom: 103px;
+    }
+
+    @include mediaDesktopMedium {
+      padding-top: 40px;
+      padding-bottom: 197px;
+    }
+  }
+
+  &__wrap {
+
+    //@include mediaMobileBig {
+    //  display: grid;
+    //  grid-template-areas:
+    //    'content content content content'
+    //    'link tabs tabs tabs';
+    //}
+
+    //@include mediaTablet {
+    //
+    //  grid-template-areas:
+    //    'content content content'
+    //    'link tabs tabs';
+    //}
+    @include mediaDesktop {
+      display: grid;
+      grid-template-areas:
+        'tabs'
+        'content'
+        'link';
+      max-width: 1600px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    right: -43px;
+    bottom: 84px;
+    width: calc(125px + 6vw);
+    height: calc(90px + 6vw);
+    z-index: -1;
+
+    background: {
+      size: 100%;
+      repeat: no-repeat;
+    }
+    transition: opacity 0.3s linear;
+    &.hidden {
+      opacity: 0 !important;
+    }
+
+    @include mediaMobileMedium {
+      right: 0;
+      bottom: 90px;
+    }
+    @include mediaDesktopMedium {
+      right: 50px;
+      bottom: -36px;
+
+      width: 293px;
+      height: 223px;
+    }
+  }
+  &__tabs {
+    grid-area: tabs;
+    display: flex;
+    //justify-content: space-between;
+
+    //@include mediaMobileBig {
+    //  justify-content: flex-end;
+    //}
+    @include mediaDesktop {
+      max-width: 70%;
+      margin-bottom: 45px;
+      //justify-content: space-between;
+    }
+    @include mediaDesktopMedium {
+      //max-width: 46.5%;
+      margin-bottom: 72px;
+    }
+
+  }
+  &__tab {
+    cursor: pointer;
+
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    opacity: 0.3;
+    transition: 0.3s;
+
+    padding-left: 24px;
+
+    @include mediaTablet {
+      padding-left: 40px;
+      &:first-child {
+        padding-left: 24px;
+      }
+    }
+
+    @include mediaMobileMedium {
+      display: flex;
+      align-items: center;
+    }
+
+    @include mediaDesktop {
+      padding-left: 80px;
+      &:first-child {
+        padding: 0;
+      }
+    }
+
+    &_active {
+      filter: none;
+      opacity: 1;
+    }
+
+    &_not-active {
+      &:hover {
+        opacity: 0.65;
+      }
+    }
+
+    &-img {
+      object-fit: contain;
+      height: 4.8vw;
+      max-width: 112px;
+
+      @include mediaMobileBig {
+        height: 18px;
+      }
+
+      @include mediaDesktop {
+        height: 32px;
+        max-width: 221px;
+      }
+    }
+  }
+
+  &__content {
+    grid-area: content;
+    padding-left: 20px;
+    max-width: calc(435px + 3vw);
+    @include mediaTablet {
+      max-width: 510px;
+    }
+    @include mediaDesktop {
+      max-width: 850px;
+    }
+    @include mediaDesktopSmall {
+      padding-left: 0;
+    }
+  }
+  &__text {
+    position: relative;
+    margin-bottom: 22px;
+
+    @include mediaTablet {
+      margin-bottom: 27px;
+      letter-spacing: 2px;
+    }
+    @include mediaDesktop {
+      margin-bottom: 41px;
+    }
+  }
+
+  &__heading {
+    letter-spacing: -0.1px;
+  }
+
+  &__author {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+
+    @include mediaDesktop {
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+  &__job {
+    margin-bottom: 33px;
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--color-dark-gray);
+
+    @include mediaDesktop {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include mediaMobileMedium {
+      margin-bottom: 41.5px;
+    }
+    @include mediaDesktopDesign {
+      margin-bottom: 82px;
+    }
+  }
+
+  &__trust-info {
+    color: #000000;
+    transition: opacity 0.3s linear;
+    &.hidden {
+      opacity: 0 !important;
+    }
+  }
+  &__trust-quotes  path{
+    fill: #000;
+  }
+
+  //&__link {
+  //  grid-area: link;
+  //  margin-bottom: 47px;
+  //  margin-left: 20px;
+  //  width: 168px;
+  //
+  //  @include mediaMobileBig {
+  //    margin-bottom: 0;
+  //  }
+  //  @include mediaDesktopDesign {
+  //    margin-left: 0;
+  //  }
+  //}
+}

@@ -1,0 +1,61 @@
+@use '../../app/mixins/index.scss' as *;
+
+.Text {
+  &_left {
+    text-align: left;
+  }
+  &_center {
+    text-align: center;
+    margin: 0 auto;
+  }
+  &_h1 {
+    @include heading_h1();
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      margin-bottom: 24px;
+    }
+    @include mediaDesktop {
+      margin-bottom: 32px;
+    }
+  }
+  &_h2 {
+    @include heading_h2();
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      margin-bottom: 16px;
+    }
+    @include mediaDesktop {
+      margin-bottom: 32px;
+    }
+  }
+  &_h3 {
+    @include heading_h3();
+  }
+  &_h4 {
+    @include heading_h4();
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      margin-bottom: 16px;
+    }
+    @include mediaDesktop {
+      margin-bottom: 24px;
+    }
+  }
+  &_h5 {
+    @include heading_h5();
+  }
+  &_p {
+    &_1 {
+      @include text_p1();
+    }
+    &_2 {
+      @include text_p2();
+    }
+  }
+  &_bold {
+    @include text_bold();
+  }
+}

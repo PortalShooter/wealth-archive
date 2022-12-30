@@ -1,0 +1,134 @@
+:root {
+
+  /* main colors */
+  --color-white: #ffffff;
+  --color-grey: #f4f5f8;
+  --color-gray: #f4f5f8;
+  --color-beige: #F5F3ED;
+  --color-dark-gray: #696C71;
+  --color-text: #1A1B1C;
+  --color-black: #000000;
+  --color-dark-green: #00534F;
+  --color-green: #00857C;
+  --color-teal: #75DBD3;
+  --color-mint: #6DD0D6;
+  --color-purple:#BC93F3;
+  --color-green-dark:#00534f;
+  --color-carousel-bg: #ebe8e1;
+  --color-yellow:#F9D756;
+  --color-green-button:#00857c;
+  --color-green-button-active: #00746d;
+  --color-green-hover:#27a299;
+  --color-light-green-hover: var(--color-teal);
+  --color-focus: royalblue;
+  --transparent: rgba(255, 255, 255, 0);
+  --color-card-yellow:#F5DC5B;
+  --color-border-pink:#DEE3EC;
+  --color-hero-yellow:#EFFEB2;
+
+
+  /* button */
+  --btn-bg-color-normal: var(--color-green);
+  --btn-bg-color-hover: #00655E;
+  --btn-bg-color-focus-visible: var(--color-green);
+  --btn-bg-color-active: #00534F;
+  --btn-bg-color-disabled: #ECEEF3;
+  --btn-color-normal: var(--color-white);
+  --btn-color-hover: var(--color-white);
+  --btn-color-focus-visible: var(--color-white);
+  --btn-color-active: var(--color-white);
+  --btn-color-disabled: var(--color-dark-gray);
+  --btn-outline-color-focus-visible: var(--color-teal);
+  --btn-border-color-normal: var(--color-green);
+  --btn-border-color-hover: #00655E;
+  --btn-border-color-focus-visible: var(--color-green);
+  --btn-border-color-active: #00534F;
+  --btn-border-color-disabled: #ECEEF3;
+
+  /* button-stroke */
+  --btn-stroke-bg-color-normal: var(--transparent);
+  --btn-stroke-bg-color-hover: #DCF4F2;
+  --btn-stroke-bg-color-focus-visible: #DCF4F2;
+  --btn-stroke-bg-color-active: #BBEAE7;
+  --btn-stroke-bg-color-disabled: var(--color-white);
+  --btn-stroke-color-normal: var(--color-green);
+  --btn-stroke-color-hover: var(--color-green);
+  --btn-stroke-color-focus-visible: var(--color-green);
+  --btn-stroke-color-active: var(--color-green);
+  --btn-stroke-color-disabled: var(--color-dark-gray);
+  --btn-stroke-outline-color-focus-visible: var(--color-teal);
+  --btn-stroke-border-color-normal: var(--color-green);
+  --btn-stroke-border-color-hover: var(--color-green);
+  --btn-stroke-border-color-focus-visible: #DCF4F2;
+  --btn-stroke-border-color-active: var(--color-green);
+  --btn-stroke-border-color-disabled: #B6BAC3;
+
+  /* link-primary */
+  --link-color-normal: var(--color-green);
+  --link-color-hover: var(--color-green);
+  --link-color-focus-visible: var(--color-green);
+  --link-color-active: #00534F;
+  --link-underline-color-normal: #B3DAD8;
+  --link-underline-color-hover: var(--color-green);
+  --link-underline-color-focus-visible: var(--color-green);
+  --link-underline-color-active: #00534F;
+
+
+  /* link-secondary */
+  --link-secondary-color-normal: var(--color-text);
+  --link-secondary-color-hover: var(--color-text);
+  --link-secondary-color-focus-visible: var(--color-text);
+  --link-secondary-color-active: var(--color-text);
+  --link-secondary-underline-color-normal: var(--transparent);
+  --link-secondary-underline-color-hover: #B6BAC3;
+  --link-secondary-underline-color-focus-visible: #B6BAC3;
+  --link-secondary-underline-color-active: var(--color-dark-gray);
+
+  /* icon */
+
+  /* font responsive modifiers */
+  --modifier-mobile-to-tablet: calc((100vw - 375px) / 392);
+  --modifier-tablet-to-design-desktop: calc((100vw - 768px) / 671);
+  --modifier-mobile-to-design-desktop: calc((100vw - 375px) / 1046);
+
+  /* calculated responsive font sizes */
+
+  --heading-h1-mobile-to-tablet:   calc(48px + 34 * var(--modifier-mobile-to-tablet));
+  --heading-h1-tablet-to-desktop:  calc(80px + 32 * var(--modifier-tablet-to-design-desktop));
+  --heading-h2-mobile-to-tablet:   calc(36px + 18 * var(--modifier-mobile-to-tablet));
+  --heading-h2-tablet-to-desktop:  calc(54px + 34 * var(--modifier-tablet-to-design-desktop));
+  --heading-h3-mobile-to-tablet:   calc(32px + 4 * var(--modifier-mobile-to-tablet));
+  --heading-h3-tablet-to-desktop:  calc(36px + 28 * var(--modifier-tablet-to-design-desktop));
+  --heading-h4-mobile-to-tablet:   calc(28px + 2 * var(--modifier-mobile-to-tablet));
+  --heading-h4-tablet-to-desktop:  calc(30px + 18 * var(--modifier-tablet-to-design-desktop));
+  --heading-h5-mobile-to-tablet:   calc(20px + 2 * var(--modifier-mobile-to-tablet));
+  --heading-h5-tablet-to-desktop:  calc(22px + 10 * var(--modifier-tablet-to-design-desktop));
+  --text-p1-tablet-to-desktop:     calc(18px + 4 * var(--modifier-tablet-to-design-desktop));
+  --text-p2-tablet-to-desktop:     calc(14px + 4 * var(--modifier-tablet-to-design-desktop));
+
+  /* header base styles */
+  --header-bg-color: var(--transparent);
+  --header-logo-color: var(--color-green-dark);
+  --header-signin-color: var(--color-green-dark);
+  --header-color: var(--color-green-dark);
+  --header-menu-mobile-color: var(--color-green-dark);
+  --header-height-mobile: 72px;
+  --header-height-tablet: 72px;
+  --header-height-desktop: 104px;
+  --header-height-mobile-sticky: 64px;
+  --header-height-tablet-sticky: 72px;
+  --header-height-desktop-sticky: 88px;
+
+  /* articles related */
+  --image-hover-scale: 1.1;
+
+  /* easings */
+  --ease: cubic-bezier(1, 0, 0, 1);
+  --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);
+  --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --control-size-min: 48px;
+  --cubic-ease-out-expo:cubic-bezier(0.16, 1, 0.3, 1);
+}

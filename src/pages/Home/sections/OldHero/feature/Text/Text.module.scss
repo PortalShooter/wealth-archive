@@ -1,0 +1,104 @@
+.Text > *:first-child {
+  margin-top: 0 !important;
+}
+
+.Text > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.Text_alignCenter {
+  text-align: center;
+}
+
+.reckless {
+  font-family: "Reckless";
+}
+
+.neue {
+  font-family: "Neue Haas Unica Pro";
+}
+
+.h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  font-size: 95px;
+  line-height: 100%;
+
+  &_Part {
+    display: block;
+    &:last-child {
+      color: var(--color-yellow);
+    }
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 61px;
+    line-height: 109%;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 40px;
+    line-height: 100%;
+  }
+}
+
+.h2 {
+  font-weight: normal;
+  font-size: 54px;
+  line-height: 120%;
+}
+
+.h3 {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 56px;
+  color: var(--color-green-dark);
+}
+
+.h4 {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+.bodyText {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.caption {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+.blackColor {
+  color: var(--color-black);
+}
+
+.whiteColor {
+  color: var(--color-white);
+}
+
+.darkGreenColor {
+  color: var(--color-green-dark);
+}
+
+.lightGreenColor {
+  color: var(--color-light-green-hover);
+}
+
+.yellowColor {
+  color: var(--color-yellow);
+}
+
+.greyColor {
+  color: var(--color-grey);
+}
+
+.darkGreyColor {
+  color: var(--color-dark-grey);
+}

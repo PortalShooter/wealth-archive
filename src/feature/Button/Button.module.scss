@@ -1,0 +1,29 @@
+@use "@/app/mixins/index.scss" as *;
+
+.Button {
+  @include button;
+
+  &_Link {
+    @include link;
+  }
+  &_btn_stroke_with_background {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+
+    &:hover {
+      background: #fff;
+      color: #00857C;
+    }
+    &:focus,
+    &:focus-visible {
+      background: #fff;
+      color: #00857C;
+      outline: #75DBD3;
+    }
+    &:active {
+      background: rgba(255, 255, 255, 0.2);
+      color: #00534F;
+    }
+  }
+}

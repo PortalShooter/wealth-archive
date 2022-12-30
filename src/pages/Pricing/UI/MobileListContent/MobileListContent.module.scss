@@ -1,0 +1,36 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 57px;
+
+  &:last-child {
+    border: none;
+  }
+
+  &__title {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 48px;
+    height: 48px;
+
+    @include mediaTablet {
+      margin-right: 8px;
+    }
+  }
+}
+.items {
+}

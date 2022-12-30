@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-text);
+  font-family: "Neue Haas Unica Pro", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  font-style: normal;
+  min-width: 375px;
+  /*scroll-behavior: smooth;*/
+}
+
+body.menu-opened {
+  overflow: hidden;
+}
+body.modal-opened {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position:fixed;
+
+  /*overflow: hidden;*/
+
+}
+
+/*
+  This will hide the focus indicator if the element receives focus via the mouse,
+  but it will still show up on keyboard focus.
+*/
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+[data-js-focus-visible] :focus:not([data-focus-visible-added]) {
+  outline: none;
+}
+
+.spawnAnimation {
+  transition: 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /*transform: translate3d(0, 30px, 0);*/
+  opacity: 0;
+}
+
+.spawnAnimation.animate {
+   animation: spawn 1.5s forwards var(--cubic-ease-out-expo);
+}
+
+
+.spawnChildrenAnimation > * {
+  transition: 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /*transform: translate3d(0, 30px, 0);*/
+  opacity: 0;
+}
+.spawnChildrenAnimation.animate > * {
+   animation: spawn 1.5s forwards var(--cubic-ease-out-expo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spawnChildrenAnimation.animate > * { animation: none; }
+  .spawnChildrenAnimation > * {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .spawnAnimation {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .spawnAnimation.animate {
+    animation: none;
+  }
+}
+
+.titleSpawnAnimation .chars {
+  opacity: 0;
+  transform: translate(50px,0);
+  display: inline-block !important;
+  letter-spacing: -0.01em;
+}
+
+.titleSpawnAnimation {
+  overflow: hidden;
+  padding-bottom: 8px;
+  opacity: 0;
+  //opacity: 1;
+}
+
+.titleSpawnAnimation.animate {
+  opacity: 1;
+}
+
+.titleSpawnAnimation + * {
+  margin-top: -8px;
+}
+
+.titleSpawnAnimation div {
+  font-kerning: none;
+}
+
+.quotes {
+  position: relative;
+}
+.quotes__wrapper {
+  padding-left: 20px;
+  margin-left: -20px;
+}
+.quotes > *:first-child:before {
+  content: '“';
+  position: absolute;
+  left: -20px;
+  top: 2px;
+
+  font-size: 38px;
+  opacity: 0;
+  transition: 0.6s;
+}
+.quotes > *>div:last-child:after {
+  content: '”';
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.quotes.quotesVisible > *:first-child:before {
+   opacity: 1;
+}
+.quotes.quotes-after > *>div:last-child:after {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .quotes > *:first-child:before {
+    font-size: 45px;
+    top: 7px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .quotes > *:first-child:before {
+    top: 0;
+    left: -32px;
+    font-size: 64px;
+  }
+  .quotes__wrapper {
+    padding-left: 32px;
+    margin-left: -32px;
+  }
+}
+
+@keyframes spawn {
+  from {
+    /*transform: translate3d(0, 30px, 0);*/
+    opacity: 0;
+  }
+  to {
+    /*transform: translate3d(0, 0, 0);*/
+    opacity: 1;
+  }
+}

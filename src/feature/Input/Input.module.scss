@@ -1,0 +1,92 @@
+@use "@/app/mixins/index.scss" as *;
+
+.input {
+  position: relative;
+  display: block;
+
+  &>input[type="text"], input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-dark-gray);
+    padding: 11px 15px 12px;
+    color: var(--color-dark-gray);
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.4;
+    transition: border-color .5s var(--easeOutExpo), box-shadow .5s var(--easeOutExpo);
+    box-shadow: 0 0 0 3px var(--transparent);
+    -webkit-box-shadow: 0 0 0 3px var(--transparent);
+
+    &:hover {
+      border-color: var(--color-green);
+    }
+
+    &:focus-visible,
+    &[data-focus-visible-added] {
+      border-color: var(--transparent);
+      box-shadow: 0 0 0 3px var(--color-teal) !important;
+      -webkit-box-shadow: 0 0 0 3px var(--color-teal) !important;
+    }
+
+    &[disabled] {
+      background-color: #ECEEF3;
+      border-color: #ECEEF3;
+    }
+  }
+
+  &_filled &__input {
+    border-color: var(--color-dark-gray);
+    box-shadow: 0 0 0 3px var(--transparent);
+    -webkit-box-shadow: 0 0 0 3px var(--transparent);
+    color: var(--color-text);
+
+    &[data-focus-visible-added] {
+      border-color: var(--transparent);
+      box-shadow: 0 0 0 3px var(--color-teal) !important;
+      -webkit-box-shadow: 0 0 0 3px var(--color-teal) !important;
+    }
+
+    &:hover {
+      border-color: var(--color-green);
+    }
+
+    &[disabled],
+    &[disabled]:hover {
+      background-color: #ECEEF3;
+      border-color: #ECEEF3;
+    }
+  }
+
+  &_active &__input[data-focus-visible-added] {
+    border-color: var(--color-green);
+    box-shadow: 0 0 0 3px var(--transparent) !important;
+    -webkit-box-shadow: 0 0 0 3px var(--transparent) !important;
+    color: var(--color-text);
+  }
+
+  &_error &__input,
+  &_error &__input:hover,
+  &_error &__input:focus-visible,
+  &_error &__input[data-focus-visible-added] {
+    border-color: #D90B1C;
+    box-shadow: 0 0 0 3px var(--transparent) !important;
+    -webkit-box-shadow: 0 0 0 3px var(--transparent) !important;
+  }
+
+  &__error-msg {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    font-family: 'Neue Haas Unica Pro', sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    color: #D90B1C;
+  }
+}

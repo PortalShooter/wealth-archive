@@ -1,0 +1,135 @@
+.Simple {
+  display: block;
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--color-yellow);
+  box-sizing: border-box;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 47%;
+    height: 2px;
+    top: 30%;
+    background-color: var(--color-yellow);
+    border-radius: 1px;
+  }
+
+  &::after {
+    right: calc(50% - 1px);
+    transform-origin: calc(100% - 1px) 50%;
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    left: calc(50% - 1px);
+    transform-origin: 1px 50%;
+    transform: rotate(45deg);
+  }
+}
+
+.Arrow {
+  display: block;
+  position: relative;
+  width: 44px;
+  height: 44px;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 44%;
+    height: 2px;
+    top: 16px;
+    border-radius: 1px;
+    background-color: var(--color-green);
+    transition: all 0.1s var(--ease-out);
+  }
+
+  &::before {
+    left: calc(48%);
+    transform-origin: 1px 50%;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    right: calc(48%);
+    transform-origin: calc(100% - 1px) 50%;
+    transform: rotate(-45deg);
+  }
+
+  @media (max-width: 767px) {
+    &::after,
+    &::before {
+      width: 37%;
+      top: 16px;
+    }
+  }
+}
+
+.Icon {
+  &_directionLeft {
+    transform: rotate(-90deg);
+  }
+
+  &_directionRight {
+    transform: rotate(90deg);
+  }
+
+  &_directionBottom {
+    transform: rotate(180deg);
+    transition: transform 0.8s var(--ease-out);
+  }
+
+  &_lightGreen {
+    &::after,
+    &::before {
+      background-color: var(--color-green-button);
+    }
+
+    &:hover {
+      &::after,
+      &::before {
+        background-color: var(--color-light-green-hover);
+      }
+    }
+    &:active {
+      &::after,
+      &::before {
+        background-color: var(--color-green-hover);
+      }
+    }
+  }
+
+  &_green {
+    &:hover {
+      &::after,
+      &::before {
+        background-color: var(--color-green-hover);
+      }
+    }
+    &:active {
+      &::after,
+      &::before {
+        background-color: var(--color-light-green-hover);
+      }
+    }
+  }
+  &_yellow {
+    &:hover {
+      &::after,
+      &::before {
+        background-color: var(--color-yellow);
+      }
+    }
+    &:active {
+      &::after,
+      &::before {
+        background-color: var(--color-yellow);
+      }
+    }
+  }
+}

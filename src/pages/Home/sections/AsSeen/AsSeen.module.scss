@@ -1,0 +1,51 @@
+@use "src/app/mixins/index" as *;
+
+.as-seen.as-seen--home {
+  padding-top: 20px;
+  padding-bottom: 65px;
+
+  @include mediaTablet {
+    padding-bottom: 89px;
+  }
+  @include mediaDesktopMedium {
+    padding-bottom: 146px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+
+    @include mediaTablet {
+      margin-bottom: 31px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 78px;
+    }
+  }
+  &__heading {
+    @include mediaTablet {
+      font-size: 36px;
+    }
+    @include mediaDesktop {
+      font-size: 64px;
+    }
+  }
+
+  &__swiper {
+    height: calc(30vw + 216px) !important;
+
+    @include mediaMobileMedium {
+      height: 60vw !important;
+    }
+    @include mediaTablet {
+      height: calc(33vw + 94px) !important;
+    }
+    @include mediaDesktopMedium {
+      height: 486px !important;
+    }
+    @include mediaDesktopBig {
+      height: calc(6vw + 372px) !important;
+    }
+  }
+}

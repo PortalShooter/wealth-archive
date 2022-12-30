@@ -1,0 +1,101 @@
+@use "src/app/mixins/index" as *;
+
+.trust-info {
+  display: grid;
+  padding-left: 18px;
+  grid-template-areas:
+        'title title'
+        'text-block img';
+  grid-template-rows: 1fr 185px;
+  grid-template-columns: 1fr 1.25fr;
+
+  color: #fff;
+
+  @include mediaTablet {
+    grid-template-areas:
+        'title img'
+        'text-block img';
+    grid-template-rows: 1fr 13.5vw;
+    grid-template-columns: 1.6fr 1fr;
+    padding-left: 0;
+  }
+
+  @include mediaDesktop {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  @include mediaDesktopDesign {
+    grid-template-columns: 1.35fr 1fr;
+    grid-template-rows: 1fr 12vw;
+  }
+
+
+  &__title {
+    & span {
+      color: #EFFEB2;
+    }
+
+    @include mediaTablet {
+      font-size: 35px;
+      margin-top: 16px;
+    }
+    @include mediaDesktop {
+      font-size: 40px;
+    }
+    @include mediaDesktopDesign {
+      font-size: 64px;
+      margin-top: 22px;
+    }
+
+    &-wrapper {
+      grid-area: title;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    grid-area: img;
+    position: relative;
+    width: calc(100% + 22px);
+    height: calc(100% + 24px);
+
+    @include mediaTablet {
+      width: calc(100% + 5.5vw);
+      height: calc(100% + 13vw);
+      right: 2px;
+      bottom: 3.5vw;
+    }
+    @include mediaDesktopDesign {
+      right: -13px;
+      bottom: 6vw;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    grid-area: text-block;
+
+    padding-top: 40px;
+    font-size: 14px;
+
+    @include mediaTablet {
+      padding-top: 47px;
+    }
+    @include mediaDesktop {
+      font-size: 18px;
+    }
+    @include mediaDesktopDesign {
+      padding-top: 38px;
+    }
+  }
+  &__name {
+    @include mediaDesktopDesign {
+      margin-bottom: 8px;
+    }
+  }
+  &__work {
+    @include mediaDesktopDesign {
+      letter-spacing: -0.5px;
+    }
+  }
+}

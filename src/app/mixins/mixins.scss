@@ -1,0 +1,238 @@
+@forward "./queries.scss";
+@forward "./typography.scss";
+
+@use "./queries.scss" as *;
+@use "./typography.scss" as *;
+
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@mixin button {
+  @include text_button;
+  font-weight: 500;
+  box-sizing: border-box;
+  position: relative;
+  padding: 10px 20px 14px;
+  min-width: 185px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border-color-normal);
+  background-color: var(--btn-bg-color-normal);
+  color: var(--btn-color-normal);
+  outline: none;
+  transition: background-color .5s var(--easeOutExpo), color .5s var(--easeOutExpo);
+
+  &:hover {
+    border-color: var(--btn-border-color-hover);
+    background-color: var(--btn-bg-color-hover);
+    color: var(--btn-color-hover);
+  }
+
+  &:active {
+    border-color: var(--btn-border-color-active);
+    background-color: var(--btn-bg-color-active);
+    color: var(--btn-color-active);
+  }
+
+  &:focus-visible {
+    border-color: var(--btn-border-color-focus-visible);
+    background-color: var(--btn-bg-color-focus-visible);
+    color: var(--btn-color-focus-visible);
+  }
+
+  &:disabled,
+  &[disabled] {
+    border-color: var(--btn-border-color-disabled);
+    background-color: var(--btn-bg-color-disabled);
+    color: var(--btn-color-disabled);
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 3px var(--btn-outline-color-focus-visible);
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--easeOutExpo);
+    transition-property: opacity;
+  }
+
+  &:focus-visible::before {
+    opacity: 1;
+  }
+}
+
+@mixin button-secondary {
+  @include text_button;
+  font-weight: 500;
+  box-sizing: border-box;
+  position: relative;
+
+  width: 185px;
+  border-radius: 8px;
+  border: 1px solid var(--color-hero-yellow);
+  background-color: var(--color-hero-yellow);
+  color: var(--color-dark-green);
+  outline: none;
+  transition: background-color .5s var(--easeOutExpo), color .5s var(--easeOutExpo);
+
+  &:hover {
+    border-color: var(--color-hero-yellow);
+    background-color: var(--color-hero-yellow);
+    color: var(--btn-color-hover);
+  }
+
+  &:active {
+    border-color: var(--color-hero-yellow);
+    background-color: var(---color-hero-yellow);
+    color: var(--btn-color-active);
+  }
+
+  &:focus-visible {
+    border-color: var(--color-hero-yellow);
+    background-color: var(--color-hero-yellow);
+    color: var(--btn-color-focus-visible);
+  }
+
+  &:disabled,
+  &[disabled] {
+    border-color: var(--btn-border-color-disabled);
+    background-color: var(--btn-bg-color-disabled);
+    color: var(--btn-color-disabled);
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 3px var(--btn-outline-color-focus-visible);
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--easeOutExpo);
+    transition-property: opacity;
+  }
+
+  &:focus-visible::before {
+    opacity: 1;
+  }
+}
+
+@mixin button-stroke {
+  @include text_button;
+  font-weight: 500;
+  position: relative;
+  padding: 10px 20px 14px;
+  width: 185px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-stroke-border-color-normal);
+  background-color: var(--btn-stroke-bg-color-normal);
+  color: var(--btn-stroke-color-normal);
+  outline: none;
+  transition: background-color .5s var(--easeOutExpo), color .5s var(--easeOutExpo), border-color .5s var(--easeOutExpo);
+
+  &:hover {
+    border-color: var(--btn-stroke-border-color-hover);
+    background-color: var(--btn-stroke-bg-color-hover);
+    color: var(--btn-stroke-color-hover);
+  }
+
+  &:active {
+    border-color: var(--btn-stroke-border-color-active);
+    background-color: var(--btn-stroke-bg-color-active);
+    color: var(--btn-stroke-color-active);
+  }
+
+  &:focus-visible {
+    border-color: var(--btn-stroke-border-color-focus-visible);
+    background-color: var(--btn-stroke-bg-color-focus-visible);
+    color: var(--btn-stroke-color-focus-visible);
+  }
+
+  &:disabled,
+  &[disabled] {
+    border-color: var(--btn-stroke-border-color-disabled);
+    background-color: var(--btn-stroke-bg-color-disabled);
+    color: var(--btn-stroke-color-disabled);
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 3px var(--btn-stroke-outline-color-focus-visible);
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--easeOutExpo);
+    transition-property: opacity;
+  }
+
+  &:focus-visible::before {
+    opacity: 1;
+  }
+}
+
+
+@mixin link {
+  display: block;
+  color: var(--color-text);
+  position: relative;
+  // display: inline-block;
+  // color: var(--color-green);
+  // position: relative;
+  // transition-duration: 0.5;
+  // transition-timing-function: var(--easeOutExpo);
+  // transition-property: opacity;
+
+
+  // &:hover {
+  //   opacity: 0.6;
+  // }
+
+  // &:active {
+  //   opacity: 0.4;
+  // }
+
+  // &:focus-visible {
+  //   border-color: var(--color-focus);
+  // }
+}
+
+@mixin textLink($colorNormal, $colorHover, $colorActive, $colorFocus, $lineColorNormal, $lineColorHover, $lineColorActive, $lineColorFocus) {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  font-weight: 500;
+  transition: color .5s var(--easeOutExpo), text-decoration-color .5s var(--easeOutExpo);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: $colorNormal;
+  text-decoration-color: $lineColorNormal;
+
+   &:hover {
+     color: $colorHover;
+     text-decoration-color: $lineColorHover;
+   }
+
+   &:active {
+     color: $colorActive;
+     text-decoration-color: $lineColorActive;
+   }
+
+   &:focus-visible {
+     color: $colorFocus;
+     text-decoration-color: $lineColorFocus;
+   }
+}

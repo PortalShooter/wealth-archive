@@ -1,0 +1,56 @@
+image: node:16-alpine
+
+pipelines:
+  branches:
+    master:
+      - parallel:
+          - step:
+              name: Build & Deploy
+              deployment: test
+              caches:
+                - node
+                - nextcache
+              script:
+                - apk update && apk add --no-cache openssh-client rsync sshpass libc6-compat gcompat
+                - npm install && npm run export
+                - sshpass -p $PWD_TEST rsync -avzhP --delete out/ $LOGIN_TEST@$IP_TEST:$PATH_TEST
+    production:
+          - step:
+              name: Build & Deploy
+              deployment: Production
+              caches:
+                - node
+                - nextcache
+              script:
+                - apk update && apk add --no-cache openssh-client rsync sshpass libc6-compat gcompat
+                - npm install && npm run export
+                - date=$(date +"%Y-%m-%d_%H_%M_%S")
+                - new_release_dir="$PATH_PROD/releases/$date"
+                - echo $new_release_dir
+                - rsync -avzhP --delete out/ $LOGIN_PROD@$IP_PROD:$new_release_dir
+                - ssh $LOGIN_PROD@$IP_PROD "bash -se" < deploy_prod.sh $PATH_PROD $new_release_dir
+    stage:
+          - step:
+              name: Build & Deploy
+              deployment: Staging
+              caches:
+                - node
+                - nextcache
+              script:
+                - apk update && apk add --no-cache openssh-client rsync sshpass libc6-compat gcompat
+                - npm install && npm run export
+                - sshpass -p $PWD_TEST rsync -avzhP --delete out/ $LOGIN_TEST@$IP_TEST:$PATH_STAGE
+    storybook:
+          - step:
+              name: Build & Deploy
+              deployment: Storybook
+              caches:
+                - node
+                - nextcache
+              script:
+                - apk update && apk add --no-cache openssh-client rsync sshpass libc6-compat gcompat
+                - npm install && npm run build-storybook
+                - sshpass -p $PWD_TEST rsync -avzhP --delete storybook-static/ $LOGIN_TEST@$IP_TEST:$PATH_TEST
+definitions:
+  caches:
+    nextcache: .next/cache

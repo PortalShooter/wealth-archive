@@ -1,0 +1,233 @@
+@use "./responsiveProperty.scss" as *;
+@use "./queries.scss" as *;
+
+@mixin numbers {
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 120%;
+  letter-spacing: -0.08em;
+
+  @include mediaTablet {
+    font-size: 180px;
+  }
+
+  @include mediaDesktop {
+    font-size: 200px;
+  }
+}
+
+@mixin heading_h1 {
+  font-family: 'Reckless';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: -1px;
+
+  @include mediaTablet {
+    font-size: 80px;
+  }
+
+  @include mediaDesktop {
+    font-size: 112px;
+  }
+}
+
+@mixin heading_h1_responsive {
+  @include heading_h1;
+
+  @media only screen and (min-width: $mobile) and (max-width: $preTablet) {
+    font-size: var(--heading-h1-mobile-to-tablet);
+  }
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--heading-h1-tablet-to-desktop);
+  }
+}
+
+@mixin heading_h2 {
+  font-family: 'Reckless';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110%;
+
+  @include mediaTablet {
+    font-size: 54px;
+  }
+
+  @include mediaDesktop {
+    font-size: 88px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+}
+
+@mixin heading_h2_responsive {
+  @include heading_h2;
+
+  @media only screen and (min-width: $mobile) and (max-width: $preTablet) {
+    font-size: var(--heading-h2-mobile-to-tablet);
+  }
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--heading-h2-tablet-to-desktop);
+  }
+}
+
+@mixin heading_h3 {
+  font-family: 'Reckless';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+
+  @include mediaTablet {
+    font-size: 36px;
+  }
+
+  @include mediaDesktop {
+    font-size: 64px;
+    line-height: 100%;
+  }
+}
+
+@mixin heading_h3_responsive {
+  @include heading_h3;
+
+  @media only screen and (min-width: $mobile) and (max-width: $preTablet) {
+    font-size: var(--heading-h3-mobile-to-tablet);
+  }
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--heading-h3-tablet-to-desktop);
+  }
+}
+
+@mixin heading_h4 {
+  font-family: 'Reckless';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 110%;
+
+  @include mediaTablet {
+    font-size: 30px;
+  }
+
+  @include mediaDesktop {
+    font-size: 48px;
+    line-height: 100%;
+  }
+}
+
+@mixin heading_h4_responsive {
+  @include heading_h4;
+
+  @media only screen and (min-width: $mobile) and (max-width: $preTablet) {
+    font-size: var(--heading-h4-mobile-to-tablet);
+  }
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--heading-h4-tablet-to-desktop);
+  }
+}
+
+@mixin heading_h5 {
+  font-family: 'Reckless';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+
+  @include mediaTablet {
+    font-size: 22px;
+  }
+
+  @include mediaDesktop {
+    font-size: 32px;
+  }
+}
+
+@mixin heading_h5_responsive {
+  @include heading_h5;
+
+  @media only screen and (min-width: $mobile) and (max-width: $preTablet) {
+    font-size: var(--heading-h5-mobile-to-tablet);
+  }
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--heading-h5-tablet-to-desktop);
+  }
+}
+
+@mixin text_p1 {
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  @include mediaTablet {
+    font-size: 18px;
+  }
+
+  @include mediaDesktop {
+    font-size: 22px;
+  }
+}
+
+@mixin text_p1_responsive {
+  @include text_p1;
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--text-p1-tablet-to-desktop);
+  }
+}
+
+@mixin text_p2 {
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+
+  @include mediaTablet {
+    font-size: 14px;
+  }
+
+  @include mediaDesktop {
+    font-size: 18px;
+  }
+}
+
+@mixin text_p2_responsive {
+  @include text_p2;
+
+  @media only screen and (min-width: $tablet) and (max-width: $preDesktopDesign) {
+    font-size: var(--text-p2-tablet-to-desktop);
+  }
+}
+
+@mixin text_button {
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  font-feature-settings: 'liga' off;
+}
+
+@mixin text_bold {
+  font-weight: 500;
+}
+
+@mixin text_inherit {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}

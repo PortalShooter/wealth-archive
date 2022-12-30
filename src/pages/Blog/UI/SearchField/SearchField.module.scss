@@ -1,0 +1,113 @@
+@import "src/app/mixins/queries";
+
+.search-result {
+  position: relative;
+  width: 100%;
+
+  &__wrap {
+    position: absolute;
+    width: calc(100% - 16px);
+
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-beige);
+    border-radius: 12px;
+    z-index: 100;
+    padding: 16px;
+    padding-bottom: 18px;
+
+    &_nothing {
+      padding: 24px 24px 16px;
+
+      @include mediaTablet {
+        padding: 32px !important;
+      }
+
+      @include mediaDesktopDesign {
+        padding: 40px !important;
+      }
+    }
+
+    @include mediaTablet {
+      width: calc(100% - 64px);
+      padding: 31px 32px 26px;
+      top: 12px;
+    }
+
+    @include mediaDesktopDesign {
+      width: calc(100%);
+      padding: 39px 40px 25px;
+    }
+
+    &__articles {
+      margin-bottom: 48px;
+
+      @include mediaDesktopDesign {
+        top: 13px;
+        margin-bottom: 40px;
+      }
+    }
+
+  }
+
+  &__background {
+    margin:auto;
+    left:0;
+    right:0;
+    position: fixed;
+    min-width: 100vw;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--color-text);
+    opacity: 0.4;
+    z-index: 90;
+  }
+
+  &__link {
+    font-size: 16px;
+    color: var(--color-dark-green);
+
+    &:hover, &:focus-visible {
+      color: var(--color-dark-green);
+    }
+  }
+}
+
+.not-found {
+  display: flex;
+
+  &__title {
+    margin-bottom: 12px !important;
+
+    @include mediaDesktopDesign {
+      margin-bottom: 16px !important;
+    }
+  }
+
+  &__description {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    @include mediaDesktopDesign {
+      font-size: 18px;
+    }
+  }
+
+  &__tab-repeater {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+:global(.article-search_white) {
+  .search-result {
+    &__wrap {
+      background-color: var(--color-white);
+    }
+  }
+
+}

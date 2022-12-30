@@ -1,0 +1,105 @@
+@use "@/app/mixins/index.scss" as *;
+
+.link {
+  @include link;
+
+  &_button {
+    @include button;
+  }
+
+  &_button-secondary {
+    @include button-secondary;
+   // background: none;
+    overflow: hidden;
+    transform: translate3d(0,0,0) scale(1);
+  }
+
+  &_button-stroke {
+    @include button-stroke;
+  }
+
+  &_text-primary {
+    @include textLink(
+                    var(--link-color-normal),
+                    var(--link-color-hover),
+                    var(--link-color-active),
+                    var(--link-color-focus-visible),
+                    var(--link-underline-color-normal),
+                    var(--link-underline-color-hover),
+                    var(--link-underline-color-active),
+                    var(--link-underline-color-focus-visible)
+    );
+  }
+
+  &_text-secondary {
+    @include textLink(
+                    var(--link-secondary-color-normal),
+                    var(--link-secondary-color-hover),
+                    var(--link-secondary-color-active),
+                    var(--link-secondary-color-focus-visible),
+                    var(--link-secondary-underline-color-normal),
+                    var(--link-secondary-underline-color-hover),
+                    var(--link-secondary-underline-color-active),
+                    var(--link-secondary-underline-color-focus-visible)
+    );
+
+  }
+  $block:&;
+  .wrap {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    overflow: hidden;
+    padding: 10px 20px 14px;
+    pointer-events: none;
+    //z-index: 5;
+    transform: translate3d(0,0,0) scale(1);
+  }
+  .whitebg {
+    background: #effeb2;
+    width:102%;
+    height: 102%;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    z-index:1;
+    display: block;
+  }
+
+  .blackbg {
+    background: black;
+    width:400px;
+    height: 400px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index:2;
+    display: block;
+    border-radius: 50%;
+    transform: translate3d(-50%,-50%,0) scale(0);
+    transition: all 0.8s var(--ease-out), transform 1.6s var(--ease-out), left 0s ,top 0s;
+    &.hover {
+      transform: translate3d(-50%,-50%,0) scale(1);
+    }
+  }
+  .content {
+    position:relative;
+    mix-blend-mode: difference;
+    color: #effeb2;
+    z-index: 3;
+    display: block;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0)
+  }
+  .makered {
+    background-color: #00534f;
+    mix-blend-mode: screen;
+    width:102%;
+    height: 102%;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    z-index:4;
+    display: block;
+  }
+}

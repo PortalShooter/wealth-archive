@@ -1,0 +1,34 @@
+@use "src/app/mixins/index" as *;
+
+.article-search {
+  position: relative;
+  padding-bottom: 64px;
+  background-color: var(--color-beige);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: var(--header-bg-color);
+  }
+
+  @include mediaTablet {
+    padding-bottom: 68px;
+  }
+
+  @include mediaDesktopSmall {
+    padding-bottom: 106px;
+  }
+
+  @include mediaDesktopDesign {
+    padding-bottom: 0 !important;
+    marging-bottom: 106px !important;
+  }
+
+  &__search-result {
+    position: relative;
+  }
+}

@@ -1,0 +1,120 @@
+@use "@/app/mixins/index.scss" as *;
+
+:root {
+  --top: 0;
+}
+
+html {
+  //scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.home,
+.help,
+.product {
+  --header-bg-color: var(--color-green-dark);
+  --header-logo-color: var(--color-teal);
+  --header-signin-color: var(--color-teal);
+  --header-color: var(--color-white);
+  --header-menu-mobile-color: var(--color-teal);
+}
+
+.blog,
+.pricing,
+.search-open {
+  --header-bg-color: var(--color-beige);
+}
+
+.solutions {
+  --header-bg-color: var(--color-grey);
+}
+
+
+.security {
+  --header-bg-color: var(--color-black);
+  --header-logo-color: var(--color-teal);
+  --header-signin-color: var(--color-teal);
+  --header-color: var(--color-white);
+  --header-menu-mobile-color: var(--color-teal);
+}
+
+.root {
+  position: relative;
+
+  &.home:before,
+  &.help:before,
+  &.product:before {
+    background-color: #00534f;
+  }
+
+  &.blog:before,
+  &.search-open:before,
+  &.pricing:before {
+    background-color: #F5F3ED;
+  }
+
+  &.search-open_white:before {
+    background-color: #FFFFFF;
+  }
+
+  &.solutions:before {
+    background-color: #f4f5f8;
+  }
+
+  &.security:before {
+    background-color: #000;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 76px;
+    background-color: white;
+
+    @include mediaDesktop {
+      height: 128px;
+    }
+
+    .home &,
+    .help &,
+    .product & {
+      background-color: #00534f;
+    }
+
+    .blog &,
+    .search-open &,
+    .pricing & {
+      background-color: #F5F3ED;
+    }
+
+    .search-open_white & {
+      background-color: #FFFFFF;
+    }
+
+    .solutions & {
+      background-color: #f4f5f8;
+    }
+
+    .security & {
+      background-color: #000;
+    }
+  }
+}
+
+.search-open,.search-open_white {
+  overflow-y: scroll;
+  position: fixed;
+}
+
+.help-search-open {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  top: var(--top);
+}

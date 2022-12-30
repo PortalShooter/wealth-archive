@@ -1,0 +1,172 @@
+@use "src/app/mixins/index" as *;
+
+.stories {
+  padding-bottom: 79px;
+
+  @include mediaTablet {
+    padding-bottom: 102px;
+  }
+
+  @include mediaDesktop {
+    padding-bottom: 153px;
+  }
+
+  &__title {
+    margin-bottom: 21px;
+
+    @include mediaTablet {
+      margin-bottom: 23px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__heading {
+    @include responsive(font-size, 28px, 36px, 375px, 768px);
+  }
+
+  &__holder {
+    @include mediaMobileMedium {
+      display: flex;
+      gap: 24px;
+    }
+
+    @include mediaDesktop {
+      gap: 40px;
+    }
+  }
+}
+
+.story {
+  position: relative;
+  display: block;
+  margin-bottom: 47px;
+
+  @include mediaMobileMedium {
+    flex-basis: 50%;
+  }
+
+  @include mediaMobileMedium {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &_imageless {
+    padding: 32px;
+    background-color: var(--color-beige);
+    min-height: 370px;
+
+    @include mediaDesktop {
+      min-height: 500px;
+    }
+  }
+
+  &__image-wrap {
+    display: block;
+    position: relative;
+    height: 246px;
+    margin-bottom: 21px;
+    overflow: hidden;
+
+    @include mediaTablet {
+      height: calc((100vw - 64px) / 2 - 96px);
+      margin-bottom: 24px;
+    }
+
+    @include mediaDesktop {
+      height: calc((100vw - 180px) / 2 - 174px);
+    }
+
+    @include mediaDesktopDesign {
+      height: 456px;
+      margin-bottom: 32px;
+    }
+
+    & > span {
+      transition: transform .3s var(--ease-out);
+    }
+  }
+
+  &:hover &__image-wrap,
+  &:focus-visible &__image-wrap {
+    & > span {
+      transform: scale(1.1);
+    }
+  }
+
+  &__category {
+    @include text_p2_responsive;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 6px;
+
+    @include mediaDesktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__title {
+    @include text_p1;
+    display: block;
+    color: var(--color-text);
+    letter-spacing: 0;
+    margin-bottom: 16px;
+    font-weight: 500;
+
+    @include mediaTablet {
+      width: calc(80% + 25px);
+    }
+
+    @include mediaDesktop {
+      width: calc(80% + 76px);
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -.02em;
+      margin-bottom: 19px;
+      transition: color .3s var(--ease-out);
+    }
+  }
+
+  &_imageless &__title {
+    @include heading_h4_responsive;
+    font-family: "Neue Haas Unica Pro";
+  }
+
+  &:hover &__title,
+  &:focus-visible &__title {
+    color: var(--color-green);
+  }
+
+  &__info {
+    @include text_p2;
+    color: var(--color-dark-gray);
+    min-height: 19px;
+  }
+
+  &__read-more {
+    @include textLink(
+        var(--link-color-normal),
+        var(--link-color-hover),
+        var(--link-color-active),
+        var(--link-color-focus-visible),
+        var(--link-underline-color-normal),
+        var(--link-underline-color-hover),
+        var(--link-underline-color-active),
+        var(--link-underline-color-focus-visible)
+    );
+    position: absolute;
+    bottom: 37px;
+    font-size: 16px;
+  }
+
+  &:hover &__read-more,
+  &:focus-visible &__read-more {
+    text-decoration-color: var(--link-underline-color-hover);
+  }
+}

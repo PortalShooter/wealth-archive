@@ -1,0 +1,67 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  border-radius: 20px;
+  box-sizing: border-box;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:hover {
+    &>div:nth-child(1) {
+      color: var(--color-green);
+    }
+
+    &>div:nth-child(2)>svg>path {
+      stroke: var(--color-green);
+    }
+  }
+
+  &__title {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    //width: 48px;
+    //height: 48px;
+
+    &_open {
+      transform: rotate(540deg);
+      transition: transform .8s var(--ease-out);
+    }
+
+    &_close {
+      transform: rotate(1turn);
+      transition: transform .8s var(--ease-out);
+    }
+
+    @include mediaTablet {
+      margin-right: 9px;
+    }
+  }
+}
+.border {
+  border-bottom: 1px solid #F4F5F8;
+  &:last-child {
+    border: none;
+  }
+}
+
+.animation {
+  transition: 0.3s ease-out;
+  overflow: hidden;
+}

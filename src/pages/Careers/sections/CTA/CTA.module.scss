@@ -1,0 +1,29 @@
+@use "src/app/mixins/index" as *;
+
+.cta {
+  @include mediaMobileBig {
+    padding-bottom: 127px;
+  }
+  @include mediaDesktop {
+    padding-bottom: 199px;
+  }
+
+  &__title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 33px;
+
+    @include mediaMobileBig {
+      margin-bottom: 47px;
+    }
+
+    @include mediaDesktop {
+      max-width: 1091px;
+    }
+  }
+
+  &__link {
+    width: 226px;
+    margin: 0 auto;
+  }
+}

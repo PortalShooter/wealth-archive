@@ -1,0 +1,125 @@
+@use "@/app/mixins/index.scss" as *;
+
+.related-articles {
+
+  padding-top: 32px;
+
+  @include mediaTablet {
+    padding-bottom: 0;
+    margin-bottom: 128px;
+    padding-top: 56px;
+  }
+
+  @include mediaDesktop {
+    padding-bottom: 0;
+    margin-bottom: 200px;
+    padding-top: 88px;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 327px;
+
+    @include mediaTablet {
+      max-width: 1260px;
+    }
+
+    //@include mediaDesktop {
+    //  max-width: 1260px;
+    //}
+
+    //@include mediaDesktopDesign {
+    //  max-width: 1260px;
+    //}
+  }
+
+  &__block-title {
+    margin-bottom: 24px;
+
+    @include mediaDesktop {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__title {
+    @include mediaTablet {
+      font-size: 36px;
+    }
+
+    @include mediaDesktop {
+      font-size: 44px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 64px;
+    }
+  }
+
+  &__articles {
+    display: grid;
+
+    @include mediaTablet {
+      //width: auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @include mediaDesktop {
+      gap: 30px;
+      width: 100%;
+    }
+
+    @include mediaDesktopDesign {
+      width: 1260px;
+      gap: 40px;
+    }
+
+    &>div {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &>div {
+        @include mediaDesktop {
+          &:nth-child(1) {
+            margin-bottom: 32px;
+            width: 390px;
+            height: 330px;
+          }
+
+          &:nth-child(2) {
+            margin-bottom: 12px;
+            font-size: 16px;
+          }
+
+          &:nth-child(3) {
+            font-size: 22px;
+            width: 340px;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+          }
+        }
+
+        @include mediaDesktopDesign {
+          &:nth-child(1) {
+            margin-bottom: 32px;
+            width: 610px;
+            height: 456px;
+          }
+
+          &:nth-child(2) {
+            margin-bottom: 12px;
+            font-size: 18px !important;
+          }
+
+          &:nth-child(3) {
+            font-size: 28px;
+            width: 571px;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

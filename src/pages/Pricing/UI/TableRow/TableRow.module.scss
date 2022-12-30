@@ -1,0 +1,104 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+//.container {
+//  border-radius: 20px;
+//
+//  &:first-child {
+//    margin-top:0;
+//  }
+//}
+//.container > .row {
+//  margin-top: 0;
+//}
+//.row {
+//  padding: 32px 0;
+//  display: flex;
+//  justify-content: space-between;
+//  align-items: center;
+//  box-sizing: border-box;
+//  --bottom-color: #DEE3EC;
+//  border-bottom: 1px solid var(--bottom-color);
+//  cursor: pointer;
+//
+//  @include mediaDesktopMedium {
+//    width: 1150px;
+//    margin-right: 50px;
+//    margin-left: 50px;
+//    box-sizing: border-box;
+//  }
+//  @include mediaDesktopDesign {
+//    width: 1260px;
+//    margin-right: 50px;
+//    margin-left: 50px;
+//  }
+//
+//  &__head {
+//    display: flex;
+//    border-radius: 20px;
+//  }
+//  &__arrow {
+//    margin-top: 3px;
+//
+//    @include mediaDesktopMedium {
+//      margin-left: 96px;
+//      margin-right: 40px;
+//    }
+//    @include mediaDesktopDesign {
+//      margin-left:75px;
+//    }
+//  }
+//  &__svg {
+//    display: flex;
+//    justify-content: flex-start;
+//    flex-shrink: 0;
+//  }
+//}
+//
+//.title {
+//  font-family: "Neue Haas Unica Pro";
+//  font-weight: 500;
+//  font-style: normal;
+//  font-size: 18px;
+//  line-height: 130%;
+//  color: var(--color-text);
+//  margin-left: 32px;
+//  width: 300px;
+//  align-self: center;
+//}
+//.icon {
+//  width: 48px;
+//  height: 48px;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+//.icons {
+//  &__svg {
+//    &:first-child {
+//      @include mediaDesktopMedium {
+//        margin-left: 120px;
+//      }
+//      @include mediaDesktopDesign {
+//        margin-left: 170px;
+//      }
+//    }
+//    &:nth-child(2) {
+//      @include mediaDesktopMedium {
+//        margin-left: 200px;
+//      }
+//      @include mediaDesktopDesign {
+//        margin-left: 232px;
+//      }
+//    }
+//    &:nth-child(3) {
+//      @include mediaDesktopMedium {
+//        margin-left: 200px;
+//      }
+//      @include mediaDesktopDesign {
+//        margin-left: 246px;
+//      }
+//    }
+//  }
+//}

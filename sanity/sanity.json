@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "2l4juc4x",
+    "dataset": "develop"
+  },
+  "project": {
+    "name": "wealth"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "inline-svg"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+@import "../../../../app/mixins/queries";
+
+.tabs {
+  padding: 118px 0 100px;
+  max-width: 1260px;
+  margin: 0 auto;
+
+  @include mediaTablet {
+    padding: 84px 0 100px;
+  }
+
+  @include mediaDesktop {
+    padding: 118px 0 100px;
+  }
+
+  &__scroll {
+    padding: 0 24px;
+    overflow-x: scroll;
+    text-align: center;
+
+    @include mediaTablet {
+      padding: 25px 32px 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      padding: 25px 64px 0;
+    }
+
+    @include mediaDesktop {
+      padding: 25px 90px 0;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 82px 0 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    scrollbar-width: none;
+
+    hr {
+      height: 2px;
+      background: #DEE3EC;
+      min-width: 703px;
+      margin-bottom: 28px;
+      margin-top: -2px;
+      width: 100%;
+
+      @include mediaTablet {
+        margin-bottom: 34px;
+        min-width: 703px;
+      }
+
+      @include mediaDesktop {
+        margin-bottom: 78px;
+      }
+
+      @include mediaDesktopDesign {
+        margin-bottom: 68px;
+      }
+    }
+  }
+  &__wrap {
+    width: fit-content;
+  }
+
+  &__block {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    font: 500 14px/130% 'Neue Haas Unica Pro';
+    text-align: center;
+    margin: 0 auto;
+    color: #696C71;
+
+    @include mediaTablet {
+      padding: 0 8px;
+      min-width: 703px;
+      width: 100%;
+    }
+
+    @include mediaDesktop {
+
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 18px;
+      padding: 0 91px;
+    }
+
+    &_inner {
+      padding: 0 18px 18px;
+      transition: color .2s ease;
+      white-space: nowrap;
+
+      @include mediaTablet {
+        padding: 0 3px 18px 3px;
+        width: 138px;
+        white-space: initial;
+      }
+
+      @include mediaDesktop {
+        width: 150px;
+        padding: 0 24px 20px 24px;
+        cursor: pointer;
+      }
+
+      @include mediaDesktopDesign {
+        width: 240px;
+      }
+
+      &:hover {
+        color: #00857C;
+      }
+    }
+
+    &_active {
+      color: #00857C;
+      border-bottom: 2px solid #00857C;
+      padding-bottom: 18px;
+    }
+  }
+}
+
+.tabs {
+  hr.will {
+    @include mediaTablet {
+      min-width: 600px;
+    }
+  }
+
+  &__block_inner.will {
+    padding: 0 18px 18px;
+
+    @include mediaTablet {
+      margin-right: 10px;
+
+      &:nth-child(3), &:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding: 0 10px 18px;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 0 30px 18px;
+    }
+  }
+
+  &__block.will {
+
+
+    @include mediaTablet {
+      padding: 0 64px;
+      min-width: 600px;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 0 150px;
+    }
+  }
+}
+
+.tabs {
+  hr.core {
+    //min-width: 445px;
+  }
+
+  &__block_inner.core {
+    padding: 0 18px 18px;
+
+    @include mediaTablet {
+      //margin-right: 10px;
+
+      &:nth-child(3), &:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__block.core {
+
+
+    @include mediaTablet {
+      padding: 0 110px;
+      //min-width: 445px;
+    }
+
+    @include mediaDesktop {
+      padding: 0 180px;
+    }
+  }
+}

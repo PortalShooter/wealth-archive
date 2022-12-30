@@ -1,0 +1,100 @@
+@use "src/app/mixins/index" as *;
+
+.list-item {
+  display: block;
+  color: var(--color-text);
+  padding: 23px 70px 24px 0;
+  border-top: 1px solid var(--color-border-pink);
+  position: relative;
+  cursor: pointer;
+
+  &.list-item:hover &__title, &.list-item:focus-visible &__title {
+    text-decoration-color: var(--link-secondary-underline-color-hover);
+    text-underline-offset: 4px;
+
+    @include mediaDesktop {
+      text-underline-offset: 7px;
+    }
+  }
+
+  @include mediaTablet {
+    padding: 32px 70px 32px 0;
+  }
+
+  @include mediaDesktop {
+    padding: 56px 70px 55px 0;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-border-pink);
+  }
+
+  &__title {
+    @include text_p2_responsive();
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    text-decoration: underline;
+    text-decoration-color: var(--transparent);
+
+    &>p>span {
+      background-color: #cfece5;
+      color: var(--color-text);
+    }
+
+    @include mediaTablet {
+      font-size: 24px;
+    }
+
+    @include mediaDesktop {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title-container {
+    margin-bottom: 12px;
+
+    @include mediaDesktop {
+      margin-bottom: 20px;
+    }
+  }
+  &__text-block {
+    display: flex;
+  }
+
+  &__arrow {
+    width: 8px;
+    height: 12px;
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 2%;
+
+    @include mediaTablet {
+      right: 1%;
+    }
+
+    @include mediaDesktop {
+      width: 14px;
+      height: 24px;
+    }
+
+    &>svg>path {
+      stroke-width: 3px;
+
+      @include mediaDesktop {
+        stroke-width: 2px;
+      }
+    }
+  }
+}
+
+.text-block {
+  @include text_p2_responsive();
+  color: var(--color-dark-gray);
+
+  &__point {
+    margin-left: 7px;
+    margin-right: 6px;
+  }
+}

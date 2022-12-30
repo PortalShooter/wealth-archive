@@ -1,0 +1,140 @@
+@use "@/app/mixins/index.scss" as *;
+
+.fa {
+  padding-bottom: 80px;
+  background-color: var(--color-grey);
+  &_white {
+    background-color: #fff;
+  }
+
+  @include mediaTablet {
+    padding: 127px 0;
+  }
+  @include mediaDesktopDesign {
+    padding: 160px 0;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__text {
+    &_green {
+      color: var(--color-dark-green);
+    }
+    @include mediaMobileMedium {
+      padding: 0 10%;
+    }
+    @include mediaDesktop {
+      padding: 0;
+    }
+    @include mediaDesktopMedium {
+      width: 73%;
+      margin-bottom: 48px;
+    }
+    @include mediaDesktopDesign {
+      width: 68%;
+    }
+  }
+  &__heading {
+    @include mediaTablet {
+      margin-bottom: 24px;
+    }
+    @include mediaDesktopDesign {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__subheading {
+    @include mediaMobileMedium {
+      width: 89%;
+    }
+
+    @include mediaTablet {
+      width: 80%;
+    }
+
+    @include mediaDesktop {
+      width: 100%;
+    }
+  }
+  &__link {
+    width: 167px;
+  }
+}
+
+.fa__companies.fa {
+  padding-top: 74px;
+  padding-bottom: 102px;
+
+  @include mediaTablet {
+    padding-top: 100px;
+    padding-bottom: 128px;
+  }
+
+  @include mediaDesktopDesign {
+    padding-top: 199px;
+    padding-bottom: 200px;
+  }
+}
+
+.fa__companies.fa__subheading {
+  @include mediaTablet {
+    width: 85%;
+  }
+
+  @include mediaDesktop {
+    width: 100%;
+  }
+}
+
+.fa__companies.fa__link {
+  @include mediaTablet {
+    margin-top: -10px;
+  }
+
+  @include mediaDesktop {
+    margin-top: 0;
+  }
+}
+
+.fa__advisors.fa {
+  padding-top: 74px;
+  padding-bottom: 102px;
+
+  @include mediaTablet {
+    padding-top: 100px;
+    padding-bottom: 128px;
+  }
+
+  @include mediaDesktopDesign {
+    padding-top: 199px;
+    padding-bottom: 200px;
+  }
+}
+
+.fa__advisors.fa__subheading {
+  @include mediaTablet {
+    width: 85%;
+  }
+
+  @include mediaDesktop {
+    width: 100%;
+  }
+}
+
+.fa__advisors.fa__link {
+  @include mediaTablet {
+    margin-top: -10px;
+  }
+
+  @include mediaDesktop {
+    margin-top: 0;
+  }
+}
+
+.fa__advisors.fa .fa__text {
+  @include mediaDesktopDesign {
+    width: 74%;
+  }
+}

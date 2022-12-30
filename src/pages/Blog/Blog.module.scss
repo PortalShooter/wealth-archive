@@ -1,0 +1,15 @@
+@import "src/app/mixins/queries";
+.blog {
+  &>section {
+    padding-bottom: 46px;
+
+    @include mediaTablet {
+      padding-bottom: 36px;
+    }
+
+    @include mediaDesktopDesign {
+      margin-top: -8px;
+      padding-bottom: 79px !important;
+    }
+  }
+}

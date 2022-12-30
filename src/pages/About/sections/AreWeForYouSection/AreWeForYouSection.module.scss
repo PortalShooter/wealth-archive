@@ -1,0 +1,531 @@
+@use "src/app/mixins/index" as *;
+
+.are-we-for-you {
+  position: relative;
+  padding-top: 104px;
+  padding-bottom: 0;
+  background-color: var(--color-black);
+
+  @include mediaMobileMedium {
+    padding-top: 160px;
+  }
+
+  @include mediaDesktop {
+    padding-top: 221px;
+  }
+
+  @include mediaDesktopMedium {
+    padding-top: 280px;
+  }
+
+  @include mediaDesktopDesign {
+    padding-top: 281px;
+  }
+
+  &__wrap {
+    width: 100%;
+    transform-style: preserve-3d;
+
+    @include mediaDesktop {
+      max-width: none;
+    }
+
+    &:last-child {
+      margin-top: -120px;
+      padding-bottom: 40px;
+
+      @include mediaMobileMedium {
+        padding-bottom: 160px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 180px;
+      }
+
+      @include mediaDesktopBig {
+        padding-bottom: 278px;
+      }
+    }
+  }
+
+  &__title {
+    top: 40%;
+    position: sticky;
+    color: var(--color-white);
+    width: calc(100% - 48px);
+    margin: 0 auto 64px;
+
+    @include mediaMobileMedium {
+      //margin-bottom: 0;
+      margin-bottom: 100px;
+      width: calc(100% - 64px);
+    }
+
+    @include mediaDesktop {
+      max-width: 1046px;
+      width: calc(100% - 197px);
+    }
+  }
+
+  &__heading {
+    @include heading_h1_responsive;
+
+
+    &_bottom {
+      @include mediaMobileMedium {
+        margin-bottom: 25px;
+      }
+
+      @include mediaDesktop {
+        margin-bottom: 65px;
+      }
+    }
+  }
+
+  &__subheading {
+    @include text_p1;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -.01em;
+    max-width: 400px;
+    opacity: 1;
+    transition: opacity .3s ease-out;
+
+    @include mediaMobileMedium {
+      max-width: calc(100% - 100px);
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    @include mediaTablet {
+      font-size: 36px;
+      line-height: 43px;
+    }
+    @include mediaDesktop {
+      font-size: 48px;
+      line-height: 57.5px;
+      max-width: calc(100% - 179px);
+    }
+
+    @include mediaDesktopBig {
+      margin: 0;
+      max-width: none;
+    }
+
+    &_hidden {
+      opacity: 0;
+    }
+  }
+
+  &__link {
+    margin: 0 auto;
+    position: sticky;
+    top: 100%;
+    max-width: 340px;
+  }
+
+  &__list {
+    padding-bottom: calc(200px + 15vw);
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 56px;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    @include mediaMobileMedium {
+      position: relative;
+      display: block;
+      min-height: calc(100vw + 112px);
+    }
+
+    @include mediaDesktop {
+      min-height: 1470px;
+      width: 100vw;
+    }
+
+    @include mediaDesktopBig {
+      min-height: 1650px;
+      overflow: visible;
+    }
+
+    @media only screen and (min-width: 1700px) {
+      max-width: 1260px;
+      margin: 0 auto;
+      overflow: visible;
+    }
+  }
+
+  &__elem {
+    position: relative;
+    display: block;
+    width: 50%;
+    overflow: hidden;
+
+    @include mediaMobileMedium {
+      position: absolute;
+    }
+
+    &_2, &_5, &_6, &_7, &_11 {
+      display: none;
+
+      @include mediaMobileMedium {
+        display: block;
+      }
+    }
+
+    &_1 {
+      order: 1;
+      width: 72%;
+      margin-left: -38%;
+
+      @include mediaMobileMedium {
+        width: 22.5%;
+        left: 24.6%;
+        top: 13.6%;
+        clip-path: none;
+      }
+
+      @include mediaDesktop {
+        width: 18%;
+        left: 29.6%;
+        top: 13.1%;
+      }
+
+      @include mediaDesktopBig {
+        width: 21%;
+        left: 20.9%;
+        top: 11.6%;
+      }
+    }
+
+    &_2 {
+      width: 21.4%;
+      left: 19.9%;
+      top: 19.7%;
+      max-width: 190px;
+
+      @include mediaDesktop {
+        width: 18.4%;
+        left: 19.4%;
+        top: 19.1%;
+        max-width: none;
+      }
+
+      @include mediaDesktopBig {
+        width: 21%;
+        left: 15%;
+        top: 17.1%;
+      }
+    }
+
+    &_3 {
+      order: 4;
+      width: 20%;
+      left: -32px;
+      top: 27px;
+      overflow: visible;
+
+      @include mediaMobileMedium {
+        top: 12.8%;
+        left: calc(50% - 12px);
+        width: 16.9%;
+        clip-path: none;
+      }
+
+      @include mediaDesktop {
+        width: 14.6%;
+        left: 45.2%;
+        top: 12%;
+      }
+
+      @include mediaDesktopBig {
+        width: 16.6%;
+        left: 44.5%;
+        top: 10.8%;
+      }
+
+      &>span {
+        transform: scale(2);
+
+        @include mediaMobileMedium {
+          transform: none;
+        }
+      }
+    }
+
+    &_4 {
+      order: 2;
+      left: 6px;
+      top: -1px;
+
+      @include mediaMobileMedium {
+        width: 28.4%;
+        right: -8.5%;
+        top: 10.1%;
+        left: auto;
+      }
+
+      @include mediaDesktop {
+        width: 24.5%;
+        right: -2.9%;
+        top: 10.8%;
+      }
+
+      @include mediaDesktopBig {
+        width: 28%;
+        right: -10.5%;
+        top: 9.7%;
+      }
+    }
+
+    &_5 {
+      width: 16.8%;
+      left: -4.7%;
+      top: 42.4%;
+
+      @include mediaDesktop {
+        width: 14.6%;
+        left: -2.3%;
+        top: 41%;
+      }
+
+      @include mediaDesktopBig {
+        width: 16.6%;
+        left: -9.8%;
+        top: 36.6%;
+      }
+    }
+
+    &_6 {
+      right: 8.5%;
+      width: 24.2%;
+      top: 35%;
+      max-width: 200px;
+
+      @include mediaDesktop {
+        width: 20.8%;
+        right: 16.1%;
+        top: 33.1%;
+        max-width: none;
+      }
+
+      @include mediaDesktopBig {
+        width: 23.8%;
+        right: 11.2%;
+        top: 29.6%;
+      }
+    }
+
+    &_7 {
+      @include mediaMobileMedium {
+        display: none;
+      }
+
+      @include mediaDesktop {
+        display: block;
+        width: 15.8%;
+        right: -6.5%;
+        top: 46.8%;
+      }
+
+      @include mediaDesktopBig {
+        width: 18%;
+        right: -14.7%;
+        top: 41.7%;
+      }
+    }
+
+    &_8 {
+      position: relative;
+      order: 5;
+      top: 89px;
+      left: 54px;
+      width: calc(50% - 46px);
+      margin-left: -68px;
+      margin-right: -69px;
+      align-self: flex-start;
+      clip-path: polygon(0 -40%, 100% -40%, 100% 130%, 0 130%);
+      overflow: visible;
+
+      @include mediaMobileMedium {
+        position: absolute;
+        width: 28.5%;
+        top: 69.8%;
+        left: 0.3%;
+        clip-path: none;
+      }
+
+      @include mediaDesktop {
+        width: 24.4%;
+        top: 67.7%;
+        left: -0.2%;
+      }
+
+      @include mediaDesktopBig {
+        width: 28%;
+        top: 60.4%;
+        left: -7.5%;
+      }
+
+      &>span {
+        transform: scale(1.5);
+
+        @include mediaMobileMedium {
+          transform: scale(-1, 1);
+        }
+
+        @include mediaDesktop {
+          transform: none;
+        }
+      }
+    }
+
+    &_9 {
+      order: 3;
+      left: -10px;
+      top: 28px;
+
+      @include mediaMobileMedium {
+        width: 28.5%;
+        left: 27.9%;
+        top: 55.6%;
+      }
+
+      @include mediaDesktop {
+        width: 24.5%;
+        left: 24.8%;
+        top: 55.3%;
+      }
+
+      @include mediaDesktopBig {
+        width: 28%;
+        left: 21.3%;
+        top: 49.3%;
+      }
+
+      &>span {
+        transform: scale(-1, 1);
+
+        @include mediaMobileMedium {
+          transform: none;
+        }
+      }
+    }
+
+    &_10 {
+      position: relative;
+      order: 6;
+      top: 84px;
+      left: 7px;
+      max-width: 280px;
+
+      @include mediaMobileMedium {
+        position: absolute;
+        width: 16.9%;
+        left: 64.2%;
+        top: 69.3%;
+        clip-path: none;
+      }
+
+      @include mediaDesktop {
+        width: 14.6%;
+        left: 56.7%;
+        top: 66.6%;
+      }
+
+      @include mediaDesktopBig {
+        width: 16.7%;
+        max-width: none;
+        left: 57.7%;
+        top: 59.4%;
+      }
+    }
+
+    &_11 {
+      width: 28.5%;
+      right: -16.4%;
+      top: 76.4%;
+
+      @include mediaDesktop {
+        width: 24.4%;
+        right: -1.5%;
+        top: 74.3%;
+      }
+
+      @include mediaDesktopBig {
+        width: 28%;
+        right: -9%;
+        top: 66.2%;
+      }
+    }
+  }
+
+  &__main-image-wrap {
+    --side-offset: 48px;
+
+    position: relative;
+    transform: translate3d(0,calc(-110px - 32vw),0);
+    height: calc((100vw - var(--side-offset)) / 1.81);
+    width: calc(100% - var(--side-offset));
+    margin: 0 auto;
+    overflow: hidden;
+    isolation: isolate;
+    span {
+      isolation: isolate;
+    }
+    img {
+      isolation: isolate;
+      transform: translate3d(0,0,0);
+    }
+    @include  mediaTablet {
+      --side-offset: 64px;
+      transform: translate3d(0,calc(-189px - 10vw),0);
+    }
+
+    @include mediaDesktop {
+      --side-offset: 394px;
+      transform: translate3d(0,calc(-345px - 10vw),0);
+      min-width: 800px;
+      min-height: 442px;
+    }
+
+    @include mediaDesktopDesign {
+      width: 1046px;
+      height: 580px;
+    }
+  }
+
+  &__spacer {
+    height: 62px;
+
+    @include mediaMobileMedium {
+      height: 12px;
+    }
+
+    @include mediaDesktop {
+      height: 99px;
+    }
+
+    @include mediaDesktopBig {
+      height: 52px;
+    }
+  }
+
+  &__spacer-top {
+    @include mediaMobileMedium {
+      height: 200px;
+    }
+
+    @include mediaDesktop {
+      height: 300px;
+    }
+
+    @include mediaDesktopBig {
+      height: 169px;
+    }
+  }
+}

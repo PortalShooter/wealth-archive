@@ -1,0 +1,225 @@
+@use "src/app/mixins/index" as *;
+
+.day {
+
+  &__img-wrapper {
+    position: relative;
+    width: 327px;
+    height: 380px;
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      width: 49.5vw;
+      height: 51.5vw;
+      margin-bottom: 0;
+    }
+
+    @include mediaDesktopMedium {
+      width: 500px;
+      height: 470px;
+      margin-bottom: -150px;
+
+      position: sticky;
+      top: 30vh;
+      opacity: 0;
+
+      transition: 0.3s;
+
+      &_view {
+        opacity: 1;
+      }
+
+      &.prev {
+        opacity: 0;
+      }
+    }
+
+    @include mediaDesktopDesign {
+      width: 620px;
+      height: 722px;
+      margin-bottom: -260px;
+    }
+  }
+
+  &__animate-wrap {
+    @include mediaTablet {
+      height: 50vh;
+    }
+
+    @include mediaDesktopMedium {
+      height: 80vh;
+      position: relative;
+      top: -16vh;
+    }
+  }
+
+
+  &__text-wrapper {
+    margin-bottom: 78px;
+    color: #1A1B1C;
+
+    @include mediaMobileBig {
+      flex-basis: 45%;
+    }
+
+    @include mediaTablet {
+      //flex-basis: 303px;
+      margin-right: 40px;
+      position: relative;
+      padding-left: 40px;
+      transition: 0.3s;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 303px;
+
+      //margin-bottom: calc(20vw - 76px);
+      margin-bottom: 0;
+
+      & .day {
+        &__header,
+        &__title,
+        &__subtitle {
+          opacity: 0.3;
+        }
+      }
+
+      &.view {
+        & .day {
+          &__header,
+          &__title,
+          &__subtitle {
+            opacity: 1;
+          }
+        }
+
+       &:before {
+         background: #00857C;
+       }
+      }
+
+      &:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top: 2px;
+
+        transition: 0.3s;
+        background: #DCF4F2;
+        border-radius: 100%;
+      }
+      &.prev {
+
+        .day {
+          &__header,
+          &__title,
+          &__subtitle {
+            opacity: 0.3;
+          }
+        }
+      }
+      &:not(:last-child) {
+        &.prev:after {
+          background: #00857C;
+        }
+        &:after {
+          content: '';
+          width: 2px;
+          height: calc(80px + 50vw);
+
+          position: absolute;
+          left: 9px;
+          top: 5px;
+
+          transition: 0.3s;
+          background: #DCF4F2;
+        }
+      }
+    }
+
+    @include mediaDesktopSmall {
+      flex-basis: 390px;
+    }
+
+    @include mediaDesktopMedium {
+      width: 515px;
+      padding-left: 60px;
+
+      &:nth-child(2) {
+        margin-top: 80px;
+      }
+
+      &:not(:last-child) {
+        padding-bottom: 164px;
+        &:after {
+          height: 100%;
+        }
+      }
+    }
+
+    @include mediaDesktopDesign {
+      &:nth-child(2) {
+        margin-top: calc(140px - 13vh);
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 24px;
+
+    color: var(--color-dark-gray);
+    font-family: 'Reckless';
+    font-size: 20px;
+
+    @include mediaTablet {
+      margin-bottom: 42px;
+      font-size: 22px;
+
+    }
+    @include mediaDesktopMedium {
+      font-size: 32px;
+      margin-bottom: 55px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    @include mediaDesktopMedium {
+      margin-bottom: 25px;
+      padding-right: 10px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-family: 'Neue Haas Unica Pro';
+    line-height: 130%;
+    &:not(:last-child) {
+      margin-bottom: 17px;
+    }
+
+    @include mediaDesktopMedium {
+      font-size: 22px;
+      width: 97%;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &_active {
+    .day__header {
+      &:before,
+      &:after {
+        background: #00857C;
+      }
+    }
+  }
+}

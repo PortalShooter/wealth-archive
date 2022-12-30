@@ -1,0 +1,139 @@
+@use "src/app/mixins/index" as *;
+
+.list-section {
+  @include mediaTablet {
+    padding-bottom: 128px;
+  }
+
+  @include mediaDesktop {
+    padding-bottom: 200px;
+  }
+
+  &__container {
+    @include mediaTablet {
+      display: flex;
+      margin-bottom: 32px;
+      justify-content: space-between;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 72px;
+      align-items: flex-end;
+    }
+  }
+
+  &__title {
+    @include heading_h3_responsive();
+    margin-bottom: 24px;
+
+    @include mediaTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__search {
+    margin-bottom: 40px;
+
+    @include mediaTablet {
+      margin-bottom: 0;
+      width: 275px;
+    }
+
+    @include mediaDesktop {
+      width: 300px;
+      margin-bottom: -8px;
+    }
+
+    & > div > div > input {
+      width: 100% !important;
+      @include mediaDesktop {
+        margin-left: 16px;
+      }
+    }
+
+    &>div>div:nth-child(2)>div {
+      @include mediaDesktop {
+        left: 33px;
+      }
+    }
+
+    &>div>div:nth-child(2)>div:nth-child(2) {
+      @include mediaTablet {
+        left: 234px !important;
+      }
+
+      @include mediaDesktop {
+        left: 260px !important;
+      }
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+
+    @include mediaTablet {
+      margin-top: 40px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 56px;
+    }
+  }
+
+  &__button {
+    @include button-stroke();
+    width: 220px;
+    height: 48px;
+  }
+
+  &__no-results {
+    padding-top: 23px;
+
+    @include mediaTablet {
+      padding-top: 31px;
+    }
+
+    @include mediaDesktop {
+      padding-top: 48px;
+    }
+  }
+}
+
+.no-results {
+  border-top: 1px solid var(--color-border-pink);
+
+  &__title {
+    @include text_p2_responsive();
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    margin-bottom: 12px;
+
+    @include mediaTablet {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    @include mediaDesktop {
+      font-size: 32px;
+    }
+  }
+
+  &__description {
+    @include text_p1_responsive();
+    color: var(--color-dark-gray);
+    margin-bottom: 24px;
+
+    @include mediaTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+  @include button-stroke();
+    width: 178px;
+    height: 48px;
+  }
+}

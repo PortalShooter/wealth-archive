@@ -1,0 +1,128 @@
+@use "@/app/mixins/index.scss" as *;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -11px;
+  margin-bottom: 3px;
+
+  @include mediaTablet {
+    width: 704px;
+    margin: 0 auto;
+    margin-bottom: 22px;
+    flex-direction: row;
+  }
+
+  @include mediaDesktop {
+    width: 939px;
+    margin-bottom: 164px;
+    justify-content: flex-start;
+  }
+
+  @include mediaDesktopBig {
+    width: 1157px;
+    margin-top: -7px;
+    margin-bottom: 163px;
+  }
+
+  @include mediaDesktopDesign {
+    width: 1300px;
+    margin-top: -7px;
+    margin-bottom: 163px;
+  }
+
+  &__svg {
+    width: 279px;
+    height: 279px;
+    margin-top: 90px;
+
+    @include mediaTablet {
+      margin: 56px 0 78px 0;
+    }
+
+    @include mediaDesktop {
+      width: 406px;
+      height: 406px;
+      margin: 139px 0 24px 107px;;
+    }
+  }
+
+  &__text-content {
+    margin-left: -8px;
+
+    @include mediaTablet {
+      margin-right: 3%;
+      margin-top: 25px;
+      margin-left: 0;
+    }
+
+    @include mediaDesktop {
+      margin-left: 10.1%;
+      margin-top: 157px;
+      width: 620px;
+    }
+  }
+
+  &__title {
+    font-family: 'Reckless', serif;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    color: var(--color-green-dark);
+    margin-top: 64px;
+    margin-bottom: 16px;
+
+    @include mediaTablet {
+      margin-top: 59px;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 110%;
+    }
+
+    @include mediaDesktop {
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 100%;
+    }
+  }
+
+  &__description {
+    margin-top: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    display: flex;
+    flex-direction: column;
+
+    @include mediaTablet {
+      margin-top: 21px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 25px;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 130%;
+    }
+  }
+
+  &__link {
+    width: 232px;
+    margin-top: 31px;
+    margin-bottom: 100px;
+    white-space: nowrap;
+
+    @include mediaTablet {
+      margin-top: 39px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 48px;
+    }
+  }
+}

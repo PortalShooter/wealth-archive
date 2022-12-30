@@ -1,0 +1,127 @@
+@use "src/app/mixins/index" as *;
+
+.investors {
+  padding-bottom: 80px;
+  overflow-x: hidden;
+  background: #F4F5F8;
+  padding-top: 0;
+
+  @include mediaMobileMedium {
+    padding-top: 24px;
+    padding-bottom: 98px;
+  }
+
+  @include mediaDesktop {
+    padding-top: 18px;
+    padding-bottom: 184px;
+  }
+
+  &__title {
+    margin-bottom: 36px;
+
+    @include mediaMobileMedium {
+      margin-bottom: 29px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 73px;
+    }
+  }
+
+  &__heading {
+    @include heading_h4_responsive;
+  }
+
+  &__list {
+    position: relative;
+    display: grid;
+    row-gap: 27px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 -7px;
+    place-items: center;
+
+    @include mediaTablet {
+      grid-template-columns: repeat(6, 1fr);
+      margin: 0;
+    }
+
+    @include mediaDesktop {
+      column-gap: calc(2vw - 9px);
+    }
+
+    @include mediaDesktopDesign {
+      column-gap: 20px;
+    }
+  }
+
+  &__elem {
+    --partners-duration-opacity: .2s;
+    --partners-duration-transform: .2s;
+    --partners-delay-base: .12s;
+    --partners-order: 0;
+    --partners-delay: calc(var(--partners-delay-base) * var(--partners-order));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: translateX(0);
+    width: 114px;
+    transition: opacity var(--partners-duration-opacity) var(--partners-delay) linear, transform var(--partners-duration-transform) var(--partners-delay) linear;
+
+    &:nth-child(6n+1) {
+      --partners-order: 0;
+    }
+
+    &:nth-child(6n+2) {
+      --partners-order: 1;
+    }
+
+    &:nth-child(6n+3) {
+      --partners-order: 2;
+    }
+
+    &:nth-child(6n+4) {
+      --partners-order: 1;
+
+      @include mediaTablet {
+        --partners-order: 3;
+      }
+    }
+
+    &:nth-child(6n+5) {
+      --partners-order: 2;
+
+      @include mediaTablet {
+        --partners-order: 4;
+      }
+    }
+
+    &:nth-child(6n+6) {
+      --partners-order: 3;
+
+      @include mediaTablet {
+        --partners-order: 5;
+      }
+    }
+
+    @include mediaDesktop {
+      width: calc(14vw - 8px);
+    }
+
+    @include mediaDesktopDesign {
+      max-width: 193px;
+    }
+
+    & svg {
+      width: 100%;
+    }
+  }
+
+  &__list_hidden &__elem {
+    --partners-x: 20px;
+    opacity: 0;
+    transition-delay: 0s;
+    transform: translateX(var(--partners-x));
+  }
+}

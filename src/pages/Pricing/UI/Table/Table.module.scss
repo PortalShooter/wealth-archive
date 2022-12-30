@@ -1,0 +1,14 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  margin: 0 auto 202px;
+  @include mediaDesktopDesign {
+    width: 1360px;
+    margin: 0 0 202px;
+  }
+}

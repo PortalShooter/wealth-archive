@@ -1,0 +1,475 @@
+@use "src/app/mixins/index" as *;
+.fixed-stroke {
+    stroke-width: 4% !important;
+}
+
+.flyingillustration {
+  position: relative;
+  z-index: 2;
+  //overflow-x: hidden;
+  //overflow-y: hidden;
+  padding-bottom: 75px !important;
+  background: var(--color-white);
+  margin-top: 50px;
+  @include mediaTablet {
+    padding-bottom: 104px !important;
+  }
+  &__content {
+    text-align: center;
+    margin-bottom: 50px;
+    @include mediaTablet {
+      margin-bottom: 70px;
+    }
+    @include mediaDesktopDesign {
+      margin-bottom: 120px;
+    }
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: 'Reckless';
+    @include mediaTablet {
+      font-size: 54px;
+    }
+    @include mediaDesktopMedium {
+      font-size: 88px;
+      line-height: 1;
+    }
+  }
+  &__text {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.29;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    @include  mediaTablet{
+      font-size: 18px;
+      max-width: 518px;
+      margin-top: 22px;
+    }
+    @include mediaDesktop {
+      font-size: 22px;
+      margin-top: 40px;
+      max-width: 620px;
+      line-height: 1.2;
+    }
+
+  }
+  &__marker {
+    position: absolute;
+    left: 0;
+    top: 60%;
+    height: 1px;
+    width: 100%;
+  }
+
+  &__frame {
+    width: 100%;
+    height: auto;
+    min-width: 467px;
+    max-width: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+  &__wrapper {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: unset;
+    pointer-events: none;
+    @include mediaDesktop {
+      overflow-x: unset;
+      margin-left: -7.5%;
+      width: 115%;
+    }
+  }
+  &__motion-icons-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    min-width: 467px;
+    pointer-events: none;
+  }
+  &__motion-icon {
+    position: absolute;
+    $parentblock:&;
+  &__motion-icon-inner {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left:0;
+  }
+
+    &.hide {
+      transform: translate3d(0,0,0) scale(1) !important;
+      color: var(--color-black) !important;
+      svg {
+        animation-play-state: running !important;
+      }
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      transition: 0.5s ease-out;
+
+
+    }
+    &--diamond {
+      width: 9%;
+      height: 14%;
+      top: 16.3%;
+      left: 15.7%;
+      .flyingillustration__motion-icon-inner {
+        transform: rotate(-8deg);
+      }
+
+    }
+    &--home {
+      width: 6.94%;
+      height: 12.19%;
+      top: 34%;
+      left: 25%;
+      .flyingillustration__motion-icon-inner {
+        transform: rotate(15deg);
+      }
+
+
+    }
+    &--document {
+      width: 9.375%;
+      height: 16.5%;
+      top: 5.2%;
+      left: 30%;
+      .flyingillustration__motion-icon-inner {
+        transform: rotate(-15deg);
+      }
+
+
+    }
+    &--auto {
+      width: 7.125%;
+      height: 12.81%;
+      top: 24%;
+      left: 51.1%;
+      .flyingillustration__motion-icon-inner {
+        transform: rotate(7deg);
+      }
+
+
+    }
+    &--circle {
+      width: 8.125%;
+      height: 14%;
+      top: 1.4%;
+      left: 50.1%;
+    }
+    &--column {
+      width: 9.125%;
+      height: 12.81%;
+      top: 26%;
+      left: 37.1%;
+    }
+    &--sinus {
+      width: 11.5%;
+      height: 19.81%;
+      top: 27%;
+      left: 63.1%;
+    }
+    &--box {
+      width: 10.125%;
+      height: 17%;
+      top: 10%;
+      left: 74.1%;
+    }
+    &--coin {
+      width: 8%;
+      height: 14%;
+      top: 10%;
+      left: 63%;
+
+    }
+
+    transition: 0s cubic-bezier(0.33, 0.00, 0.67, 1.00);
+    &.move {
+      .flyanimation {
+        &__icon {
+          animation-play-state: paused;
+        }
+      }
+      //&#{$parentblock}--diamond {
+      //  svg {
+      //    transform: rotate(7deg);
+      //  }
+      //}
+      //&#{$parentblock}--home {
+      //  svg {
+      //    transform: rotate(-15deg);
+      //  }
+      //}
+      //&#{$parentblock}--document {
+      //  svg {
+      //    transform: rotate(15deg);
+      //  }
+      //}
+      //&#{$parentblock}--auto {
+      //  svg {
+      //    transform: rotate(7deg);
+      //  }
+      //}
+    }
+  }
+}
+
+/********* animations ************/
+ .flyanimation {
+   &__cup {
+     transform-box: fill-box;
+     transform-origin: 50% 50%;
+     animation-name: cup;
+     animation-duration: 1067ms;
+     animation-fill-mode: forwards;
+     animation-iteration-count: 1;
+     animation-timing-function: linear;
+   }
+   &__icon {
+     transform-box: fill-box;
+     transform-origin: 50% 50%;
+     animation-name: check-motion;
+     animation-duration: 10s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in-out;
+
+     &--reverse {
+       animation-name: check-motion-reverse;
+     }
+     &--reverse-long {
+      animation-name: check-motion-reverse-long;
+     }
+     &--long {
+      animation-name: check-motion-long;
+     }
+
+   }
+   &__head {
+     transform-box: fill-box;
+     transform-origin: 50% 90%;
+     animation-name: head;
+     animation-duration: 5s;
+     animation-fill-mode: forwards;
+     animation-iteration-count: infinite;
+     animation-timing-function: cubic-bezier(0.44, 0.00, 0.56, 1.00);
+   }
+   &__hand {
+     animation-delay: 0.333s;
+     transform-box: fill-box;
+     transform-origin: -5% 90%;
+     animation-name: hand;
+     animation-duration: 5s;
+     animation-fill-mode: forwards;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in-out;
+   }
+   &__shirt {
+     animation-delay: 0.333s;
+     transform-box: fill-box;
+     animation-name: shirt;
+     animation-duration: 5s;
+     animation-fill-mode: forwards;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in-out;
+   }
+   &__leaflet {
+     animation-delay: 0.5s;
+     transform-box: fill-box;
+     animation-name: leaflet;
+     animation-duration: 10s;
+     animation-fill-mode: forwards;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+   }
+ }
+
+/**** keyframes ****/
+
+@keyframes cup {
+  0% {
+    transform: translate(0%,0%) rotate(0);
+  }
+  42.87% {
+    transform: translate(30%,135%) rotate(57deg);
+  }
+  57.16% {
+    transform: translate(30%,118.125%) rotate(50deg);
+  }
+  71.45% {
+    transform: translate(30%,135%) rotate(57deg);
+  }
+  85.74% {
+    transform: translate(30%,132.9%) rotate(55deg);
+  }
+  100% {
+    transform: translate(30%,135%) rotate(57deg);
+  }
+}
+
+@keyframes check-motion {
+  0% {
+    transform: translate(0,0)
+  }
+  25% {
+    transform: translate(-10%,-10%)
+  }
+  50% {
+    transform: translate(0%,0%)
+  }
+  75% {
+    transform: translate(15%,-15%)
+  }
+  100% {
+    transform: translate(0%,0%)
+  }
+
+}
+@keyframes check-motion-reverse {
+  0% {
+    transform: translate(0,0)
+  }
+  25% {
+    transform: translate(-10%,10%)
+  }
+  50% {
+    transform: translate(0%,0%)
+  }
+  75% {
+    transform: translate(15%,15%)
+  }
+  100% {
+    transform: translate(0%,0%)
+  }
+
+}
+@keyframes check-motion-long {
+  0% {
+    transform: translate(0,0)
+  }
+  25% {
+    transform: translate(-10%,-5%)
+  }
+  50% {
+    transform: translate(0%,0%)
+  }
+  75% {
+    transform: translate(30%,-15%)
+  }
+  100% {
+    transform: translate(0%,0%)
+  }
+
+}
+@keyframes check-motion-reverse-long {
+  0% {
+    transform: translate(0,0)
+  }
+  25% {
+    transform: translate(-10%,5%)
+  }
+  50% {
+    transform: translate(0%,0%)
+  }
+  75% {
+    transform: translate(30%,5%)
+  }
+  100% {
+    transform: translate(0%,0%)
+  }
+
+}
+@keyframes head {
+  0% {
+    transform: translate(0,0) rotate(0deg);
+  }
+  23.34% {
+    transform: translate(0,0) rotate(-10deg);
+  }
+  46.68% {
+    transform: translate(0,0) rotate(-10deg);
+  }
+  70.02% {
+    transform: translate(0,0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0,0) rotate(0);
+  }
+}
+
+
+@keyframes hand {
+  0% {
+    transform: translate(0,0) rotate(0deg);
+  }
+  23.34% {
+    transform: translate(0,0) rotate(-9deg);
+  }
+  46.68% {
+    transform: translate(0,0) rotate(-9deg);
+  }
+  70.02% {
+    transform: translate(0,0) rotate(0deg);
+  }
+  80% {
+    transform: translate(0,0) rotate(-1deg);
+  }
+  90% {
+    transform: translate(0,0) rotate(-0.2deg);
+  }
+  95% {
+    transform: translate(0,0) rotate(-0.5deg);
+  }
+  100% {
+    transform: translate(0,0) rotate(0);
+  }
+}
+@keyframes shirt {
+  0% {
+    d: path("M661.25 632L603.75 619C617.75 574.75 639.848 524.771 657 506.5C703 457.5 804.003 489.211 851 499.5L857 567L801.5 552C816.167 581.167 846.6 649.8 851 691C808 664 716.5 668.5 691.5 670C689.9 635.6 676.75 602.917 670.25 589.75L661.25 632Z");
+  }
+  23.34% {
+    d: path("M661.25 632L603.75 619C617.75 574.75 639.848 524.771 657 506.5C703 457.5 804.003 489.211 851 489.5L850 557L801.5 552C816.167 581.167 846.6 649.8 851 691C808 664 716.5 668.5 691.5 670C689.9 635.6 676.75 602.917 670.25 589.75L661.25 632Z");
+  }
+  46.68% {
+    d: path("M661.25 632L603.75 619C617.75 574.75 639.848 524.771 657 506.5C703 457.5 804.003 489.211 851 489.5L850 557L801.5 552C816.167 581.167 846.6 649.8 851 691C808 664 716.5 668.5 691.5 670C689.9 635.6 676.75 602.917 670.25 589.75L661.25 632Z");
+  }
+  70.02% {
+    d: path("M661.25 632L603.75 619C617.75 574.75 639.848 524.771 657 506.5C703 457.5 804.003 489.211 851 499.5L857 567L801.5 552C816.167 581.167 846.6 649.8 851 691C808 664 716.5 668.5 691.5 670C689.9 635.6 676.75 602.917 670.25 589.75L661.25 632Z");
+  }
+  100% {
+    d: path("M661.25 632L603.75 619C617.75 574.75 639.848 524.771 657 506.5C703 457.5 804.003 489.211 851 499.5L857 567L801.5 552C816.167 581.167 846.6 649.8 851 691C808 664 716.5 668.5 691.5 670C689.9 635.6 676.75 602.917 670.25 589.75L661.25 632Z");
+  }
+}
+
+@keyframes leaflet {
+  0% {
+    d: path("M423 679.25C402.6 677.05 386.667 685.167 379.5 690.25H419.5C426.833 697.917 443.2 712.95 450 711.75C458.5 710.25 448.5 682 423 679.25Z");
+  }
+  20% {
+    d: path("M423 679.25C402.6 677.05 386.667 685.167 379.5 690.25H419.5C426.833 697.917 443.2 705.95 455 704.75C458.5 703.25 453.5 682 423 679.25Z");
+  }
+  50% {
+    d: path("M423 679.25C402.6 677.05 386.667 685.167 379.5 690.25H419.5C426.833 697.917 443.2 705.95 455 704.75C458.5 703.25 453.5 682 423 679.25Z");
+  }
+  60% {
+    d: path("M423 679.25C402.6 677.05 386.667 685.167 379.5 690.25H419.5C426.833 697.917 443.2 712.95 450 711.75C458.5 710.25 448.5 682 423 679.25Z");
+  }
+  100% {
+    d: path("M423 679.25C402.6 677.05 386.667 685.167 379.5 690.25H419.5C426.833 697.917 443.2 712.95 450 711.75C458.5 710.25 448.5 682 423 679.25Z");
+  }
+}
+

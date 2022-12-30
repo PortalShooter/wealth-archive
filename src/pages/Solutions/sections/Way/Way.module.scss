@@ -1,0 +1,202 @@
+@import "src/app/mixins/queries";
+
+.way {
+  position: relative;
+  padding: 0 24px;
+
+  @include mediaTablet {
+    display: flex;
+    padding: 0 32px 130px 32px;
+  }
+
+  @include mediaDesktop {
+    padding: 26px 90px 104px;
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+
+  @include mediaDesktopMedium {
+    padding: 26px 170px 104px;
+  }
+
+  @include mediaDesktopDesign {
+    padding: 0 0 160px;
+  }
+
+  &__column {
+    max-width: 327px;
+    margin: 0 auto 24px auto;
+    position: relative;
+
+    @media only screen and (min-width: 500px) {
+      max-width: 400px;
+    }
+
+    @include mediaMobileBig {
+      max-width: 500px;
+    }
+
+    @include mediaTablet {
+      width: 50%;
+      max-width: 100%;
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-right: 12px;
+      }
+
+      &:last-child {
+        margin-left: 12px;
+      }
+    }
+
+    @include mediaDesktopDesign {
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__block {
+    background: #F5F3ED;
+    border-radius: 20px;
+    padding: 24px 24px 32px 24px;
+    box-sizing: border-box;
+
+    @include mediaDesktop {
+      padding: 48px 56px 48px 48px;
+    }
+
+    &_old {
+      padding: 24px 24px 26px 24px;
+
+      @include mediaTablet {
+        padding: 24px 24px 24px 24px;
+      }
+
+      @include mediaDesktop {
+        padding: 48px 56px 48px 48px;
+      }
+    }
+
+    &_new {
+      @include mediaTablet {
+        padding: 24px 24px 24px 24px;
+      }
+
+      @media screen and (width: 1024px) {
+        padding: 24px 24px 24px 24px;
+      }
+
+      @include mediaDesktop {
+        right: 0;
+        position: sticky;
+        top: 130px;
+        padding: 48px 56px 48px 48px;
+      }
+    }
+  }
+
+  &_title {
+    font: 400 32px/110% 'Reckless';
+    color: #000000;
+    margin-bottom: 8px;
+
+    @include mediaDesktop {
+      font: 400 50px/100% 'Reckless';
+    }
+
+    @include mediaDesktopDesign {
+      font: 400 64px/100% 'Reckless';
+    }
+  }
+
+  &_subtitle {
+    font: 400 20px/110% 'Reckless';
+    color: #000000;
+    display: block;
+    margin-bottom: 32px;
+
+    @include mediaDesktop {
+      font: 400 26px/110% 'Reckless';
+      margin-bottom: 56px;
+    }
+
+    @include mediaDesktopDesign {
+      font: 400 32px/110% 'Reckless';
+    }
+  }
+
+  &__list {
+    //overflow-y: scroll;
+    //overflow-y: hidden;
+    //max-height: 385px;
+
+    @include mediaTablet {
+      max-width: 100%;
+    }
+
+    @include mediaDesktop {
+      max-height: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &_item {
+      display: flex;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include mediaTablet {
+        margin-bottom: 32px;
+      }
+
+      @media screen and (width: 1024px) {
+        margin-bottom: 35px;
+      }
+
+      @include mediaDesktopDesign {
+        align-items: center;
+        margin-bottom: 32.4px;
+      }
+    }
+
+    &_icon-block {
+      margin-right: 16px;
+      max-height: 40px;
+
+      @include mediaDesktop {
+        margin-right: 24px;
+      }
+    }
+
+    &_text {
+      font: 400 14px/130% 'Neue Haas Unica Pro';
+      color: #1A1B1C;
+      max-width: 223px;
+
+      @include mediaTablet {
+        max-width: 228px;
+      }
+
+      @media screen and (min-width: 900px){
+        max-width: 400px;
+        font: 400 16px/130% 'Neue Haas Unica Pro';
+      }
+
+      @include mediaDesktopDesign {
+        font: 400 22px/130% 'Neue Haas Unica Pro';
+        max-width: 460px;
+      }
+    }
+  }
+}

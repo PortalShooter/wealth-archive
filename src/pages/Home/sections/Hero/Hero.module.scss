@@ -1,0 +1,101 @@
+@use "@/app/mixins/index.scss" as *;
+
+.hero {
+  $block:&;
+  background: var(--color-dark-green);
+  height: calc(100vh + 300px);
+  position: relative;
+  z-index:1 ;
+  &__container {
+    padding-top: 80px;
+    opacity: 0;
+    &.mounted {
+      opacity: 1;
+      #{$block}__link {
+        animation-delay: 700ms !important;
+      }
+    }
+    @include mediaDesktop {
+      padding-top: 7vh;
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__link {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  &__title {
+    color: var(--color-white);
+    margin-bottom: 20px;
+    span {
+      color: var(--color-hero-yellow);
+    }
+    @include mediaTablet {
+      font-size: 61px;
+    }
+    @include mediaDesktopDesign {
+      font-size: 88px;
+    }
+  }
+  &__content {
+    margin-bottom: 50px;
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--color-white);
+    animation-delay: 700ms !important;
+  }
+  &__carousel {
+    position: sticky;
+    top: 50vh;
+    //bottom: 50vh;
+    height: 50vh;
+    //transform: translateY(-50%);
+    opacity: 0;
+    isolation: isolate;
+    contain: layout;
+    &.mounted {
+      opacity: 1;
+    }
+    @include mediaDesktop {
+      top: 30vh;
+      height: 70vh;
+      @media (min-height: 800px) {
+        top: 50vh;
+        height: 50vh;
+      }
+    }
+
+  }
+  &__carousel-inner {
+    height:calc(100vh + 300px);
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: calc(-50vh - 150px);
+    padding-top: calc(50vh + 100px);
+    pointer-events: none;
+    isolation: isolate;
+    > * {
+      pointer-events: auto;
+    }
+    @include mediaDesktop {
+      height:calc(100vh + 500px);
+      margin-top: calc(-50vh - 250px);
+      padding-top: calc(50vh + 200px);
+      @media (min-height: 800px) {
+        height:calc(100vh + 300px);
+        margin-top: calc(-50vh - 150px);
+        padding-top: calc(50vh + 100px);
+      }
+    }
+
+  }
+}

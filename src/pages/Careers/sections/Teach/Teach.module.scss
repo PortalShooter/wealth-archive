@@ -1,0 +1,68 @@
+@use "src/app/mixins/index" as *;
+
+.teach {
+  background: #F4F5F8;
+  margin-top: calc(-60px - 10vw);
+
+  @include mediaMobileMedium {
+    margin-top: calc(-70px - 10vw);
+  }
+  @include mediaDesktop {
+    margin-top: calc(-760px + 20vw);
+  }
+  //@include mediaDesktopMedium {
+  //  margin-top: calc(-760px + 30vw);
+  //}
+  @include mediaDesktopBig {
+    margin-top: calc(-316px - 10vw);
+  }
+
+  &__text {
+    @include mediaDesktop {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__title {
+    letter-spacing: -1px;
+    max-width: 325px;
+
+    @include mediaTablet {
+      max-width: 522px;
+      margin-bottom: 19px;
+    }
+    @include mediaDesktop {
+      max-width: 1012px;
+      margin-bottom: 30px;
+      letter-spacing: -7px;
+    }
+  }
+  &__subtitle {
+    max-width: 400px;
+
+    @include mediaTablet {
+      max-width: 522px;
+    }
+    @include mediaDesktop {
+      max-width: 815px;
+      letter-spacing: -0.55px;
+    }
+  }
+
+  &__quality {
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 39px;
+
+    @include mediaTablet {
+      padding-top: 7px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 63px 24px;
+    }
+    @include mediaDesktop {
+      padding-top: 41px;
+      grid-gap: 125px 20px;
+    }
+  }
+}

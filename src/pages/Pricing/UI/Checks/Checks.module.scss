@@ -1,0 +1,38 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.icons {
+  display: flex;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  margin-right: 10px;
+  height:40px;
+
+  &__svg {
+    &:first-child {
+      @include mediaDesktopMedium {
+        margin-left: 120px;
+      }
+      @include mediaDesktopDesign {
+        margin-left: 170px;
+      }
+    }
+    &:nth-child(2) {
+      @include mediaDesktopMedium {
+        margin-left: 200px;
+      }
+      @include mediaDesktopDesign {
+        margin-left: 232px;
+      }
+    }
+    &:nth-child(3) {
+      @include mediaDesktopMedium {
+        margin-left: 200px;
+      }
+      @include mediaDesktopDesign {
+        margin-left: 246px;
+      }
+    }
+  }
+}

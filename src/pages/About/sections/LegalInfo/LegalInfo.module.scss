@@ -1,0 +1,33 @@
+@use "src/app/mixins/index" as *;
+
+.legal-info {
+  padding-bottom: 38px;
+
+  @include mediaDesktop {
+    padding-bottom: 80px;
+  }
+
+  &__link {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    display: block;
+    @include text_p1;
+    font-size: 14px;
+    line-height: 1.3;
+
+    @include mediaTablet {
+      font-size: 14px;
+    }
+
+    @include mediaDesktop {
+      font-size: 18px;
+      line-height: 1.5;
+      padding-right: 10px;
+    }
+
+    color: #696C71;
+  }
+}

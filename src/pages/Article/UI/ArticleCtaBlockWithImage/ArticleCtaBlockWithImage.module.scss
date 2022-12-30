@@ -1,0 +1,161 @@
+@use "@/app/mixins/index.scss" as *;
+
+.quote {
+  background-color: var(--color-beige);
+  border-radius: 12px;
+  padding: 56px 32px;
+
+  @include mediaMobileMedium {
+    display: flex;
+    padding: 48px 37px 48px 32px;
+  }
+
+  @include mediaDesktop {
+    padding: 80px 50px;
+  }
+
+  margin-top: -16px;
+
+  @include mediaDesktop{
+    margin-top: -32px;
+  }
+
+  &_with-paragraph {
+    padding: 56px 24px 56px 32px;
+
+    &>div:nth-child(2)>div:nth-child(1) {
+      font-size: 32px;
+      width: 100%;
+      margin-bottom: 16px;
+
+      @include mediaMobileMedium {
+        width: 260px;
+      }
+
+      @include mediaTablet {
+        width: 315px;
+        font-size: 36px;
+        margin-bottom: 0;
+      }
+
+      @include mediaDesktop {
+        margin-top: 55px;
+        font-size: 64px;
+        width: 560px;
+      }
+    }
+
+    @include mediaMobileMedium {
+      padding: 48px 37px 48px 32px;
+    }
+
+    @include mediaDesktop {
+      padding: 65px 50px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 266px;
+    height: 180px;
+    margin: 0 auto 40px;
+
+    @include mediaMobileMedium {
+      order: 2;
+      margin: 0 0 0 auto;
+      align-self: center;
+    }
+
+    @include mediaDesktop {
+      width: 513px;
+      height: 344px;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    div {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    svg {
+      max-height: 180px;
+      max-width: 100%;
+      text-align: center;
+
+      @include mediaDesktop {
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'Reckless';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 110%;
+    width: 233px;
+    margin-bottom: 32px;
+
+    @include mediaMobileMedium {
+      width: 230px;
+    }
+
+    @include mediaTablet {
+      width: 311px;
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 24px;
+      font-size: 64px;
+      width: 512px;
+      line-height: 100%;
+      margin-bottom: 56px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+
+    @include mediaMobileMedium {
+      margin: 20px 0 40px;
+      width: 200px;
+    }
+
+    @include mediaTablet {
+      margin: 20px 0 40px;
+      width: 332px;
+    }
+
+    @include mediaDesktop {
+      margin: 24px 0 40px;
+      width: 572px;
+      font-size: 22px;
+    }
+  }
+
+  &__button {
+    &>a {
+      display: inline-block;
+      height: 48px;
+    }
+  }
+
+  &__text-block {
+    @include mediaMobileMedium {
+      order: 1;
+    }
+  }
+}

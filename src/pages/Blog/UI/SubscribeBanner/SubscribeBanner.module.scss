@@ -1,0 +1,52 @@
+@use "src/app/mixins/index" as *;
+
+.banner {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 73px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Reckless';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  color: var(--color-text);
+  background-color: var(--color-beige);
+
+  @include mediaTablet {
+    font-size: 22px;
+    height: 72px;
+    line-height: 110%;
+    padding-left: 12px;
+  }
+
+  @include mediaDesktop {
+    font-size: 32px;
+    height: 91px;
+    margin-left: 0px;
+  }
+}
+
+.animation {
+  animation: 4s show linear;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

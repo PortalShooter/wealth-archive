@@ -1,0 +1,25 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #333333;
+  --color-green-dark: #00534f;
+  --color-yellow: #effeb2;
+  --color-yellow-hover: #f6ed8c;
+  --color-yellow-active: #f6e16e;
+  --color-dark-grey: #1a1a1a;
+  --color-green: #4ebeb6;
+  --color-light-green-hover: #75dbd3;
+  --color-green-hover: #27a299;
+  --color-carousel-bg: #ebe8e1;
+  --color-question-carousel-bg: #f5f3ed;
+  --color-card-bg: #f4f5f8;
+  --color-number: #f9fcff;
+  --color-grey-text: #9ea2aa;
+  --color-question-carousel-bg-hover: #edfdb1;
+  --color-green-button: #00857c;
+  --color-green-button-active: #00746d;
+
+  --ease: cubic-bezier(1, 0, 0, 1);
+  --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}

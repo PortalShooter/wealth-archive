@@ -1,0 +1,27 @@
+@import "../../../../app/mixins/queries";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  &__title {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    margin-bottom: 9px;
+  }
+  &__description {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-text);
+    margin-bottom: 15px;
+  }
+  &:last-child {
+    padding-bottom: 9px;
+  }
+}

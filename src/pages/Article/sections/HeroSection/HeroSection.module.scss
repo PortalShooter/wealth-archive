@@ -1,0 +1,135 @@
+@import "src/app/mixins/queries";
+
+.hero-section {
+  padding-bottom: 50px;
+
+  @include mediaTablet {
+    padding-bottom: 52px;
+  }
+
+  @include mediaDesktopDesign {
+    font-size: 18px;
+    padding-bottom: 75px;
+  }
+
+  &__wrapper {
+    @include mediaDesktopDesign {
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    padding-right: 6px;
+    margin-bottom: 16px;
+
+    @include mediaTablet {
+      width: 607px;
+    }
+
+    @include mediaDesktop {
+      width: 850px;
+    }
+
+    @include mediaDesktopDesign {
+      width: 891px;
+    }
+  }
+
+  &__category {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-text);
+    margin-right: 24px;
+    margin-bottom: 4px;
+
+    @include mediaTablet {
+      margin-right: 32px;
+      margin-bottom: 0;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 18px;
+      margin-right: 40px;
+    }
+  }
+
+  &__time {
+    margin-bottom: 40px;
+
+    @include mediaTablet {
+      margin-bottom: 40px;
+    }
+
+    @include mediaDesktopDesign {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    min-height: 220px;
+    min-width: 331px;
+    margin-top: -24px;
+
+    @include mediaMobileMedium {
+      min-height: 390px;
+      margin-top: 0;
+    }
+
+    @include mediaTablet {
+      min-height: 394px;
+    }
+
+    @media (min-width: 800px) {
+      min-height: 500px;
+    }
+
+    @include mediaDesktop {
+      min-height: 500px;
+    }
+
+    @media (min-width: 1200px) {
+      min-height: 650px;
+    }
+
+    @include mediaDesktopDesign {
+      min-height: 704px;
+      width: 1260px;
+    }
+  }
+}
+
+.time {
+
+  display: flex;
+  font-family: 'Neue Haas Unica Pro';
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--color-dark-gray);
+
+  @include mediaTablet {
+    flex-direction: row;
+  }
+
+  @include mediaDesktopDesign {
+    font-size: 18px;
+  }
+
+  &__point {
+    margin: 0 8px 0 6px;
+
+    @include mediaDesktopDesign {
+      margin: 0 8px 0 7px;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+}

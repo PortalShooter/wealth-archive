@@ -1,0 +1,253 @@
+@use "@/app/mixins/index.scss" as *;
+
+.promo {
+  padding: 49px 0 64px;
+  background: #000000;
+
+  @include mediaTablet {
+    padding: 69px 0 88px;
+  }
+
+  @include mediaDesktopDesign {
+    padding: 96px 0 143px;
+  }
+
+  &__heading p span {
+    display: block;
+    color: #FFFFFF;
+
+    @include mediaTablet {
+      font-size: 80px;
+      line-height: 100%;
+      letter-spacing: -1px;
+    }
+
+    @include mediaDesktop {
+      font-size: 112px;
+    }
+  }
+
+  & &__title {
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      margin-bottom: 26px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title > &__heading {
+    display: block;
+    color: #FFFFFF;
+    padding-right: 30px;
+
+    @include heading_h1_responsive;
+
+    @include mediaMobile {
+      font-size: 36px;
+      line-height: 110%;
+    }
+
+    @include mediaTablet {
+      line-height: 100%;
+      letter-spacing: -1px;
+      padding-right: 50px;
+    }
+  }
+
+  &__subtitle {
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    color: rgb(255, 255, 255, 0.88);
+    margin-bottom: 62px;
+    padding-right: 16px;
+
+    @include mediaTablet {
+      padding-right: 140px;
+      margin-bottom: 55px;
+    }
+
+    @include mediaDesktop {
+      max-width: 690px;
+      padding-right: 0;
+      font-size: 22px;
+      margin-bottom: 89px;
+    }
+  }
+
+  &__blocks {
+    margin-bottom: 104px;
+
+    @include mediaTablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 -12px 104px -12px;
+    }
+
+    @include mediaDesktop {
+      margin: 0 -10px 181px -10px;
+    }
+  }
+
+  &__block {
+    &-external {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 16px auto;
+
+      @include mediaTablet {
+        width: ((100% / 12) * 6);
+        max-width: 390px;
+        padding: 0 12px;
+        margin: 0 0 25px 0;
+      }
+
+      @include mediaDesktop {
+        max-width: none;
+        padding: 0 10px;
+        margin: 0 0 21px 0;
+      }
+    }
+
+    &-inner {
+      padding: 20px 20px 17px;
+      background: #F5F3ED;
+      border-radius: 20px;
+
+      @include mediaTablet {
+        padding: 23px 24px 21px;
+        height: 100%;
+      }
+
+      @include mediaDesktop {
+        padding: 39px 42px 41px;
+      }
+    }
+
+    &-img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 38px;
+
+      @include mediaTablet {
+        margin-bottom: 48px;
+      }
+
+      @include mediaDesktop {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 60px;
+      }
+    }
+
+    &-title {
+      font: 400 28px/110% 'Reckless';
+      color: #1A1B1C;
+      margin-bottom: 15px;
+      padding-right: 80px;
+
+      @include mediaTablet {
+        font-size: 30px;
+        margin-bottom: 13px;
+      }
+
+      @include mediaDesktop {
+        font-size: 48px;
+        line-height: 100%;
+        padding-right: 0;
+        max-width: 350px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &-subtitle {
+      font: 400 18px/130% 'Neue Haas Unica Pro';
+      color: #1A1B1C;
+
+      @include mediaDesktop {
+        font-size: 22px;
+        max-width: 486px;
+      }
+    }
+  }
+
+  &__info-title {
+    font: 400 36px/110% 'Reckless';
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 1069px;
+    margin: 0 auto 20px auto;
+
+    @include mediaTablet {
+      font-size: 54px;
+      margin-bottom: 24px;
+    }
+
+    @include mediaDesktop {
+      font-size: 88px;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: -1px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__info-text {
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 37px;
+
+    @include mediaTablet {
+      padding: 0 60px;
+      margin-bottom: 48px;
+    }
+
+    @include mediaDesktop {
+      font-size: 22px;
+      line-height: 130%;
+      text-align: center;
+      max-width: 763px;
+      padding: 0;
+      margin: 0 auto 80px auto;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 895px;
+    margin: 0 auto;
+    gap: 16px;
+
+    @include mediaTablet {
+      gap: 24px;
+    }
+
+    @include mediaDesktop {
+      gap: 40px;
+    }
+
+    img {
+      display: block;
+      width: 120px;
+
+      @include mediaTablet {
+        width: 150px;
+      }
+
+      @include mediaDesktop {
+        width: 193px;
+        height: 193px;
+      }
+    }
+  }
+
+  &__images-external {
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,88 @@
+@use "@/app/mixins/index.scss" as *;
+
+.assess {
+  background-color: #f6f4ed;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+  padding-bottom: 80px;
+  flex-direction: column-reverse;
+
+  @include mediaDesktop {
+    padding-bottom: 170px;
+    flex-direction: row;
+  }
+
+  &__image {
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: {
+      size: contain;
+      repeat: no-repeat;
+      position: center;
+    }
+
+    @include mediaDesktop {
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__image-desktop {
+    display: none;
+
+    @include mediaDesktop {
+      display: flex;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include mediaDesktop {
+      width: 50%;
+      padding: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__heading {
+    color: #015350;
+    font: 400 60px/64px "Neue Haas Unica Pro";
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    color: #231f20;
+    font: 400 30px/38px "Neue Haas Unica Pro";
+    margin-bottom: 60px;
+  }
+
+  &__link {
+    width: 310px;
+    height: 60px;
+    font: 500 24px/32px "Neue Haas Unica Pro";
+    color: #231f20;
+    background-color: #eef1b3;
+    border-radius: 16px;
+    border: none;
+    margin: auto;
+
+    @include mediaDesktop {
+      margin: inherit;
+    }
+  }
+}

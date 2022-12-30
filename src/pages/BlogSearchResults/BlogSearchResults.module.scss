@@ -1,0 +1,39 @@
+@import "src/app/mixins/queries";
+
+.blog-search-results {
+
+  display: flex;
+  align-items: flex-start;
+  margin-top:1px;
+
+  @include mediaTablet {
+    margin-top: -2px;
+  }
+
+  @include mediaDesktop {
+    margin-top: -7px;
+  }
+
+  &>section {
+    padding-bottom: 0;
+    background-color: var(--color-white);
+    margin-bottom: 28px;
+
+    @include mediaTablet {
+      margin-bottom:37px;
+    }
+
+    @include mediaDesktopDesign {
+      margin-bottom: 59px;
+    }
+  }
+
+  &__show {
+    &>section {
+      background-color: var(--color-beige);
+    }
+  }
+  :global(.article-search_white) {
+    background-color: var(--color-white);
+  }
+}

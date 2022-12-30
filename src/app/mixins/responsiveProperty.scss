@@ -1,0 +1,12 @@
+@use "./functions.scss" as *;
+
+@mixin responsive($property, $fromFZPx, $toFZPx, $fromWidthPx, $toWidthPx) {
+  $fromFZ: strip-unit($fromFZPx);
+  $toFZ: strip-unit($toFZPx);
+  $fromWidth: strip-unit($fromWidthPx);
+  $toWidth: strip-unit($toWidthPx) - 1;
+
+  @media only screen and (min-width: $fromWidthPx) and (max-width: #{$toWidth}px) {
+    #{$property}: calc(#{$fromFZPx} + calc(#{$toFZ} - #{$fromFZ}) * calc(100vw - #{$fromWidthPx}) / calc(#{$toWidth} - #{$fromWidth}))
+  }
+}

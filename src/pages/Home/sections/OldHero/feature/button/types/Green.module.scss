@@ -1,0 +1,17 @@
+/* GREEN */
+@use "@/app/mixins/index.scss" as *;
+
+.Button_Green {
+  background-color: var(--color-green-button);
+  color: var(--color-white);
+
+  &:hover:not(:disabled){
+    background-color: var(--btn-bg-color-hover);
+  }
+  &:focus-visible:not(:disabled) {
+    outline: 3px solid #75DBD3;
+  }
+  &:active:not(:disabled) {
+    background-color: var(--btn-bg-color-active);
+  }
+}

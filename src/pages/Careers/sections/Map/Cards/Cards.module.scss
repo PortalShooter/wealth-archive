@@ -1,0 +1,95 @@
+@import "src/app/mixins/queries";
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+
+  @include mediaTablet {
+    margin: 0 -12px;
+  }
+
+  @include mediaDesktop {
+    margin: 0 -10px;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    margin-bottom: 106px;
+
+    @include mediaTablet {
+      margin-bottom: 106px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 162px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    font: 500 16px/140% 'Neue Haas Unica Pro';
+    margin: 26px auto 0 auto;
+
+    @include mediaTablet {
+      margin: 18px auto 0 auto;
+    }
+
+    @include mediaDesktop {
+      margin: 20px auto 0 auto;
+    }
+  }
+
+  &__modal {
+    position: relative;
+    &-wrapper {
+      width: 230px;
+      min-height: 328px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 15px 21px;
+      background: #EDFDB1;
+      border-radius: 12px;
+
+      font-size: 18px;
+    }
+    color: #00534F;
+    &-text {
+      margin-bottom: 20px;
+    }
+    &-name {
+      font-family: 'Reckless';
+    }
+    &-job {
+      font-size: 12px;
+    }
+    &-btn {
+      position: absolute;
+      top: 0;
+      right: -39px;
+      width: 32px;
+      height: 32px;
+      background: #EDFDB1;
+      border-radius: 100px;
+
+      &:before,
+      &:after {
+        content: '';
+        height: 2px;
+        width: 20px;
+        background: #00857C;
+        border-radius: 20px;
+        position: absolute;
+        top: 15px;
+        left: 6px;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.Block {
+  position: relative;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.Modal {
+  position: fixed;
+  padding: 20px;
+  background-color: #fff;
+  top: 10px;
+  right: 20px;
+  margin: 0 auto;
+  max-width: 500px;
+  min-height: 200px;
+  width: 100%;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.Modal_Active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.Button__OpenModal {
+  width: 40px;
+  background: none;
+  cursor: pointer;
+}
+
+.Button__CloseModal {
+  position: absolute;
+  width: 40px;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  background: none;
+  cursor: pointer;
+}

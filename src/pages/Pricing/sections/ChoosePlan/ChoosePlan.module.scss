@@ -1,0 +1,117 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin-bottom: 85px;
+  margin-top: -7px;
+
+  @include mediaTablet {
+    margin-bottom: 95px;
+  }
+
+  @include mediaDesktop {
+    margin-top: -7px;
+    margin-bottom: 128px;
+  }
+}
+
+.choose-plan {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 15px;
+
+  @include mediaTablet {
+    margin-top: 7px;
+  }
+
+  @include mediaDesktop {
+    margin-top: -34px;
+  }
+
+  &__header {
+    --color-header:  #202020;
+    font-size: 32px;
+    font-family: "Reckless";
+    color: var(--color-header);
+    font-weight: 400;
+    text-align: center;
+    margin: 40px auto 48px;
+    line-height: 110%;
+    width: 318px;
+
+    @include mediaMobileMedium {
+      margin: 78px auto 55px;
+      width: 525px;
+      font-size: 54px;
+    }
+
+    @include mediaDesktop {
+      font-size: 64px;
+      width: 628px;
+      margin: 136px auto 72px;
+      line-height: 100%;
+    }
+  }
+
+  &__switch {
+    display: flex;
+    align-self: center;
+    margin-bottom: 24px;
+    width: 327px;
+    height: 48px;
+
+    @include mediaTablet {
+      margin-bottom: 40px;
+      width: 320px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__cardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mediaDesktopMedium {
+      max-width: 1259px;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    @include mediaDesktopDesign {
+      max-width: 1259px;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+  }
+}
+
+.background {
+  --color-header: #F5F3ED;
+  background-color: var(--color-header);
+  position: absolute;
+  width: 100%;
+  height: 619px;
+  z-index: -1;
+
+  @include mediaTablet {
+    height: 505px;
+  }
+
+  @include mediaDesktop {
+    height: 593px;
+  }
+}

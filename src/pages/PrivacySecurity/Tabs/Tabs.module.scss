@@ -1,0 +1,175 @@
+@import "../../../app/mixins/queries";
+
+.tabs {
+  padding: 33px 0 105px;
+  //max-width: 1260px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+
+  @include mediaTablet {
+    padding: 31px 0 121px;
+  }
+
+  @include mediaDesktop {
+    padding: 31px 0 200px;
+  }
+
+  &__scroll {
+    position: relative;
+    z-index: 4;
+    padding: 0 24px;
+    overflow-x: scroll;
+    text-align: center;
+    scroll-behavior: smooth;
+    max-width: 1260px;
+    margin: 0 auto;
+    scrollbar-width: none;
+
+    @include mediaTablet {
+      padding: 8px 32px 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      padding: 8px 32px 0;
+    }
+
+    @include mediaDesktop {
+      padding: 25px 90px 0;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 25px 0 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    hr {
+      height: 2px;
+      background: #DEE3EC;
+      min-width: 406px;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+  }
+
+  &__scroll_active {
+    --header-hidden-delay: 0s;
+    padding: 30px 26px 16px 26px;
+    overflow-x: scroll;
+    text-align: center;
+    scroll-behavior: smooth;
+    box-shadow: 0px -0.95749px 0.95749px rgba(64, 65, 69, 0.05), 0px 0.95749px 1.91498px rgba(64, 65, 69, 0.15), 0px 1.91498px 3.82996px 0.95749px rgba(64, 65, 69, 0.1);
+
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 190;
+    scrollbar-width: none;
+    transform: translateY(calc(var(--header-height-mobile-sticky, 0) - 1px));
+    transition: transform .3s var(--ease-out);
+    transition-delay: var(--header-hidden-delay);
+
+
+    @include mediaTablet {
+      padding: 33px 32px 16px;
+      transform: translateY(calc(var(--header-height-tablet-sticky, 0) - 9px));
+    }
+
+    @include mediaDesktop {
+      padding: 25px 90px 18px;
+      transform: translateY(calc(var(--header-height-desktop-sticky, 0) - 1px));
+    }
+
+    @include mediaDesktopDesign {
+      padding: 31px 0 18px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    .tabs__block {
+      max-width: 1260px;
+      padding-bottom: 1px;
+
+      @include mediaTablet {
+        padding: 0 89px 1px;
+      }
+
+      @media screen and (min-width: 1000px) {
+        padding: 0 150px 1px;
+      }
+
+      @media screen and (min-width: 1280px) {
+        padding: 0 260px 1px;
+      }
+
+      @include mediaDesktopDesign {
+        padding: 0 305px 3px;
+      }
+    }
+  }
+
+  :global(.header-hidden)  &__scroll_active {
+    transform: none;
+    --header-hidden-delay: .0s;
+  }
+
+  &__block {
+    min-width: 411px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font: 500 14px/130% 'Neue Haas Unica Pro';
+    text-align: center;
+    margin: 0 auto;
+    color: #696C71;
+    padding: 0 16px 16px;
+
+    @include mediaTablet {
+      padding: 0 89px 16px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      padding: 0 150px 16px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 0 250px 16px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 18px;
+      padding: 0 305px 16px;
+    }
+
+    &_inner {
+      padding: 0 16px 7px;
+      transition: color .2s ease;
+      color: #696C71;
+
+      @include mediaTablet {
+        padding: 0 18px 7px 18px;
+      }
+
+      @include mediaDesktop {
+        padding: 0 24px 12px 24px;
+        cursor: pointer;
+        margin-right: -16px;
+      }
+
+      &:hover {
+        color: #00857C;
+      }
+    }
+
+    &_active {
+      color: #00857C;
+      border-bottom: 2px solid #00857C;
+    }
+  }
+}

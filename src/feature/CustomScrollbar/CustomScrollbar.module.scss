@@ -1,0 +1,27 @@
+@use "@/app/mixins/index.scss" as *;
+
+.custom-scrollbar {
+  &__content {
+    height: 100%;
+  }
+
+  &__track-horizontal {
+    height: 2px !important;
+    width: calc(100% - 48px) !important;
+    left: 24px !important;
+    bottom: -18px !important;
+    background-color: #DEE3EC;
+
+    @include mediaTablet {
+      width: calc(100% - 64px) !important;
+      bottom: -21px !important;
+      left: 32px !important;
+    }
+  }
+
+  &__thumb-horizontal {
+    display: block;
+    height: 100%;
+    background-color: var(--color-green) !important;
+  }
+}

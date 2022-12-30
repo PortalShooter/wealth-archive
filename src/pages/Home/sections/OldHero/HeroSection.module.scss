@@ -1,0 +1,491 @@
+.HeroSection {
+  position: relative;
+  background-color: var(--color-green-dark);
+  padding: 46px 0 21px;
+
+  &__Controls {
+    margin-right: 65px;
+
+    @media (min-width: 1920px) {
+      margin-right: 164px;
+    }
+
+    @media (max-width: 1199px) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    padding: 79px 0 41px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 27px 0 30px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 26px 0 28px;
+  }
+}
+
+.Text {
+  margin-bottom: 60px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 75px;
+  }
+
+  @media (max-width: 1199px) {
+    margin-bottom: 33px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 42px;
+  }
+}
+
+.Title {
+  margin-bottom: 30px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 43px;
+  }
+
+  @media (max-width: 1199px) {
+    margin-bottom: 27px;
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 auto;
+    margin-bottom: 34px;
+    max-width: 390px;
+  }
+}
+
+.h1_Part {
+  display:inline;
+  & + & {
+    padding-left: 0.2em;
+  }
+  &:first-child {
+    color:#EFFEB2;
+  }
+  &:last-child {
+    color:#FFFFFF;
+  }
+}
+
+.Subtitle {
+  margin: 0 auto;
+  color: var(--color-white);
+
+  @media (max-width: 767px) {
+    max-width: 300px;
+  }
+}
+
+.HeroContainer {
+  width: 94.44%;
+  max-width: none;
+
+  @media (min-width: 1920px) {
+    width: 84.44%;
+    max-width: 1620px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0 13px;
+    box-sizing: border-box;
+  }
+}
+
+.SubHeroSection {
+  padding: 0 0 73px;
+
+  @media (min-width: 1920px) {
+    padding: 0 0 90px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 0 0 48px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 0 47px;
+  }
+
+  &__Controls {
+    margin-right: 65px;
+
+    @media (min-width: 1920px) {
+      margin-right: 185px;
+    }
+
+    @media (max-width: 1199px) {
+      margin-right: 0;
+    }
+  }
+}
+
+.SubHeroContainer {
+  width: 94.44%;
+  max-width: none;
+
+  @media (min-width: 1920px) {
+    width: 84.44%;
+    max-width: 1620px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+// HeroCard
+.HeroCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+
+  @media (max-width: 1199px) {
+    padding: 30px 15px 20px 20px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 30px 20px;
+  }
+
+  &__Text {
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out);
+    &_Title {
+      letter-spacing: -0.01em;
+      font-size: 21px;
+      line-height: 30px;
+
+      @media (max-width: 1199px) {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__ImageWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 135px;
+    height: 132px;
+    overflow: hidden;
+    font-size: 0;
+    transition: all 0.8s var(--ease-out);
+
+    @media (max-width: 1199px) {
+      width: 90px;
+      height: 100px;
+    }
+  }
+
+  &__Image {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// HeroCarousel
+.HeroCarousel {
+  margin-bottom: 32px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 45px;
+  }
+
+  @media (max-width: 1199px) {
+    margin-bottom: 26px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 13px;
+  }
+
+  & img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  &__Item {
+    width: 180px;
+    height: 237px;
+    transition: all 0.8s var(--ease-out), width 0s linear;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      border-radius: 12px;
+      transition: all 0.8s var(--ease-out);
+      background-color: var(--color-carousel-bg);
+      z-index: -1;
+    }
+
+    &:hover,
+    &_hovered {
+      &::after {
+        background-color: var(--color-white);
+        transform: scaleY(1.235) scaleX(1.29);
+        border-radius: 9px;
+        opacity: 1;
+        z-index: -2;
+      }
+      & .HeroCard__ImageWrap {
+        top: 50%;
+        transform: translateY(-3%) translateX(-50%) scale(0.9);
+        overflow: hidden;
+        font-size: 0;
+        @media (max-width: 767px) {
+          transform: translateY(-25%);
+        }
+      }
+
+      & .HeroCard__Text {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      height: 218px;
+
+      // &::after {
+      //   background-color: var(--color-white);
+      //   opacity: 1;
+      // }
+      // & .HeroCard__ImageWrap {
+      //   top: auto;
+      //   transform: translateX(-50%) translateY(10%);
+      //   overflow: hidden;
+      //   font-size: 0;
+      //   bottom: 20px;
+      // }
+
+      // & .HeroCard__Text {
+      //   opacity: 1;
+      // }
+
+      &:hover,
+      &_hovered {
+        &::after {
+          background-color: var(--color-white);
+          transform: scaleY(1) scaleX(1);
+          opacity: 1;
+          border-radius: 12px;
+        }
+
+        & .HeroCard__ImageWrap {
+          top: auto;
+          transform: translateX(-50%) translateY(10%);
+          overflow: hidden;
+          font-size: 0;
+          bottom: 20px;
+        }
+
+        & .HeroCard__Text {
+          opacity: 1;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      // &::after {
+      //   border-radius: 10px;
+      // }
+
+      &:hover,
+      &_hovered {
+        &::after {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+// SubHeroCard
+.SubHeroCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1199px) {
+    display: block;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__Info {
+    width: 710px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (max-width: 1199px) {
+      width: 588px;
+      margin-bottom: 112px;
+      flex-direction: row;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      margin-bottom: 55px;
+    }
+  }
+  &__ImageWrap {
+    display: flex;
+    width: 362px;
+    height: 100%;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 1199px) {
+      width: 187px;
+      height: 180px;
+    }
+
+    @media (max-width: 767px) {
+      width: 185px;
+      height: 207px;
+    }
+  }
+
+  &__Image {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__Text {
+    margin-bottom: 99px;
+
+    @media (max-width: 1199px) {
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+      margin-bottom: 0;
+      padding-right: 30px;
+      width: 408px;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin-bottom: 23px;
+    }
+  }
+  &__Title {
+    margin-bottom: 68px;
+
+    @media (max-width: 1199px) {
+      font-size: 40px;
+      margin-bottom: 47px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 29px;
+      line-height: 35px;
+      margin-bottom: 32px;
+    }
+  }
+  &__SubTitle {
+    line-height: 40px;
+    margin-bottom: 17px;
+
+    @media (max-width: 1199px) {
+      font-size: 29px;
+      line-height: 35px;
+      font-weight: normal;
+      margin-bottom: 23px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__Description {
+    max-width: 510px;
+  }
+
+  &__Button {
+    @media (max-width: 1199px) {
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+      box-sizing: border-box;
+    }
+  }
+}
+
+// SubHeroCarousel
+.SubHeroCarousel {
+  margin-bottom: 39px;
+  padding: 122px 0 0;
+
+  @media (min-width: 1920px) {
+    padding: 171px 0 0;
+    margin-bottom: 86px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 86px 0 0;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 40px 0 0;
+    margin-bottom: 24px;
+  }
+
+  & img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  &__Item {
+    width: 1072px;
+    display: flex;
+  }
+}

@@ -1,0 +1,52 @@
+@use "../../../../app/mixins/index" as *;
+
+.estate-planning {
+  background: var(--color-dark-green);
+  padding-bottom: 65px;
+  @include mediaTablet {
+    padding-bottom: 108px;
+  }
+  @include mediaDesktopDesign {
+    padding-bottom: 84px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include mediaTablet {
+      margin-bottom: 46px;
+    }
+    @include mediaDesktopDesign {
+      margin-bottom: 76px;
+    }
+  }
+
+  &__wrapper-slider {
+    width: 100%;
+
+    @include mediaTablet {
+      //max-width: 650px;
+      margin: 0 auto;
+    }
+
+    @include mediaDesktopDesign {
+      max-width: 1314px;
+      margin: 0 auto;
+    }
+  }
+
+  &__heading {
+    color: #fff;
+    & span {
+      color: #EFFEB2;
+      display: block;
+      @include mediaTablet {
+        display: inline;
+      }
+    }
+    @include mediaDesktopDesign {
+      font-size: 88px;
+      line-height: 88px;
+    }
+  }
+}

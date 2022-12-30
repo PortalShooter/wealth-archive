@@ -1,0 +1,79 @@
+@use "@/app/mixins/index.scss" as *;
+
+.slider {
+  height: calc(37vw + 236px);
+
+  @include mediaMobileMedium {
+    height: calc(208px + 18vw);
+  }
+  @include mediaDesktop {
+    height: calc(204px + 24vw);
+  }
+  @include mediaDesktopDesign {
+    height: 493px;
+  }
+
+  :global(.swiper) {
+    height: 100%;
+  }
+
+  :global(.swiper-slide) {
+    transition:all 200ms var(--ease-out), transform 0.8s var(--ease-out);
+    * {
+      pointer-events: none;
+      @include mediaDesktop {
+        pointer-events: auto;
+      }
+    }
+  }
+
+  :global(.swiper-slide-active) {
+    div {
+    // pointer-events: auto;
+    }
+  }
+
+  :global(.swiper-pagination-bullets) {
+    bottom: 8px;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    margin: 0 4px !important;
+    height: 14px;
+    width: 14px;
+    background: transparent;
+    opacity: 1;
+
+    & > div {
+      width: 8px;
+      height: 8px;
+      margin: 3px auto;
+      opacity: 0.4;
+      background: var(--color-green);
+      border-radius: 4px;
+      transition: 0.3s var(--ease-out);
+    }
+
+    &:hover {
+      & > div {
+        opacity: 1;
+      }
+    }
+  }
+  :global(.swiper-pagination-bullet-active) {
+    cursor: auto;
+    width: 48px;
+    & > div {
+      width: 48px;
+      opacity: 1;
+    }
+  }
+
+  &.img {
+    :global(.swiper-pagination-bullet) {
+      & > div {
+        background: #fff;
+      }
+    }
+  }
+}

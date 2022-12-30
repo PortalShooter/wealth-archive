@@ -1,0 +1,43 @@
+@use "src/app/mixins/index" as *;
+
+.faith {
+  padding-bottom: 41px;
+
+  @include mediaMobileBig {
+    padding-bottom: 104px;
+  }
+  @include mediaDesktopMedium {
+    padding-bottom: 159px;
+
+  }
+  &__block {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include mediaMobileBig {
+      flex-direction: row;
+    }
+  }
+  &__img {
+    @include mediaDesktopMedium {
+      margin-left: 5px;
+      flex: 0 0 515px;
+      height: 515px;
+    }
+  }
+  &__text {
+    @include mediaDesktop {
+      width: 500px;
+    }
+  }
+  &__heading {
+    font-size: 32px;
+
+    @include mediaTablet {
+      font-size: 36px;
+    }
+    @include mediaDesktopMedium {
+      font-size: 64px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "src/app/mixins/index" as *;
+
+.parallax-images {
+  padding-top: 40px;
+  background: #F4F5F8;
+  color: #F4F5F8;
+
+  &__main-image {
+    transform: translateY(-100px);
+    //
+    // @include mediaTablet {
+    //   transform: translateY(calc(-38px - 5vw));
+    // }
+    @include mediaDesktop {
+      transform: translateY(calc(-345px - 10vw));
+    }
+    //@include mediaDesktopDesign {
+    //  transform: translateY(calc(-50px - 9.3vw));
+    //}
+  }
+
+  &__wrap {
+    width: 100%;
+    transform-style: preserve-3d;
+
+    @include mediaDesktop {
+      max-width: none;
+    }
+
+    &:last-child {
+      @include mediaDesktopBig {
+        padding-bottom: 134px;
+      }
+    }
+  }
+  &__heading {
+    color: #1A1B1C;
+  }
+  &__title {
+    color: #1A1B1C;
+    margin-bottom: 140px;
+
+    @include mediaTablet {
+      margin-bottom: 90px;
+    }
+    @include mediaDesktop {
+      margin-bottom: 230px;
+    }
+  }
+}

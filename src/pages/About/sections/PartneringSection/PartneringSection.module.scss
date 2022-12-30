@@ -1,0 +1,69 @@
+@use "src/app/mixins/index" as *;
+
+.partnering {
+  padding-top: 80px;
+  padding-bottom: 84px;
+  background-color: var(--color-white);
+
+  @include mediaTablet {
+    padding-top: 106px;
+    padding-bottom: 108px;
+  }
+
+  @include mediaDesktop {
+    padding-top: 159px;
+    padding-bottom: 164px;
+  }
+
+  &__title {
+    margin-bottom: 38px;
+
+    @include mediaTablet {
+      margin-bottom: 23px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+
+    @include heading_h3_responsive;
+
+    @include mediaTablet {
+      padding-right: 90px;
+      margin-bottom: 47px;
+    }
+
+    @include mediaDesktop {
+      width: calc(70% + 90px);
+      padding-right: 0;
+      margin-bottom: 81px;
+    }
+  }
+
+  &__subheading {
+    @include mediaTablet {
+      margin-left: calc(50% - 108px);
+    }
+
+    @include mediaDesktop {
+      margin-left: calc(70% - 135px);
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    letter-spacing: .2px;
+
+    @include mediaTablet {
+      margin-left: calc(50% - 108px);
+    }
+
+    @include mediaDesktop {
+      margin-left: calc(70% - 135px);
+    }
+  }
+}

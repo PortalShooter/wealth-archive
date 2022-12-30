@@ -1,0 +1,217 @@
+@use "@/app/mixins/index.scss" as *;
+
+.slide {
+  width: 100%;
+  height: 100%;
+  padding: 64px 32px 56px;
+  display: flex;
+  flex-direction: column;
+
+  background: #F4F5F8;
+  border-radius: 12px;
+
+  @include mediaMobileBig {
+    flex-direction: row;
+    padding-bottom: 30px;
+  }
+  @include mediaDesktopMedium {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 82px;
+    border-radius: 20px;
+  }
+  @include mediaDesktopBig {
+    padding-top: 100px;
+    min-height: 705px;
+  }
+
+  &__first-column {
+
+    @include mediaMobileBig {
+      flex-basis: 56%;
+      display: flex;
+      flex-direction: column;
+    }
+    @include mediaDesktopMedium {
+      flex-basis: 48%;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include mediaDesktopMedium {
+      padding-top: 79px;
+      margin-bottom: 111px;
+    }
+    @include mediaDesktopBig {
+      padding-top: 13px;
+      margin-bottom: 65px;
+    }
+
+    & p {
+      font-size: 32px;
+      line-height: 38px;
+      letter-spacing: -1px;
+
+      @include mediaMobileBig {
+        letter-spacing: -0.3px;
+      }
+      @include mediaDesktopMedium {
+        font-size: 45px;
+        line-height: 60px;
+      }
+      @include mediaDesktopMedium {
+        letter-spacing: -1.38px;
+      }
+    }
+  }
+
+  &__cards {
+    position: relative;
+    width: 279px;
+    height: 320px;
+    margin-bottom: 32px;
+    align-self: center;
+
+    @include mediaMobileBig {
+      flex-basis: calc(20% + 118px);
+      margin-bottom: 0;
+      margin-left: auto;
+      margin-right: 2.5%;
+      height: calc(30vw + 92px);
+    }
+    @include mediaDesktopMedium {
+      flex-basis: 446px;
+      align-self: flex-start;
+      margin-right: 10px;
+      height: 320px;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    margin-bottom: 75px;
+
+
+    &-text {
+      display: inline;
+      font-weight: 500;
+      color: var(--color-green);
+      margin-right: 12px;
+      transition: 0.3s;
+
+      &:hover,
+      &:focus-visible {
+        color: #00655E;
+      }
+      &:active {
+        color: #00534F;
+      }
+
+      @include mediaDesktopMedium {
+        font-size: 34px;
+        letter-spacing: -1px;
+      }
+    }
+    &-icon {
+     vertical-align: middle;
+    }
+  }
+
+  &__file-name {
+    position: absolute;
+    top: 87px;
+    left: 48px;
+    width: 125px;
+    font-size: 28px;
+    line-height: 38px;
+    color: var(--color-green-dark);
+    font-family: 'Reckless';
+
+    @include mediaMobileBig {
+      top: 24%;
+      left: 21%;
+      font-size: 29px;
+      line-height: 34px;
+    }
+
+    @include mediaTablet {
+      top: 26%;
+      left: 17%;
+      width: 130px;
+    }
+
+    @include mediaDesktopMedium {
+      top: 137px;
+      left: 73px;
+      width: 218px;
+      line-height: 60px;
+      font-size: 48px;
+    }
+  }
+
+  & .text__line {
+    transition: transform 0.5s var(--easeOutExpo), opacity 0.33s var(--easeOutExpo);
+    opacity: 0;
+  }
+  .text__line.visible {
+    opacity: 1;
+  }
+
+  &__arrows-group {
+    margin-top: auto;
+  }
+
+  &__arrow {
+    display: none;
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+
+    @include mediaMobileBig {
+      display: inline-block;
+    }
+    @include mediaDesktopBig {
+      bottom: 60px;
+    }
+    &.left {
+      transform: rotate(-90deg);
+      margin-right: 32px;
+    }
+    &.right {
+      transform: rotate(90deg);
+    }
+
+    &_disabled {
+      filter: grayscale(1);
+      opacity: 0.4;
+      cursor: auto;
+    }
+    &-icon {
+      & > path {
+        stroke: var(--color-green);
+      }
+
+      &:hover,
+      &:focus-visible {
+        & > path {
+          stroke: #00655E;
+        }
+
+      }
+      &:active {
+        & > path {
+          stroke: #00534F;
+        }
+      }
+    }
+  }
+}
+
+.text__line.next-slide {
+  transform: translateX(70px);
+}
+.text__line.prev-slide {
+  transform: translateX(-70px);
+}

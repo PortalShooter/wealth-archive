@@ -1,0 +1,256 @@
+@import "src/app/mixins/queries";
+
+.search-results {
+  display: flex;
+  width: 100%;
+  //min-height: 85px;
+  border-top: 1px solid #DEE3EC;
+  padding: 24px 0;
+
+  &:last-child {
+    border-bottom: 1px solid #DEE3EC;
+  }
+
+  &_show-background {
+    background-color: var(--color-beige);
+    border: none;
+    padding: 0;
+    margin-bottom: 32px;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__image {
+    min-width: 86px;
+    height: 62px;
+    position: relative;
+    margin-right: 14px;
+
+    @include mediaTablet {
+      min-width: 182px;
+      height: 132px;
+      margin-right: 23px;
+    }
+
+    @include mediaDesktopDesign {
+      min-width: 193px;
+      height: 145px;
+      margin-right: 48px;
+    }
+
+    &_search {
+
+      @include mediaTablet {
+        min-width: 150px;
+        height: 108px;
+        margin-right: 24px;
+      }
+
+      @include mediaDesktopDesign {
+        min-width: 109px;
+        height: 80px;
+        margin-right: 32px;
+      }
+    }
+  }
+
+  &__image-link {
+    span {
+      transition: box-shadow .3s var(--easeOutExpo);
+    }
+
+    &:focus-visible span {
+      box-shadow: 0 0 2px 1px var(--color-green);
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include mediaTablet {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+    }
+  }
+}
+
+.text-block {
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: var(--color-text);
+  align-self: center;
+  margin-top: 1px;
+
+  &__title {
+    margin-bottom: 0 !important;
+
+    &>h4 {
+      margin-bottom: 12px;
+      line-height: 120%;
+      font-weight: 500;
+      font-size: 14px;
+      font-family: 'Neue Haas Unica Pro';
+      color: var(--color-text);
+
+      @include mediaTablet {
+        font-size: 18px;
+        min-width: 391px;
+      }
+
+      @media (min-width: 1000px) {
+        min-width: 554px;
+      }
+
+      @include mediaDesktop {
+        font-size: 26px;
+        min-width: 535px;
+        margin-bottom: 20px;
+      }
+
+      @media (min-width: 1220px) {
+        min-width: 800px;
+      }
+
+      @include mediaDesktopDesign {
+        font-size: 32px;
+        min-width: 699px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__heading {
+
+    & span {
+      display: inline-block;
+      color: var(--color-text);
+      background-color: #d6f4f2;
+      background-size: auto 38px;
+      transition: text-decoration-color .5s var(--easeOutExpo);
+      text-decoration: underline;
+      text-decoration-color: var(--transparent);
+      line-height: 100%;
+    }
+
+    &_show-background {
+      & span {
+        background-color: #cfece5;
+        //background-color: rgb(117, 219, 211, 0.3);
+        position: relative;
+        line-height: 100%;
+        text-underline-offset: 3px;
+
+        @include mediaDesktop {
+          text-underline-offset: 4px;
+          line-height: 80%;
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 6px;
+    color: var(--color-text);
+
+    @include mediaTablet {
+      margin-bottom: 0;
+      margin-right: 24px;
+    }
+
+    @include mediaDesktopDesign {
+      margin-right: 32px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 18px;
+    }
+  }
+
+  &__time {
+    display: flex;
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-dark-gray);
+
+    @include mediaDesktopDesign {
+      font-size: 18px;
+    }
+
+    &__point {
+      margin: 0 6px;
+
+      @include mediaTablet {
+        margin: 0 7px;
+      }
+    }
+  }
+
+  &__link {
+    text-underline-offset: 3px;
+
+    @include mediaDesktopDesign {
+      text-underline-offset: 6px;
+    }
+
+    &_search {
+      text-underline-offset: 3px;
+
+      @include mediaDesktop {
+        text-underline-offset: 4px;
+      }
+    }
+  }
+
+  &__link:hover &__heading span, &__link:focus-visible &__heading span {
+    text-decoration-color: var(--link-secondary-underline-color-hover);
+    //text-underline-offset: 8px;
+  }
+
+  &__link_search:hover &__heading span, &__link_search:focus-visible &__heading span {
+    text-decoration-color: var(--link-secondary-underline-color-hover);
+    text-underline-offset: 3px;
+
+    @include mediaDesktop {
+      text-underline-offset: 4px;
+    }
+  }
+}
+
+.container {
+  @include mediaTablet {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.title {
+
+  &_show-background {
+    @include mediaDesktopDesign {
+      &>h4 {
+        font-size: 22px;
+        color: var(--color-text);
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+:global(.article-search_white) {
+  .search-results {
+    &_show-background {
+      background-color: var(--color-white);
+    }
+  }
+
+}

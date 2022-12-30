@@ -1,0 +1,218 @@
+@use "src/app/mixins/index" as *;
+
+.item {
+  cursor: pointer;
+  position: relative;
+  transition: background-color .5s var(--easeOutExpo), color .5s var(--easeOutExpo);
+
+  &_open {
+    transition: .5s ease-out;
+    background-color: var(--color-grey);
+    border-radius: 20px;
+    padding-bottom: 22px;
+    margin-bottom: 8px;
+
+    @include mediaTablet {
+      padding-bottom: 28px;
+    }
+
+    @include mediaDesktop {
+      padding-bottom: 40px;
+    }
+
+    &>div:nth-child(1) {
+      border-top: none;
+
+      @include mediaTablet {
+        padding-bottom: 0;
+      }
+
+      &>div:nth-child(2)>svg>path {
+        stroke: #696C71;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      min-width: 100%;
+      background-color: var(--color-white);
+      top: -2px;
+      z-index: 99;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 8px;
+      min-width: 100%;
+      background-color: var(--color-white);
+      top: 100%;
+      z-index: 99;
+
+      @include mediaTablet {
+        height: 9px;
+      }
+    }
+  }
+
+  &__container {
+    padding: 24px 0 0;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+
+    @include mediaTablet {
+      padding: 32px 0 0;
+      width: calc(100% - 64px);
+    }
+
+    @include mediaDesktop {
+      max-width: 1046px;
+      padding-top: 31px;
+    }
+
+    &:hover {
+      &>div:nth-child(1) {
+        color: #00857C;
+      }
+      &>div:nth-child(2) {
+        &>svg>path {
+          stroke: #00857C !important;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'Neue Haas Unica Pro' !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    word-break: break-word;
+
+    @include mediaDesktop {
+      font-size: 22px !important;
+    }
+
+    &>p>span {
+      color: var(--color-text);
+      background-color: #d6f4f2;
+    }
+  }
+
+  &__title-container {
+    margin-bottom: 0 !important;
+
+    @include mediaDesktop {
+      align-self: center;
+    }
+  }
+
+  &__icon {
+    align-self: center;
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+
+    @include mediaDesktop {
+      margin-left: 23px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &_open {
+      transform: rotate(540deg);
+      transition: transform .8s var(--ease-out);
+    }
+
+    &_close {
+      transform: rotate(1turn);
+      transition: transform .8s var(--ease-out);
+    }
+
+    &>svg {
+      width: 24px;
+      height: 24px;
+
+      &>path {
+        stroke: var(--color-dark-green);
+
+        @include mediaDesktop {
+          stroke-width: 1px;
+        }
+      }
+
+      @include mediaDesktop {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 24px 0;
+    @include text_p1;
+    font-size: 16px;
+    height: 0;
+    opacity: 0;
+    margin-top: 0;
+    transition: all 0.3s var(--ease-out), 0s overflow 0s linear, margin-top 0.3s var(--ease-out);
+    overflow: hidden;
+
+    @include mediaDesktop {
+      width: 786px;
+    }
+
+    &.visible {
+      transition: all 0.8s var(--ease-out), 0s overflow 0s linear, margin-top 0.2s var(--ease-out);
+      height: var(--text-height);
+      opacity: 1;
+      overflow: visible;
+      margin-top: 23px;
+
+      @include mediaTablet {
+        margin-top: 23px;
+      }
+
+      @include mediaDesktop {
+        width: 786px;
+        margin-top: 25px;
+        margin-bottom: 0;
+      }
+    }
+
+    @include mediaTablet {
+      font-size: 16px;
+      padding: 0 32px 0;
+
+      opacity: 0;
+      //transition: all 0.3s var(--ease-out), 0s overflow 0s linear, margin-top 0.3s var(--ease-out);
+      overflow: hidden;
+    }
+
+    @include mediaDesktop {
+      font-size: 18px;
+      padding: 0 0 0 56px;
+    }
+  }
+
+  &__line {
+    width: calc(100% - 48px);
+    margin: 23px auto 0;
+    border-bottom: 1px solid var(--color-border-pink);
+
+    @include mediaTablet {
+      margin-top: 32px;
+      width: calc(100% - 64px);
+    }
+
+    @include mediaDesktop {
+      max-width: 1046px;
+      height: 2px;
+      margin-top: 31px;
+    }
+  }
+}

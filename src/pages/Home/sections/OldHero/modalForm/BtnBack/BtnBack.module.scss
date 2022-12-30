@@ -1,0 +1,70 @@
+.btn {
+  position: relative;
+  top: -50px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: 0;
+
+  cursor: pointer;
+
+  color: #00857C;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Neue Haas Unica Pro';
+  transition: 0.3s;
+
+  @media only screen and (min-width: 1025px) {
+    top: -60px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+
+    @media only screen and (min-width: 1025px) {
+      inset: -0px;
+    }
+  }
+
+
+  &:hover,
+  &:focus-visible {
+    .btn__text {
+      border-color: #00857C;
+    }
+  }
+  &:active {
+    color: #00534F;
+
+    .btn__text {
+      border-color: #00534F;
+    }
+  }
+
+  &.left {
+    left: calc(110px + 100%);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: 8px;
+    height: 15px;
+    z-index: 1;
+
+    & svg {
+      height: 100%;
+    }
+  }
+
+  &__text {
+    margin-left: 18px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+    z-index: 1;
+  }
+}

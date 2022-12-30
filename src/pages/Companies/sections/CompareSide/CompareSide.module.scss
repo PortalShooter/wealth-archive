@@ -1,0 +1,323 @@
+@import "src/app/mixins/queries";
+
+.compare-side {
+  &__wrapper {
+    padding: 58px 24px 30px;
+
+    @include mediaTablet {
+      padding: 71px 93px 24px;
+    }
+
+    @include mediaDesktop {
+      padding: 110px 90px 72px;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 122px 0 0;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    font: 400 36px/110% 'Reckless';
+    color: #1A1B1C;
+    text-align: center;
+    margin-bottom: 18px;
+
+    @include mediaTablet {
+      font-size: 54px;
+      margin-bottom: 24px;
+    }
+
+    @include mediaDesktop {
+      font-size: 88px;
+      line-height: 100%;
+      letter-spacing: -1px;
+      margin-bottom: 33px;
+    }
+  }
+
+  &__subtitle {
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    text-align: center;
+    color: #1A1B1C;
+    margin-bottom: 38px;
+
+    @include mediaTablet {
+      padding: 0 44px;
+      margin-bottom: 46px;
+    }
+
+    @include mediaDesktop {
+      font-size: 22px;
+      padding: 0;
+      max-width: 633px;
+      margin: 0 auto 128px auto;
+    }
+  }
+
+  &__columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc((100% / 12) * 4);
+
+    @include mediaDesktop {
+      width: calc((100% / 4) - 30px);
+    }
+
+    &-desktop {
+      display: none;
+
+      @include mediaDesktop {
+        display: flex;
+        width: calc(((100% / 12) * 5));
+
+        .compare-side__column-title {
+          text-align: left;
+        }
+
+        .compare-side__column-img {
+          text-align: left;
+        }
+      }
+    }
+
+    &-active_trust {
+
+      @include mediaDesktop {
+        background: #F4F5F8;
+        border-radius: 20px;
+        margin-left: 32px;
+        margin-top: -39px;
+        padding: 39px 32px 0;
+
+        svg circle {
+          fill: #FFFFFF;
+        }
+
+        .green-icon circle {
+          fill: #00857C;
+        }
+      }
+    }
+
+    &-active_will {
+      @include mediaDesktop {
+        background: #F4F5F8;
+        border-radius: 20px;
+        margin: 0 32px;
+        margin-top: -39px;
+        padding: 39px 32px 0;
+
+        svg circle {
+          fill: #FFFFFF;
+        }
+
+        .green-icon circle {
+          fill: #00857C;
+        }
+      }
+    }
+
+    &-active_core {
+      @include mediaDesktop {
+        background: #F4F5F8;
+        border-radius: 20px;
+        margin: 0 32px;
+        margin-top: -39px;
+        padding: 39px 32px 0;
+
+        svg circle {
+          fill: #FFFFFF;
+        }
+
+        .green-icon circle {
+          fill: #00857C;
+        }
+
+        @include mediaDesktop {
+          &:nth-child(2) {
+            .compare-side__column-wrapper {
+              padding-right: 0;
+            }
+
+            .compare-side__column-img {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__column-wrapper {
+    width: 100%;
+    border-bottom: 1px solid #F4F5F8;
+    padding-bottom: 24px;
+
+    @include mediaTablet {
+      padding-bottom: 20px;
+    }
+
+    @include mediaDesktop {
+      border-bottom: 1px solid #DEE3EC;
+      padding-bottom: 40px;
+    }
+
+    &_active-trust {
+      padding-bottom: 12px;
+
+      @include mediaTablet {
+        padding-bottom: 8px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 28px;
+      }
+    }
+
+    &_active-will {
+      padding-bottom: 12px;
+
+      @include mediaTablet {
+        padding-bottom: 10px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 28px;
+      }
+    }
+
+    &_active-core {
+      padding-bottom: 12px;
+
+      @include mediaTablet {
+        padding-bottom: 10px;
+      }
+
+      @include mediaDesktop {
+        padding-bottom: 28px;
+      }
+    }
+  }
+
+  &__column-title {
+    font: 400 20px/110% 'Reckless';
+    text-align: center;
+    color: #1A1B1C;
+
+    @include mediaTablet {
+      font-size: 22px;
+    }
+
+    @include mediaDesktop {
+      font-size: 32px;
+    }
+
+    &_active-trust {
+      padding: 12px 0;
+      background: #F4F5F8;
+      border-radius: 12px;
+      margin: -12px auto 0 auto;
+    }
+
+    &_active-will {
+      padding: 12px 0;
+      background: #F4F5F8;
+      border-radius: 12px;
+      margin: -12px auto 0 auto;
+    }
+
+    &_active-core {
+      padding: 12px 0;
+      background: #F4F5F8;
+      border-radius: 12px;
+      margin: -12px auto 0 auto;
+    }
+  }
+
+  &__column-img {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 79px 0 36px;
+    border-bottom: 1px solid #F4F5F8;
+
+    @include mediaDesktop {
+      border-bottom: 1px solid #DEE3EC;
+      padding: 36px 0 32px;
+      max-height: 113px;
+    }
+  }
+
+  &__block-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 32px 0 32px;
+    border-bottom: 1px solid #DEE3EC;
+    font: 500 18px/130% 'Neue Haas Unica Pro';
+    color: #1A1B1C;
+
+    svg {
+      margin-right: 32px;
+    }
+  }
+
+  &__btn {
+    margin: 32px auto 0;
+    min-width: 192px;
+
+    @include mediaTablet {
+      margin: 37px auto 0;
+    }
+
+    @include mediaDesktop {
+      display: none;
+    }
+
+    &:focus, &:focus-visible {
+      background: #00857C;
+    }
+  }
+
+  &__info-btn {
+    display: none;
+
+    @include mediaDesktop {
+      display: block;
+      margin: 30px 0;
+      min-width: 192px;
+    }
+
+    &:focus, &:focus-visible {
+      background: #00857C;
+    }
+  }
+
+  &__column-text {
+    width: 300%;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font: 500 18px/130% 'Neue Haas Unica Pro';
+    color: #1A1B1C;
+
+    @include mediaDesktop {
+      display: none;
+    }
+  }
+
+}

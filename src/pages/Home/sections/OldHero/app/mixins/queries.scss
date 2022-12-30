@@ -1,0 +1,25 @@
+$tablet: 1199px;
+$verticalTablet: 1023px;
+$phone: 767px;
+$verticalPhone: 414px;
+
+@mixin mediaTablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin mediaVerticalTablet {
+  @media (max-width: $verticalTablet) {
+    @content;
+  }
+}
+@mixin mediaPhone {
+  @media (max-width: $phone) {
+    @content;
+  }
+}
+@mixin mediaVerticalPhone {
+  @media (max-width: $verticalPhone) {
+    @content;
+  }
+}

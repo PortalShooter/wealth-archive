@@ -1,0 +1,78 @@
+@use "src/app/mixins/index" as *;
+
+.card {
+  background-color: var(--color-beige);
+  margin: 0 auto 24px;
+  padding: 32px;
+  border-radius: 20px;
+  max-width: 404px;
+  display: flex;
+  flex-direction: column;
+
+  @include mediaTablet {
+    margin: 0;
+  }
+
+  @include mediaDesktop {
+    padding: 40px;
+    padding-right: 50px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    @include heading_h5_responsive;
+  }
+
+  &__categories {
+    flex-grow: 1;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 24px;
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--color-dark-green);
+    outline: none;
+    transition: color .5s var(--easeOutExpo), text-decoration-color .5s var(--easeOutExpo);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: var(--link-secondary-underline-color-normal);
+    text-decoration-thickness: 2px;
+
+    &:last-child {
+      margin-bottom: 48px;
+
+      @include mediaDesktop {
+        margin-bottom: 64px;
+      }
+    }
+  }
+
+  &__item:hover, &__item:focus-visible {
+    text-decoration-color:var(--link-underline-color-hover);
+  }
+
+  &__link-container {
+    line-height: 140%;
+  }
+
+  &__link {
+    font-size: 16px;
+    color: var(--color-dark-green);
+    text-decoration-thickness: 2px;
+    text-decoration-color: #acc3be;
+
+    &:hover, &:focus-visible {
+      color: var(--color-dark-green);
+    }
+  }
+
+  &:hover &__link,
+  &:focus-visible &__link {
+    text-decoration-color: var(--link-underline-color-hover);
+  }
+}

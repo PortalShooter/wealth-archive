@@ -1,0 +1,80 @@
+@use "src/app/mixins/index" as *;
+
+.hero {
+  padding: 0;
+  background-color: #015350;
+
+  &__text {
+    margin-bottom: 0px;
+  }
+
+  &__title {
+    width: 95%;
+    letter-spacing: -1px !important;
+    color: #4ebeb6;
+    font: 400 64px/70px "Reckless";
+    margin-bottom: 36px;
+  }
+
+  &__subtitle {
+    font: 400 32px/42px "Neue Haas Unica Pro";
+    color: #f6f4ed;
+    margin-bottom: 90px;
+  }
+
+  &__link {
+    width: 310px;
+    height: 60px;
+    font: 500 24px/32px "Neue Haas Unica Pro";
+    color: #231f20;
+    background-color: #eef1b3;
+    border-radius: 16px;
+    border: none;
+    margin: auto;
+
+    @include mediaDesktop {
+      margin: inherit;
+    }
+  }
+
+  &__wrap {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 118px;
+    padding-top: 200px;
+    padding-bottom: 114px;
+    flex-direction: column;
+    text-align: center;
+
+    @include mediaDesktop {
+      flex-direction: row;
+      text-align: inherit;
+    }
+  }
+
+  &__wrap-img {
+    margin: 0;
+  }
+
+  &__wrap-text {
+    max-width: 900px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 40px;
+
+    @include mediaDesktop {
+      width: 45%;
+      padding: 0;
+    }
+  }
+
+  &__wrap-bnr {
+    width: 100%;
+    max-width: 100%;
+  }
+}

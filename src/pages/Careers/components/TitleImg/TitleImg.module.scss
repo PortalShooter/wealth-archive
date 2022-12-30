@@ -1,0 +1,76 @@
+@use "../../../../app/mixins/index" as *;
+
+.titleImg {
+
+  @include mediaMobileBig {
+    display: flex;
+    align-items: center;
+  }
+
+  &__wrapper-img {
+    position: relative;
+    margin-bottom: 40px;
+    height: calc(100vw - 50px);
+
+    @include mediaMobileBig {
+      flex: 0 0 45.5%;
+      height: calc(45vw - 25px);
+      margin-right: 44px;
+      margin-bottom: 0;
+    }
+
+    @include mediaDesktopMedium {
+      flex: 0 0 620px;
+      height: 620px;
+      margin-right: 127px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include mediaMobileBig {
+      margin-bottom: 0;
+    }
+    @include mediaDesktop {
+      width: 480px;
+    }
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+  &__heading {
+    margin-bottom: 20px;
+
+    @include mediaDesktopMedium {
+      margin-bottom: 25px;
+    }
+  }
+  &__subheading {
+    line-height: 128%;
+    @include mediaDesktop {
+      line-height: 134%;
+    }
+  }
+
+  &__link {
+    width: 228px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 24px;
+
+    @include mediaMobileBig {
+      margin-top: 40px;
+    }
+    @include mediaDesktop {
+      margin-top: 46px;
+    }
+  }
+  &__arrow {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+  }
+}

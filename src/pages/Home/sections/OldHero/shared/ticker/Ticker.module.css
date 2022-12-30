@@ -1,0 +1,12 @@
+.Ticker {
+  overflow: hidden;
+}
+
+.Ticker .Ticker__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.Ticker span {
+  display: block;
+}

@@ -1,0 +1,270 @@
+@import "src/app/mixins/queries";
+
+.include {
+  background: #F4F5F8;
+  overflow: hidden;
+
+  &__main {
+    padding: 0 0 72px;
+    max-width: 1260px;
+    margin: 0 auto;
+
+    @include mediaTablet {
+      padding: 24px 0 100px;
+    }
+
+    @include mediaDesktop {
+      padding: 24px 0 80px;
+    }
+
+    @include mediaDesktopDesign {
+      padding: 24px 0 158px;
+    }
+  }
+
+  &_header {
+    font: 400 36px/110% 'Reckless';
+    color: #1A1B1C;
+    margin-bottom: 47px;
+
+    @include mediaTablet {
+      font-size: 54px;
+      margin-bottom: 64px;
+      letter-spacing: -1px;
+    }
+
+    @include mediaDesktop {
+      font-size: 88px;
+    }
+
+    @include mediaDesktopDesign {
+      margin-bottom: 122px;
+      padding-left: 7px;
+    }
+  }
+
+  &__main-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -40px 104px;
+
+    @include mediaTablet {
+      margin: 0 -40px 128px;
+      padding-right: 56px;
+    }
+
+    @include mediaDesktop {
+      margin: 0 -80px 128px;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    @include mediaDesktopDesign {
+      margin: 0 -50px 76px;
+      width: auto;
+    }
+  }
+
+  &__inner-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    font: 400 20px/110% 'Reckless';
+    padding: 0 40px;
+    width: 100%;
+
+    @include mediaMobileMedium {
+      width: calc((100% / 12) * 6);
+      margin-bottom: 64px;
+    }
+
+    @include mediaTablet {
+      font-size: 22px;
+      margin-bottom: 64px;
+    }
+
+    @include mediaDesktop {
+      width: calc(((100% / 12) * 4) - 24px);
+      padding: 0 80px;
+    }
+
+    @include mediaDesktopDesign {
+      font-size: 32px;
+      padding: 0 50px;
+      margin-bottom: 126px;
+
+      &_text {
+        max-width: 290px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(5) {
+      @include mediaDesktopDesign {
+        .include__inner-block_text {
+          max-width: 200px;
+        }
+      }
+    }
+
+    &_img {
+      margin-bottom: 16px;
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+
+      @include mediaDesktopDesign {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 23px;
+      }
+
+      & > svg {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mediaTablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @include mediaDesktop {
+      align-items: center;
+    }
+
+    &_img {
+      width: 100%;
+      max-width: 327px;
+      margin: 0 auto 36px auto;
+
+      @include mediaMobileMedium {
+        max-width: 400px;
+      }
+
+      @include mediaTablet {
+        width: calc((100% / 12) * 5);
+        min-width: 304px;
+        margin: 0;
+      }
+
+      @include mediaDesktop {
+        width: calc((100% / 12) * 6);
+        max-width: 620px;
+      }
+
+      @include mediaDesktopDesign {
+        margin: 0;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  &__text-block {
+    color: #1A1B1C;
+
+    @include mediaTablet {
+      width: calc((100% / 12) * 6);
+      padding: 34px 20px 0 0;
+      margin-right: -10px;
+    }
+
+    @include mediaDesktop {
+      width: calc((100% / 12) * 5);
+      padding: 0;
+      margin-right: 5px;
+    }
+
+    @include mediaDesktopDesign {
+      width: calc((100% / 12) * 5);
+      margin-right: 9px;
+    }
+
+    &_title {
+      font: 400 20px/110% 'Reckless';
+      margin-bottom: 24px;
+
+      @include mediaTablet {
+        font-size: 22px;
+        margin-bottom: 32px;
+      }
+
+      @include mediaDesktop {
+        font-size: 32px;
+        margin-bottom: 64px;
+      }
+    }
+
+    &__list {
+      box-sizing: border-box;
+
+      li {
+        font: 400 18px/130% 'Neue Haas Unica Pro';
+        color: #1A1B1C;
+        list-style: none;
+        background: url("../../../../assets/images/Solutions/list-item.svg") no-repeat 0 8px;
+        padding-left: 28px;
+        margin-bottom: 14px;
+
+        @include mediaDesktop {
+          font-size: 22px;
+          max-width: 420px;
+        }
+
+        @include mediaDesktopDesign {
+          margin-bottom: 18px;
+        }
+
+        div {
+          border-bottom: 1px solid #DEE3EC;
+          padding-bottom: 16px;
+          max-width: 379px;
+
+          @include mediaDesktop {
+            padding-bottom: 24px;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          div {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.will.include__main-block {
+  @include mediaDesktopDesign {
+    margin: 0 -50px 200px;
+    width: auto;
+  }
+}
+
+.will.include__text-block {
+  @include mediaDesktopDesign {
+    width: calc((100% / 12) * 5);
+    margin-right: 9px;
+  }
+}
+

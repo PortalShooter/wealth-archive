@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Reckless";
+  src: url("/fonts/reckless/reckless-regular.woff2") format("woff2"),
+    url("/fonts/reckless/reckless-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica Pro";
+  src: url("/fonts/neue-haas-unica-pro/neue-haas-unica-pro.woff2")
+      format("woff2"),
+    url("/fonts/neue-haas-unica-pro/neue-haas-unica-pro.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica Pro";
+  src: url("/fonts/neue-haas-unica-pro/neue-haas-unica-pro-medium.woff2")
+      format("woff2"),
+    url("/fonts/neue-haas-unica-pro/neue-haas-unica-pro-medium.woff")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+}

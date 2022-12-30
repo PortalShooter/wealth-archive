@@ -1,0 +1,161 @@
+@import "src/app/mixins/queries";
+
+.card {
+  &__external {
+    width: calc(100% / 12)*6;
+    padding: 0 8px;
+    margin-bottom: 15px;
+
+    @include mediaTablet {
+      padding: 0 12px;
+      margin-bottom: 24px;
+    }
+
+    @include mediaDesktop {
+      width: calc(100% / 12)*4*0.85;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+  }
+  &__img {
+    transition: 0.3s;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 10px;
+    height: 51.8vw;
+    max-height: 508px;
+    padding: 16px 12px 12px;
+    color: white;
+    z-index: 9;
+    transition: 0.3s;
+    opacity: 1;
+
+    @include mediaMobileBig {
+      padding: 36px 32px 32px;
+      border-radius: 20px;
+      height: 55vw;
+
+      &:hover {
+        background: rgba(239, 254, 178, 1);
+
+        .card__img {
+          opacity: 0;
+        }
+
+        .card__text {
+          opacity: 1;
+          visibility: visible;
+          height: 100%;
+        }
+
+        .card__title {
+          color: #00534F;
+        }
+
+        .card__subtitle {
+          color: #00534F;
+        }
+      }
+    }
+
+    @include mediaDesktop {
+      height: 34vw;
+      max-height: 432px;
+    }
+  }
+
+  &__text {
+    opacity: 0;
+    visibility: hidden;
+    font: 400 12px/130% 'Neue Haas Unica Pro';
+    color: #00534F;
+    height: 0;
+    transition: 0.3s;
+
+    @include mediaMobileBig {
+      font-size: 22px;
+    }
+
+    @include mediaDesktop {
+
+    }
+  }
+
+  &__title {
+    font: 400 18px/110% 'Reckless';
+    color: #FFFFFF;
+    margin-bottom: 0;
+    transition: 0.3s;
+
+    @include mediaTablet {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    @include mediaDesktop {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    font: 400 12px/130% 'Neue Haas Unica Pro';
+    color: #FFFFFF;
+    transition: 0.3s;
+
+    @include mediaTablet {
+      font-size: 22px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 4.64%, rgba(26, 17, 0, 0.8) 88.07%);
+
+    @include mediaTablet {
+      border-radius: 20px;
+    }
+
+    &-black {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 4.64%, rgba(26, 17, 0, 0.8) 88.07%);
+      opacity: 0.75;
+      border-radius: 10px;
+      object-fit: cover;
+
+      @include mediaTablet {
+        border-radius: 20px;
+      }
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      z-index: -2;
+      object-fit: cover;
+      object-position: center 25%;
+      transform: translate3d(0,0,0);
+      isolation: isolate;
+      @include mediaTablet {
+        border-radius: 20px;
+      }
+    }
+  }
+}

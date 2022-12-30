@@ -1,0 +1,84 @@
+@use "src/app/mixins/index" as *;
+
+.works {
+  background-color: #f6f4ed;
+  padding-top: 60px;
+  padding-bottom: 10px;
+
+  @include mediaDesktop {
+    padding-top: 135px;
+    padding-bottom: 100px;
+  }
+
+  &__text {
+    color: #015350;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 38px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mediaDesktop {
+      padding: auto;
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    width: 95%;
+    letter-spacing: -1px !important;
+    color: #00877e;
+    font: 400 66px/86px "Reckless";
+    margin-bottom: 55px;
+    margin-left: 0;
+  }
+
+  &__description,
+  &__subtitle {
+    color: #231f20;
+    font: 400 30px/38px "Neue Haas Unica Pro";
+    margin-bottom: 85px;
+  }
+
+  &__wrap-item {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__plans-title {
+    color: #00877e;
+    font: 400 36px/42px "Neue Haas Unica Pro";
+    margin-bottom: 16px;
+  }
+
+  &__plans-subtitle {
+    color: #231f20;
+    font: 400 23px/29px "Neue Haas Unica Pro";
+  }
+
+  &__wrap-plans {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include mediaDesktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__wrap-plans-item {
+    width: 100%;
+    min-width: 200px;
+
+    @include mediaDesktop {
+      width: 30%;
+    }
+  }
+}

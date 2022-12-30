@@ -1,0 +1,89 @@
+@import "src/app/mixins/queries";
+
+.cards {
+  padding-top: 64px;
+
+  &__wrapper {
+    @include mediaDesktop {
+      display: flex;
+    }
+  }
+
+  @include mediaTablet {
+    padding-top: 80px;
+    padding-bottom: 130px;
+  }
+
+  @include mediaDesktop {
+    padding-top: 128px;
+    padding-bottom: 191px;
+  }
+
+  .card {
+    background: #F5F3ED;
+    border-radius: 20px;
+    padding: 27px 24px 28px 24px;
+    margin-bottom: 20px;
+
+    @include mediaTablet {
+      padding: 25px 24px 28px 24px;
+    }
+
+    @include mediaDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 36px 32px 38px;
+      width: calc((100%/12)*4);
+      margin-right: 20px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      font: 400 20px/110% 'Reckless';
+      color: #1A1B1C;
+      margin-bottom: 10px;
+
+      @include mediaTablet {
+        font-size: 22px;
+      }
+
+      @include mediaDesktop {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__subtitle {
+      display: flex;
+      flex-grow: 1;
+      font: 400 14px/130% 'Neue Haas Unica Pro';
+      color: #696C71;
+      margin-bottom: 31px;
+      padding-right: 22px;
+
+      @include mediaDesktop {
+        font-size: 18px;
+        padding-right: 10px;
+        margin-bottom: 46px;
+        display: flex;
+        align-items: stretch;
+        flex-shrink: 1;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      font: 500 16px/140% 'Neue Haas Unica Pro';
+      color: #00534F;
+    }
+  }
+}

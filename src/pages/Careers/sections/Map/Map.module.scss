@@ -1,0 +1,190 @@
+@import "src/app/mixins/queries";
+
+.map {
+  background: #00534F;
+  padding: 80px 0 24px;
+
+  @include mediaTablet {
+    padding: 104px 0 40px;
+  }
+
+  @include mediaDesktop {
+    padding: 172px 0 80px;
+  }
+
+  &__title {
+    margin-bottom: 11px;
+
+    @include mediaTablet {
+      margin-bottom: 12px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__title h2 {
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: #FFFFFF;
+    text-align: center;
+    font: 400 18px/130% 'Neue Haas Unica Pro';
+    margin: 0 auto 30px auto;
+
+    @include mediaTablet {
+      max-width: 462px;
+      margin: 0 auto 40px auto;
+    }
+
+    @include mediaDesktop {
+      max-width: 745px;
+      margin: 0 auto 73px auto;
+      font-size: 22px;
+    }
+  }
+
+  &__desktop-img {
+    display: none;
+    max-width: 1440px;
+    margin: 0 auto;
+    img {
+      transform: translate3d(0,0,0);
+      isolation: isolate;
+    }
+
+    @include mediaTablet {
+      display: block;
+      margin: 0 auto 68px auto;
+    }
+
+    @include mediaDesktop {
+      margin: 0 auto 160px auto;
+    }
+  }
+
+  &__mobile-img {
+    display: block;
+    max-width: 375px;
+    margin: 0 auto 81px auto;
+
+    @include mediaTablet {
+      display: none;
+    }
+  }
+
+  &__companies {
+    background: none !important;
+    color: #fff;
+
+    @include mediaTablet {
+      & > div {
+        width: 100%;
+      }
+    }
+
+    @include mediaDesktopMedium {
+      & > div {
+        max-width: 1315px;
+      }
+    }
+
+    &-item {
+      opacity: 0.5 !important;
+
+      &:nth-child(2n) {
+        --partners-order: 0 !important;
+      }
+
+      &:nth-child(2n+1) {
+        --partners-order: 1 !important;
+      }
+
+      @include mediaTablet {
+
+
+        &:nth-child(5n+1) {
+          --partners-order: 0 !important;
+        }
+
+        &:nth-child(5n+2) {
+          --partners-order: 1 !important;
+        }
+
+        &:nth-child(5n+3) {
+          --partners-order: 2 !important;
+        }
+
+        &:nth-child(5n+4) {
+          --partners-order: 3 !important;
+        }
+
+        &:nth-child(5n+5) {
+          --partners-order: 4 !important;
+        }
+
+      }
+
+      //&:nth-child(5n+3) {
+      //  --partners-order: 2;
+      //}
+      //
+      //&:nth-child(5n+4) {
+      //  --partners-order: 1;
+      //
+      //  @include mediaTablet {
+      //    --partners-order: 3;
+      //  }
+      //}
+      //
+      //&:nth-child(5n+5) {
+      //  --partners-order: 2;
+      //
+      //  @include mediaTablet {
+      //    --partners-order: 4;
+      //  }
+      //}
+      //
+      //&:nth-child(5n+6) {
+      //  --partners-order: 3;
+      //
+      //  @include mediaTablet {
+      //    --partners-order: 5;
+      //  }
+      //}
+    }
+
+    &-list {
+      grid-template-columns: repeat(2, 1fr) !important;
+      row-gap: 8px !important;
+
+      @include mediaTablet {
+        grid-template-columns: repeat(5, 1fr) !important;
+      }
+
+      @include mediaDesktop {
+        row-gap: 46px !important;
+      }
+    }
+    &-title {
+      margin-bottom: 31px !important;
+
+      @include mediaMobileMedium {
+        max-width: 519px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 29px !important;
+      }
+
+      @include mediaDesktopMedium {
+        max-width: 706px;
+        margin-bottom: 73px !important;
+      }
+    }
+  }
+
+}

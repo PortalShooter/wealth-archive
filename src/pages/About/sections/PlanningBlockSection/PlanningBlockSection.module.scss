@@ -1,0 +1,166 @@
+@use "src/app/mixins/index" as *;
+
+.planning-block {
+  padding-bottom: 85px;
+  background-color: var(--color-gray);
+
+  @include mediaTablet {
+    padding-bottom: 104px;
+  }
+
+  @include mediaDesktopMedium {
+    padding-bottom: 157px;
+  }
+
+  &:global(.advisor) {
+    padding-top: 104px;
+
+    @include mediaTablet {
+      padding-top: 123px;
+    }
+
+    @include mediaDesktop {
+      padding-top: 100px;
+    }
+  }
+
+  &:global(.company) {
+    padding-top: 104px;
+
+    @include mediaTablet {
+      padding-top: 123px;
+    }
+
+    @include mediaDesktop {
+      padding-top: 100px;
+    }
+  }
+
+  &__wrap {
+    @include mediaMobileBig {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 44px;
+    }
+
+    @include responsive(gap, 44px, 127px, 768px, 1440px);
+
+    @include mediaDesktopDesign {
+      gap: 127px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 37px;
+
+    @include mediaMobileBig {
+      margin-bottom: 0;
+    }
+
+    @include mediaDesktop {
+      padding-right: 80px;
+    }
+
+    :global(.company) &{
+      &>h3 {
+        font-size: 36px;
+
+        @include mediaTablet {
+          font-size: 54px;
+        }
+
+        @include mediaDesktop {
+          font-size: 88px;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    @include heading_h4_responsive;
+
+    @include mediaMobileBig {
+      margin-bottom: 14px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto;
+
+    @include mediaMobileBig {
+      width: 45.4%;
+      flex-shrink: 0;
+      max-width: none;
+    }
+
+    @include mediaDesktop {
+      width: 40.7%;
+      transform: scale(-1, 1);
+    }
+  }
+}
+
+.planning__companies.planning__heading {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mediaDesktop {
+    margin-bottom: 24px;
+  }
+}
+
+.planning__companies.planning__subheading {
+  @include mediaDesktopDesign {
+    width: 560px;
+  }
+}
+
+.planning__companies.planning__image {
+  @include mediaMobile {
+    object-position: 50% center !important;
+  }
+}
+
+.planning__companies.planning-block__image-wrap {
+
+  @include mediaDesktop {
+    transform: scale(1, 1);
+  }
+}
+
+.planning__companies.planning-block__heading {
+  font: 400 36px/110% 'Reckless';
+  color: #1A1B1C;
+
+  @include mediaMobileBig {
+    margin-bottom: 19px;
+  }
+
+  @include mediaTablet {
+    font: 400 54px/110% 'Reckless';
+  }
+
+  @include mediaDesktopDesign {
+    font-size: 88px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    margin-bottom: 26px;
+  }
+}
+
+.planning__companies.planning {
+  @include mediaTablet {
+    padding-top: 107px;
+  }
+
+  @include mediaDesktopDesign {
+    padding-top: 161px;
+  }
+}

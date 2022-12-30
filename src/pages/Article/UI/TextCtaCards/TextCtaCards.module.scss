@@ -1,0 +1,101 @@
+@use "@/app/mixins/index.scss" as *;
+
+.text-cta {
+  background: var(--color-beige);
+  border-radius: 12px;
+  padding: 48px 32px;
+
+  @include mediaMobileMedium {
+    padding: 40px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include mediaDesktop {
+    padding: 56px 50px;
+  }
+
+  &_center {
+    text-align: center;
+    padding: 48px 24px;
+
+    &>div:nth-child(1) {
+      width: 100%;
+
+      @include mediaMobileMedium {
+        margin-right: 0;
+        width: 387px;
+      }
+
+      @include mediaDesktop {
+        width: 604px;
+      }
+    }
+
+    &>div:nth-child(3)>a {
+      margin: 0 auto;
+    }
+
+    @include mediaMobileMedium {
+      padding: 48px 125px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include mediaDesktop {
+      padding: 64px 125px;
+    }
+  }
+
+  &__title {
+    font-family: 'Reckless';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 110%;
+    color: var(--color-text);
+    margin-bottom: 32px;
+    width: 233px;
+
+    @include mediaMobileMedium {
+      width: 375px;
+      margin-right: 110px;
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+
+    @include mediaDesktop {
+      font-size: 48px;
+      width: 604px;
+      line-height: 100%;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'Neue Haas Unica Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    margin-top: -8px;
+    margin-bottom: 40px;
+
+    @include mediaMobileMedium {
+      margin-top: 20px;
+    }
+
+    @include mediaDesktop {
+      margin-top: 24px;
+      font-size: 22px;
+      width: 678px;
+    }
+  }
+
+  &__button {
+    &>a {
+      display: inline-block;
+      height: 48px;
+    }
+  }
+}

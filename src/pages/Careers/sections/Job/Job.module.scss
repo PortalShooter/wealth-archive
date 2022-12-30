@@ -1,0 +1,46 @@
+@use "src/app/mixins/index" as *;
+
+.job {
+  padding-bottom: 67px;
+
+  @include mediaMobileBig {
+    padding-bottom: 126px;
+  }
+  @include mediaDesktop {
+    padding-bottom: 199px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include mediaMobileBig {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+  &__img {
+    @include mediaMobileBig {
+      margin-right: 0;
+    }
+    @include mediaDesktopMedium {
+      flex: 0 0 620px;
+      height: 620px;
+    }
+  }
+  &__text {
+    @include mediaMobileBig {
+      margin-right: 44px;
+    }
+  }
+  &__heading {
+    font-size: 32px;
+
+    @include mediaTablet {
+      font-size: 36px;
+    }
+    @include mediaDesktopMedium {
+      font-size: 64px;
+    }
+  }
+}

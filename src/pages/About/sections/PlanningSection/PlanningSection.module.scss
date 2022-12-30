@@ -1,0 +1,219 @@
+@use "src/app/mixins/index" as *;
+
+.planning {
+  padding-top: 80px;
+  background-color: var(--color-white);
+  overflow: hidden;
+  padding-bottom: 0;
+
+  @include mediaTablet {
+    padding-top: 95px;
+    padding-bottom: 5px;
+  }
+
+  @include mediaDesktop {
+    padding-bottom: 98px;
+    --planning-gap: 21px;
+    --planning-transition: 0;
+  }
+
+  @include mediaDesktopDesign {
+    padding-top: 98px;
+  }
+
+  &:global(.plan) {
+    background-color: var(--color-gray);
+  }
+
+  &__container {
+    --scale: 1;
+
+    @include mediaDesktop {
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    @include mediaMobileMedium {
+      margin-bottom: 48px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 81px;
+    }
+
+    :global(.company) &{
+      font-size: 36px;
+    }
+  }
+
+  &__heading {
+    @include heading_h2_responsive;
+
+    @include mediaDesktopSmall {
+      width: 85%;
+    }
+
+    @include mediaDesktopMedium {
+      max-width: 1200px;
+    }
+
+    :global(.about) & {
+      color: var(--color-green-dark);
+    }
+  }
+
+  &__subheading {
+    @include text_p1_responsive;
+
+    @include mediaMobileMedium {
+      width: 70%;
+    }
+
+    @include mediaDesktop {
+      width: 44%;
+    }
+
+    @include mediaDesktopDesign {
+      width: 630px;
+    }
+
+    :global(.about) & {
+      color: var(--color-green-dark);
+    }
+  }
+
+  &__image-holder {
+    position: relative;
+    transform: translatey(-1px);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 450px;
+
+    @include mediaMobileMedium {
+      gap: 24px;
+      height: calc((100vw - 64px) / 2 - 50px);
+    }
+
+    @include mediaDesktop {
+      height: calc((100vw - 180px) / 2 - 70px);
+      max-height: 560px;
+      gap: 21px;
+      overflow: visible;
+    }
+  }
+
+  &__image-block {
+    position: relative;
+    width: 100%;
+
+    @include mediaMobileMedium {
+      width: calc(100% / 3 - 16px);
+      overflow: hidden;
+    }
+
+    @include mediaDesktop {
+      flex-grow: 0;
+      width: calc(100% / 3 - 13px);
+      height: 100%;
+      overflow: visible;
+    }
+
+    &:first-child,
+    &:last-child {
+      display: none;
+
+      @include mediaMobileMedium {
+        display: block;
+      }
+
+      @include mediaDesktop {
+        position: absolute;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 100%;
+          width: var(--planning-gap);
+          height: 100%;
+          background-color: var(--color-gray);
+        }
+      }
+    }
+
+    :global(.about) &:first-child::before,
+    :global(.about) &:last-child::before {
+      @include mediaDesktop {
+        background-color: var(--color-white);
+      }
+    }
+
+    &:first-child {
+      @include mediaDesktop {
+        left: 0;
+        transform: translatex(calc(-1 * var(--image-offset, 0) * 1px));
+        z-index: 1;
+
+        &::before {
+          left: 100%;
+        }
+      }
+    }
+
+    &:last-child {
+      @include mediaDesktop {
+        right: 0;
+        transform: translatex(calc( var(--image-offset, 0) * 1px));
+      }
+    }
+
+    &:nth-child(2) {
+      @include mediaDesktop {
+        flex-shrink: 0;
+        width: calc(90% - 150px);
+        overflow: hidden;
+      }
+    }
+
+    @include mediaMobileMedium {
+      display: block;
+    }
+  }
+
+  &__image-wrap {
+    overflow: hidden;
+    margin-left: 10px;
+    height: 100%;
+  }
+
+  &__image-block:nth-child(2) &__image-wrap {
+    @include mediaDesktop {
+      height: 100%;
+      transform: scale(var(--scale, 1));
+    }
+  }
+
+  &__image {
+    @include mediaMobile {
+      object-position: calc(50% - 21px) center !important;
+    }
+
+    @include mediaMobileMedium {
+      object-position: 50% center !important;
+    }
+  }
+}
+
+.planning__companies.planning__heading {
+  @include mediaDesktop {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}

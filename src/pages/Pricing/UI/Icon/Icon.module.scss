@@ -1,0 +1,25 @@
+@use "src/app/mixins/index.scss" as *;
+@use "src/app/mixins/typography";
+@use "src/app/mixins/queries";
+
+.label {
+  width: 135px;
+  height: 32px;
+  color: #4D4104;
+  background: #F5DC5B;
+  border-radius: 8px;
+  font-family: 'Neue Haas Unica Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mediaDesktop {
+    width: 159px;
+    height: 40px;
+    font-size: 18px;
+  }
+}

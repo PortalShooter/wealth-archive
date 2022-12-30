@@ -1,0 +1,160 @@
+@use "@/app/mixins/index.scss" as *;
+
+.video-block {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  padding: 0;
+  margin: -33px auto 40px;
+
+  @include mediaTablet {
+    margin-top: -37px;
+  }
+
+  @include mediaDesktop {
+    margin-top: -54px;
+    margin-bottom: 56px;
+    width: 727px;
+    transform: translateX(calc(-4vw + 4px));
+  }
+
+  @include responsive(width, 522px, 727px, 768px, 1440px);
+
+  &__wrapper {
+    margin: 0;
+
+    @include mediaTablet {
+      width: 100%;
+    }
+  }
+
+  &__picture {
+    position: relative;
+    min-width: 100%;
+    aspect-ratio: 0.8;
+    z-index: 90;
+    height: 182px;
+    cursor: pointer;
+
+    &:hover {
+      &>div:nth-child(2)>div {
+        background-color: var(--color-white);
+        opacity: 1;
+      }
+    }
+
+    @include responsive(height, 182px, 324px, 375px, 768px);
+
+    @include mediaTablet {
+      aspect-ratio: 0.56;
+      @include responsive(height, 324px, 464px, 768px, 1440px);
+    }
+
+    @include mediaDesktop {
+      min-width: 834px;
+      height: 464px;
+    }
+
+    &_hide {
+      //pointer-events: none;
+      display: none;
+      //opacity: 0;
+      //transition: opacity 1s;
+    }
+  }
+
+  &__picture-wrapper {
+    position: absolute;
+    min-width: 100%;
+
+    @include mediaDesktop {
+      min-width: 834px;
+      height: 464px;
+    }
+  }
+
+  &__video {
+    min-width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+
+    @include mediaDesktop {
+      min-width: 834px;
+      height: 464px;
+    }
+  }
+
+  &__icon {
+    background-color: #FFFFFF;
+    opacity: 0.7;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    position: relative;
+    z-index: 100;
+    margin: auto;
+
+    @include mediaTablet {
+      width: 104px;
+      height: 104px;
+    }
+
+    @include mediaDesktop {
+      width: 120px;
+      height: 120px;
+    }
+
+    &>svg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 23px;
+      height: 23px;
+      transform: translateX(5px);
+
+      @include mediaTablet {
+        width: 33px;
+        height: 33px;
+        transform: translateX(3px);
+      }
+    }
+  }
+
+  &__icon-container {
+    position: absolute;
+    left: calc(50% - 36px);
+    top: calc(50% - 36px);
+    width: 23px;
+    height: 23px;
+
+    @include mediaTablet {
+      left: calc(50% - 52px);
+      top: calc(50% - 52px);
+    }
+
+    @include mediaDesktop {
+      left: calc(50% - 60px);
+      top: calc(50% - 60px);
+    }
+
+    &_hide {
+      display: none;
+      cursor: auto;
+
+      //opacity: 0;
+      //transition: opacity 1s;
+    }
+  }
+}
+
+.margin {
+  margin-top: 40px;
+
+  @include mediaDesktop {
+    margin-top: 56px;
+  }
+}

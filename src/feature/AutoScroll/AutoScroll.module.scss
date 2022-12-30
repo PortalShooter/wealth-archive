@@ -1,0 +1,44 @@
+@use "src/app/mixins/index" as *;
+
+.autoscroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #7986cb;
+  border: 5px solid #49599a;
+  z-index: 1000;
+  border-radius: 10px;
+  padding: 10px;
+
+  &__text {
+    @include heading_h5_responsive;
+    margin: 5px;
+
+  }
+
+  &__btn {
+    padding: 5px;
+    border: 2px solid #49599a;
+    border-radius: 5px;
+    transition: .3s ease-out;
+    outline: none;
+    margin: 5px;
+
+    &:hover {
+      background-color: #aab6fe;
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    width: 40px;
+    padding: 5px;
+    border: 2px solid #49599a;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  &__comment {
+    @include text_p1_responsive;
+  }
+}

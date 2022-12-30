@@ -1,0 +1,29 @@
+@use "@/app/mixins/index.scss" as *;
+
+.Container {
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 48px);
+
+  @include mediaTablet {
+    width: calc(100% - 64px);
+  }
+
+  @include mediaDesktop {
+    max-width: 1260px;
+    width: calc(100% - 180px);
+  }
+
+  &_Small {
+    width: calc(100% - 32px);
+
+    @include mediaTablet {
+      width: calc(100% - 32px);
+    }
+
+    @include mediaDesktop {
+      max-width: 1716px;
+      width: calc(100% - 64px);
+    }
+  }
+}

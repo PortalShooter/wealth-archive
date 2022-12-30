@@ -1,0 +1,143 @@
+@use "src/app/mixins/index" as *;
+
+.companies {
+  padding-top: 20px;
+  padding-bottom: 65px;
+  background-color: #F6F4ED;
+
+  @include mediaTablet {
+    padding-bottom: 89px;
+  }
+  @include mediaDesktopMedium {
+    padding-bottom: 146px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+
+    @include mediaTablet {
+      margin-bottom: 31px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 78px;
+    }
+  }
+  &__heading {
+    color: #BABABA;
+    font: 400 43px/110% 'Neue Haas Unica Pro';
+
+    @include mediaTablet {
+      // font-size: 36px;
+    }
+    @include mediaDesktop {
+      // font-size: 64px;
+    }
+  }
+
+  &__list-wrapper {
+    // background-color: #FFFFFF;
+    // border-radius: 16px;
+    // padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    position: relative;
+    // display: grid;
+    display: flex;
+    // row-gap: 20px;
+    // grid-template-columns: repeat(3, 1fr);
+    margin: 0 -7px;
+    // place-items: center;
+    max-width: 800px;
+    gap: 45px;
+
+    @include mediaMobileBig {
+      // column-gap: 80px;
+    }
+
+    @include mediaTablet {
+      // column-gap: 45px;
+      // grid-template-columns: repeat(4, 1fr);
+      margin: 0;
+    }
+
+    @include mediaDesktopMedium {
+      row-gap: 45px;
+      // column-gap: 100px;
+    }
+
+    &-wrarrer {
+      @include mediaMobileBig {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__elem {
+    --partners-duration-opacity: .2s;
+    --partners-duration-transform: .2s;
+    --partners-delay-base: .12s;
+    --partners-order: 0;
+    --partners-delay: calc(var(--partners-delay-base) * var(--partners-order));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: translateX(0);
+    // width: 114px;
+    // width: auto;
+    transition: opacity var(--partners-duration-opacity) var(--partners-delay) linear, transform var(--partners-duration-transform) var(--partners-delay) linear;
+
+
+    &:nth-child(2n) {
+      --partners-order: 1;
+    }
+
+    &:nth-child(2n+1) {
+      --partners-order: 0;
+    }
+
+    @include mediaTablet {
+
+
+
+      &:nth-child(4n+1) {
+        --partners-order: 0;
+      }
+
+      &:nth-child(4n+2) {
+        --partners-order: 1;
+      }
+
+      &:nth-child(4n+3) {
+        --partners-order: 2;
+      }
+
+      &:nth-child(4n+4) {
+        --partners-order: 3;
+      }
+    }
+
+    @include mediaDesktopMedium {
+      // width: 200px;
+    }
+
+    & svg {
+      width: 100%;
+      height: 80px;
+    }
+  }
+
+  &__list_hidden &__elem {
+    --partners-x: 20px;
+    opacity: 0;
+    transition-delay: 0s;
+    transform: translateX(var(--partners-x));
+  }
+}

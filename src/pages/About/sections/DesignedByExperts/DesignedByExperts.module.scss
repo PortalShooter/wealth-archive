@@ -1,0 +1,94 @@
+@use "src/app/mixins/index" as *;
+
+.designed {
+  background-color: var(--color-white);
+  padding-top: 81px;
+  padding-bottom: 0;
+
+  @include mediaTablet {
+    padding-top: 104px;
+  }
+
+  @include mediaDesktop {
+    padding-top: 100px;
+    margin-bottom: -15px;
+  }
+
+  &__title {
+    margin-bottom: 29px;
+
+    @include mediaTablet {
+      margin-bottom: 33px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 53px;
+    }
+  }
+
+  &__heading {
+    @include heading_h2_responsive;
+  }
+
+  &__subheading {
+    line-height: 127%;
+
+    @include mediaTablet {
+      padding-right: 33px;
+    }
+
+    @include mediaDesktop {
+      width: 62%;
+    }
+  }
+
+  &__svg-wrap {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+
+    @include mediaDesktop {
+      max-width: none;
+      margin: 0 auto;
+    }
+  }
+
+  &__svg {
+    position: relative;
+    left: 50%;
+    width: 172vw;
+    max-width: 885px;
+    transform: translateX(-50.6%);
+
+    svg {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    @include mediaTablet {
+      transform: translateX(-50.6%);
+    }
+
+    @include mediaDesktop {
+      transform: translateX(-51.4%);
+      max-width: 1647px;
+    }
+  }
+  &__svg-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49.2%,-50%);
+    width: 172vw;
+    max-width: 885px;
+    @include mediaTablet {
+      transform: translate(-49.3%,-50%);
+    }
+
+    @include mediaDesktop {
+      transform: translate(-50.1%,-50%);
+      max-width: 1647px;
+    }
+  }
+}

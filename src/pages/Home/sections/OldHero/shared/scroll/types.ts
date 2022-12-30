@@ -1,0 +1,1 @@
+export type OffsetScrollbar = undefined | false | "right" | "marginRight" | "paddingRight";

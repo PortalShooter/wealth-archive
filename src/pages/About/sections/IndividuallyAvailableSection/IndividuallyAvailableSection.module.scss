@@ -1,0 +1,108 @@
+@use "src/app/mixins/index" as *;
+
+.available {
+  padding-bottom: 81px;
+
+  @include mediaTablet {
+    padding-bottom: 105px;
+  }
+
+  @include mediaDesktop {
+    padding-bottom: 160px;
+  }
+
+  &__container {
+    padding: 80px 24px;
+    background-color: var(--color-beige);
+    border-radius: 12px;
+
+    @include mediaMobileBig {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 80px 32px;
+      border-radius: 20px;
+      gap: 20px;
+    }
+
+    @include responsive(padding-top, 82px, 160px, $tablet, $desktopDesign);
+    @include responsive(padding-right, 32px, 110px, $tablet, $desktopDesign);
+    @include responsive(padding-bottom, 80px, 160px, $tablet, $desktopDesign);
+    @include responsive(padding-left, 32px, 59px, $tablet, $desktopDesign);
+
+    @include mediaDesktopDesign {
+      padding: 160px 112px 160px 59px;
+      gap: 60px;
+      max-width: 1540px;
+      justify-content: space-between;
+    }
+  }
+
+  &__text-with-link {
+    @include mediaDesktopDesign {
+      max-width: 650px;
+    }
+  }
+
+  &__svg-wrap {
+    display: flex;
+    justify-content: center;
+    padding-right: 15px;
+    margin-bottom: 45px;
+
+    @include mediaMobileBig {
+      flex-shrink: 0;
+      width: calc(50% - 83px);
+      padding-right: 0;
+      margin-bottom: 0;
+    }
+
+    @include  mediaDesktop {
+      width: calc(50% - 164px);
+      justify-content: flex-end;
+    }
+  }
+
+  &__svg {
+    width: calc(100% - 60px);
+    max-width: 420px;
+
+    @include mediaMobileBig {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    @include mediaDesktop {
+      width: 100%;
+      min-width: 320px;
+      max-width: 440px;
+    }
+  }
+
+  &__title {
+    padding-right: 5px;
+
+    @include mediaMobileBig {
+      margin-bottom: 24px;
+    }
+
+    @include mediaDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__heading {
+    @include heading_h3_responsive;
+  }
+
+  &__link {
+    width: 185px;
+
+    @include mediaTablet {
+      width: 193px;
+    }
+
+    @include mediaDesktop {
+      width: 185px;
+    }
+  }
+}

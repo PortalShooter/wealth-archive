@@ -1,0 +1,121 @@
+@use "@/app/mixins/index.scss" as *;
+
+.want-to-learn-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 104px;
+
+  @include mediaTablet {
+    margin-bottom: 128px;
+  }
+
+  @include mediaDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    width: 327px;
+    margin-bottom: 32px !important;
+
+    @include mediaMobileMedium {
+      width: 500px;
+
+      >h2 {
+        font-size: 40px;
+      }
+    }
+    @include mediaMobileBig {
+      width: 650px;
+
+      >h2 {
+        font-size: 50px;
+      }
+    }
+
+    @include mediaTablet {
+      width: 704px;
+      margin-bottom: 32px;
+
+      >h2 {
+        font-size: 54px;
+      }
+    }
+
+    @include mediaDesktop {
+      width: 750px;
+      margin-bottom: 46px !important;
+
+      >h2 {
+        font-size: 60px;
+      }
+    }
+
+    @include mediaDesktopMedium {
+      width: 950px;
+
+      >h2 {
+        font-size: 74px;
+      }
+    }
+
+    @include mediaDesktopDesign {
+      width: 1101px;
+
+      >h2 {
+        font-size: 88px;
+      }
+    }
+  }
+}
+
+.subscribe {
+  width: 327px;
+  flex-shrink: 1;
+  margin: 0 auto;
+
+  @include mediaMobileBig {
+    display: flex;
+    justify-content: space-between;
+    width: 462px;
+  }
+
+  @include mediaDesktop {
+    width: 471px;
+  }
+
+  &__input {
+    margin-bottom: 16px;
+    flex-shrink: 1;
+
+    @include mediaMobileBig {
+      width: 300px;
+    }
+
+    @include mediaTablet {
+      margin-bottom: 0;
+    }
+
+    &_error {
+      margin-bottom: 40px;
+
+      @include mediaTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    @include button;
+    width: 100%;
+    height: 48px;
+
+    @include mediaMobileBig {
+      width: 146px;
+    }
+
+    @include mediaDesktop {
+      width: 155px;
+    }
+  }
+}

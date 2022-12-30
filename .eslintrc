@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "extends": ["airbnb", "prettier", "plugin:import/recommended"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": "off",
+    "no-use-before-define": ["error", { "variables": false }],
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "import/extensions": [2, {
+       "js": "never",
+      "jsx": "never"
+    }],
+    "no-await-in-loop": "off"
+  },
+  "settings": {
+    "import/resolver":  {
+      "webpack": {
+        "config": "./webpack.config.js"
+      }
+    }
+  }
+}
